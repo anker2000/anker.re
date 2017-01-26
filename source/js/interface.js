@@ -28,7 +28,7 @@ $(function() {
 	var camera, scene, renderer, particles, geometry, materials = [], starMaterials = [], parameters, i, h, color, sprite, size, effect;
 	var mouseX = 0, prevMouseX = 0, mouseY = 0, mouseDown = false, mouseDirection;
 	var phone = new Object(), tweenRotation, phoneObject;
-	var phoneObject, phoneGroup, newPhone;
+	var phoneObject, phoneGroup, newPhone, macbookGroup;
 	var idleTimeout, idle = true;
 	var myRotation=new Object();
 	myRotation.x=0;
@@ -38,7 +38,7 @@ $(function() {
 	var windowHalfX = window.innerWidth / 2;
 	var windowHalfY = window.innerHeight / 2;
 	var mouseDownCoord = new Object();
-	var shadowMapSize = 1024;
+	var shadowMapSize = 512;
 
 
 	function init() {
@@ -58,30 +58,40 @@ $(function() {
 		phoneGroup = new THREE.Group();
 
 		var screenGeometry = new THREE.PlaneGeometry( 0.55, 0.983, 1 );
-		var screenMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+		var mobileMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
 		// var texture = THREE.ImageUtils.loadTexture( "css/screen.jpg" );
 		// texture.repeat.set( 1, 1 );	
 		// texture.anisotropy=2;
 
-		video = document.getElementById( 'prototype' );
-		var texture = new THREE.VideoTexture( video );
-		texture.minFilter = THREE.LinearFilter;
-		texture.magFilter = THREE.LinearFilter;
-		texture.format = THREE.RGBFormat;
-		texture.wrapS = THREE.ClampToEdgeWrapping;
-		texture.wrapT = THREE.ClampToEdgeWrapping;
+		mobileVideo = document.getElementById( 'mobile' );
+		var mobileTexture = new THREE.VideoTexture( mobileVideo );
+		mobileTexture.minFilter = THREE.LinearFilter;
+		mobileTexture.magFilter = THREE.LinearFilter;
+		mobileTexture.format = THREE.RGBFormat;
+		mobileTexture.wrapS = THREE.ClampToEdgeWrapping;
+		mobileTexture.wrapT = THREE.ClampToEdgeWrapping;
 		// texture.anisotropy=2;
 
-		screenMaterial.map = texture;
+		mobileMaterial.map = mobileTexture;
 		// screenMaterial.color = "#ffffff";
 
-		var screen = new THREE.Mesh( screenGeometry, screenMaterial );
+		var screen = new THREE.Mesh( screenGeometry, mobileMaterial );
+		screen.receiveShadow = false;
+		// screen.rotation.x = de2ra(90);
+		screen.position.z = 0.0292;
+		screen.position.y = 0.05;
+
+
+
+
+		
 		
 		screen.receiveShadow = false;
 		// screen.rotation.x = de2ra(90);
 		screen.position.z = 0.0292;
 		screen.position.y = 0.05;
+
 		phoneGroup.add( screen );
 		
 		
@@ -103,12 +113,12 @@ $(function() {
 		var groundGeometry = new THREE.PlaneGeometry( 250, 250, 1 );
 		var groundMaterial = new THREE.ShadowMaterial();
 
-		groundMaterial.opacity = .15;
+		groundMaterial.opacity = .3;
 
 		var ground = new THREE.Mesh(groundGeometry, groundMaterial);
 		ground.receiveShadow = true;
 		ground.rotation.x=55;
-		ground.position.y=-25;
+		ground.position.y=-20;
 		ground.transparent = true;
 
 		scene.add(ground);
@@ -145,7 +155,7 @@ $(function() {
 		       
 		  
 				phoneGroup.add( object );
-				scene.add( phoneGroup );
+				
 		    });
 
 			phoneObject = object;
@@ -162,8 +172,8 @@ $(function() {
 			phone2 = phoneGroup.clone();
 			phone2.position.x=25;
 			phone2.position.z = -20;
-			scene.add(phone1);
-			scene.add(phone2);
+			// scene.add(phone1);
+			// scene.add(phone2);
 
 			TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
 
@@ -180,15 +190,172 @@ $(function() {
 		}
 		
 	);
+	macbookGroup = new THREE.Group();
+	var macbookScreenGroup = new THREE.Object3D();
+	loader.load(
+			// resource URL
+			'models/screen.json',
+			// Function when resource is loaded
+			function ( geometry, materials ) {
+				var material = new THREE.MultiMaterial( materials );
+				var object = new THREE.Mesh( geometry, material );
+				// scene.add( object );
+				
+				object.position.y=0;
+				object.position.x=-0.5;
+				object.position.z=0;
+				// object.rotation.y=de2ra(180);
+				
+				object.castShadow=true;
+				object.traverse( function ( child ) {
+		        if ( child instanceof THREE.Mesh ) {
+		            child.geometry.computeVertexNormals();
+		        }
+		        for (i=0;i<object.material.materials.length;i++) {
+		        	var tC = .75;
+		        	object.material.materials[i].side=2;
+					object.material.materials[i].specular.r=tC;
+					object.material.materials[i].specular.g=tC;
+					object.material.materials[i].specular.b=tC;	
+					object.material.materials[i].emissive.r=.0;
+					object.material.materials[i].emissive.g=.0;
+					object.material.materials[i].emissive.b=.0;
+					object.material.materials[i].shininess=1;	
+		        }
+				macbookScreenGroup.add( object );
+		    });
+		}
+	);
+	var desktopMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+	desktopVideo = document.getElementById( 'desktop' );
+	var desktopTexture = new THREE.VideoTexture( desktopVideo );
+	desktopTexture.minFilter = THREE.LinearFilter;
+	desktopTexture.magFilter = THREE.LinearFilter;
+	desktopTexture.format = THREE.RGBFormat;
+	desktopTexture.wrapS = THREE.ClampToEdgeWrapping;
+	desktopTexture.wrapT = THREE.ClampToEdgeWrapping;
+
+	desktopMaterial.map = desktopTexture;
+	
+	var desktopGeometry = new THREE.PlaneGeometry( 8.7, 5.8, 1 );
+
+	var desktopScreen = new THREE.Mesh( desktopGeometry, desktopMaterial );
+	desktopScreen.position.z = -3;
+	desktopScreen.position.y = 3.3;
+	desktopScreen.rotation.x = de2ra(1);
+	macbookScreenGroup.add(desktopScreen);
+
+	var desktopGlass = new THREE.Mesh(desktopGeometry, glassMaterial);
+	desktopGlass.receiveShadow = true;
+	desktopGlass.position.z = -3;
+	desktopGlass.position.y = 3.3;
+	desktopGlass.rotation.x = de2ra(1);
+	desktopGlass.transparent = false;
+	macbookScreenGroup.add(desktopGlass);
+
+	var macbookPivot = new THREE.Object3D();
+	var tempgeometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
+	var tempmaterial = new THREE.MeshBasicMaterial( { color: 0xffffff } );	
+	mesh = new THREE.Mesh( tempgeometry, tempmaterial );
+	macbookPivot.add( mesh );
+	
+	macbookScreenGroup.position.z=3;
+	macbookPivot.add(macbookScreenGroup);
+	macbookPivot.position.z=-3;
+	macbookPivot.rotation.x=de2ra(90);
+	var openLid = TweenMax.to(macbookPivot.rotation, 2, { x:0, ease:Power4.easeInOut});
+	macbookGroup.add(macbookPivot);
+
+	loader.load(
+			// resource URL
+			'models/keyboard.json',
+			// Function when resource is loaded
+			function ( geometry, materials ) {
+				var material = new THREE.MultiMaterial( materials );
+				var object = new THREE.Mesh( geometry, material );
+				// scene.add( object );
+				
+				object.position.y=0;
+				object.position.x=-0.5;
+				object.position.z=0;
+				
+				object.castShadow=true;
+				object.traverse( function ( child ) {
+		        if ( child instanceof THREE.Mesh ) {
+		            child.geometry.computeVertexNormals();
+		        }
+		        for (i=0;i<object.material.materials.length;i++) {
+		        	var tC = .75;
+		        	object.material.materials[i].side=2;
+					object.material.materials[i].specular.r=tC;
+					object.material.materials[i].specular.g=tC;
+					object.material.materials[i].specular.b=tC;	
+					object.material.materials[i].emissive.r=.0;
+					object.material.materials[i].emissive.g=.0;
+					object.material.materials[i].emissive.b=.0;
+					object.material.materials[i].shininess=1.5;	
+		        }
+				macbookGroup.add( object );
+		    });
+		}
 		
+	);
+	loader.load(
+			// resource URL
+			'models/keys.json',
+			// Function when resource is loaded
+			function ( geometry, materials ) {
+				var material = new THREE.MultiMaterial( materials );
+				var object = new THREE.Mesh( geometry, material );
+				// scene.add( object );
+				
+				object.position.y=0;
+				object.position.x=-0.5;
+				object.position.z=0;
+				
+				object.castShadow=true;
+				object.traverse( function ( child ) {
+		        if ( child instanceof THREE.Mesh ) {
+		            child.geometry.computeVertexNormals();
+		        }
+		        for (i=0;i<object.material.materials.length;i++) {
+		        	var tC = .75;
+		        	object.material.materials[i].side=2;
+					object.material.materials[i].specular.r=tC;
+					object.material.materials[i].specular.g=tC;
+					object.material.materials[i].specular.b=tC;	
+					object.material.materials[i].emissive.r=.0;
+					object.material.materials[i].emissive.g=.0;
+					object.material.materials[i].emissive.b=.0;
+					object.material.materials[i].shininess=21;	
+		        }
+				macbookGroup.add( object );
+		    });
+		}
+		
+	);
+	
+
+	// scene.add( phoneGroup );
+
+	macbookGroup.position.y=-10;
+	macbookGroup.position.z=10;
+	macbookGroup.scale.set(4,4,4);
+	scene.add(macbookGroup);
+
+	
+	var tween1 = TweenMax.to(macbookGroup.position, 3.5,{ y:-9, yoyo:true, repeat:-1, ease:Power2.easeInOut, onComplete:function() {}});
+	
+
 
 	var spotLight4 = new THREE.SpotLight( 0xffffff); 
 	spotLight4.castShadow = false;
-	spotLight4.position.set( 40, 60, 32 ); 
-	spotLight4.target.position.set( 0, 0, 0 );
+	spotLight4.position.set( 20, 35, 20 ); 
+	spotLight4.target.position.set(00, 15, 0 );
 	spotLight4.shadow.mapSize.height = shadowMapSize;
 	spotLight4.shadow.mapSize.width = shadowMapSize;
-	spotLight4.intensity = 0.15;
+	spotLight4.intensity = 0.20;
+	spotLight4.penumbra = 1.5;
 	// spotLight4.exponent = 15;
 	spotLight4.decay = 2;
 	spotLight4.angle = de2ra(25);
@@ -196,7 +363,7 @@ $(function() {
 
 	var spotLight3 = new THREE.SpotLight( 0xFFFFFF); 
 	spotLight3.castShadow = true;
-	spotLight3.position.set( 0, 50, -5 ); 
+	spotLight3.position.set( 0, 50, -10 ); 
 	spotLight3.target.position.set( 0, 5, -10 );
 	spotLight3.shadow.mapSize.height = 1024;
 	spotLight3.shadow.mapSize.width = 1024;
@@ -204,9 +371,6 @@ $(function() {
 	spotLight3.exponent = .05;
 	spotLight3.angle = de2ra(85);
 	scene.add( spotLight3 );
-
-	// var light2 = new THREE.AmbientLight( 0xFFFFFF,1 );
-	// scene.add( light2 );
 
 	var geometry1 = new THREE.CubeGeometry( 35, 15, 1 );
 
@@ -246,29 +410,6 @@ $(function() {
 	
 	window.addEventListener( 'resize', onWindowResize, false );
 	camera.position.set(0, 0, 65);
-	controls = new THREE.OrbitControls(camera, element);
-	controls.target.set(
-		camera.position.x + 0.15,
-		camera.position.y ,
-		camera.position.z
-	);
-	console.log(controls);
-	controls.noPan = true;
-	controls.noZoom = true;
-
-	// setTimeout(function() {
-		
-	// 	setActive();
-	// 	controls.object.position.x=0;
-	// 	controls.object.position.y=0;
-	// 	controls.object.position.z=0;
-	// 	camera.position.x=0.4199409997492556;
-	// 	camera.position.y=0.1188543577613863;
-	// 	camera.position.z=65;
-	// 	camera.lookAt( 0, 0, 0 );
-	// 	render();
-	// 	animate();
-	// },2000);
 	animate();
 
 }
@@ -296,7 +437,7 @@ $(function() {
 	
 
 	function animate() {
-		controls.update();
+		// controls.update();
 		requestAnimationFrame( animate );
 		render();
 	}
@@ -304,11 +445,12 @@ $(function() {
 	function render() {
 		var time = Date.now();
 
-		camera.position.x = ( mousePosition.x - camera.position.x ) * 0.015;
-		camera.position.y = ( - mousePosition.y - camera.position.y ) * 0.015;
+		camera.position.x = ( mousePosition.x - camera.position.x ) * 0.003;
+		camera.position.y = ( - mousePosition.y - camera.position.y ) * 0.003;
 
 		camera.lookAt( 0,0, 0 );
-
+		// phone1.rotation.y += 0.03;
+		// phone2.rotation.y -= 0.03;
 		for ( i = 0; i < scene.children.length; i ++ ) {
 			var object = scene.children[ i ];
 
