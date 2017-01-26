@@ -18,11 +18,25 @@
 	</head>
 
 	<body>
-		<video id="mobile" autoplay="autoplay" loop="loop" controls="false" style="display:none">
-			<source src="iphone.mp4" type="video/mp4">
-		</video>
-		<video id="desktop" autoplay="autoplay" loop="loop" controls="false" style="display:none">
-			<source src="rapha.mp4" type="video/mp4">
-		</video>
+		<div class="devices">
+
+		</div>
+		<div class="projects">
+			<section class="mobile">
+				<video id="mobile" autoplay="autoplay" loop="loop" muted controls="false" style="display:none" playsinline webkit-playsinline>
+					<source src="iphone.mp4" type="video/mp4">
+				</video>
+			</section>
+			<section class="desktop">
+				<video id="desktop" autoplay="autoplay" loop="loop" muted controls="false" style="display:none" playsinline webkit-playsinline>
+					<source src="rapha.mp4" type="video/mp4">
+				</video>
+			</section>
+			<section class="mobile">
+				<video id="mobile" autoplay="autoplay" loop="loop" muted controls="false" style="display:none" playsinline webkit-playsinline>
+					<source src="iphone.mp4" type="video/mp4">
+				</video>
+			</section>
+		</div>
 	</body>
 </html>
