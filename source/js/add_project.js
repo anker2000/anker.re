@@ -1,4 +1,12 @@
 function addProject(section, scene) {
+	var area = {};
+	function resizeHandler() {
+		area.screenWidth=screenWidthFromDistance(camera.position.z);
+		console.log(area.screenWidth);
+	}
+	$(window).bind("resize",resizeHandler);
+	resizeHandler();
+
 	var loader = new THREE.JSONLoader();
 	
 	var screenMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });	
