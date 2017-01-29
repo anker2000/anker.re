@@ -31,16 +31,18 @@ table {
 
 html {
   height: 100%;
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+  overflow: hidden; }
 
 * {
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box; }
 
 body {
-  background-color: #1a1a1a;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden;
+  height: 100%; }
 
 .devices {
   position: fixed;
@@ -49,7 +51,32 @@ body {
   width: 100%;
   height: 100%; }
 
+.frame {
+  border: 20px solid #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none; }
+
+.projects {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
 section {
   display: block;
   width: 100%;
   height: 100vw; }
+
+.devices {
+  background-color: #181818; }
+  .devices canvas:nth-child(2) {
+    z-index: 200; }
