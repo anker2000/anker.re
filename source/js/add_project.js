@@ -29,6 +29,10 @@ function addProject(section, stage) {
 	glassMaterial.opacity = 0.1;
 	glassMaterial.shininess = 10;
 
+	var color_light = hexToRgb($(section).data("device-light"));
+	var color_dark = hexToRgb($(section).data("device-dark"));
+	console.log(color_light.r, color_dark);
+
 	if ($(section).hasClass("mobile")) {
 		var phoneGroup = new THREE.Group();
 		var screenGeometry = new THREE.PlaneGeometry( 0.55, 0.983, 1 );
@@ -63,13 +67,12 @@ function addProject(section, stage) {
 			        for (i=0;i<object.material.materials.length;i++) {
 			        	var tC = .75;
 			        	object.material.materials[i].side=2;
-						object.material.materials[i].specular.r=tC;
-						object.material.materials[i].specular.g=tC;
-						object.material.materials[i].specular.b=tC;	
-						object.material.materials[i].emissive.r=.0;
-						object.material.materials[i].emissive.g=.0;
-						object.material.materials[i].emissive.b=.0;
-						object.material.materials[i].shininess=10;	
+						object.material.materials[i].specular.r = color_dark.r/255;
+						object.material.materials[i].specular.g = color_dark.g/255;
+						object.material.materials[i].specular.b = color_dark.b/255;
+						object.material.materials[i].emissive.r = color_light.r/255;
+						object.material.materials[i].emissive.g = color_light.g/255;
+						object.material.materials[i].emissive.b = color_light.b/255;
 			        } 
 					phoneGroup.add( object );
 		    	}
@@ -118,12 +121,12 @@ function addProject(section, stage) {
 			        for (i=0;i<object.material.materials.length;i++) {
 			        	var tC = .75;
 			        	object.material.materials[i].side=2;
-						object.material.materials[i].specular.r=tC;
-						object.material.materials[i].specular.g=tC;
-						object.material.materials[i].specular.b=tC;	
-						object.material.materials[i].emissive.r=.0;
-						object.material.materials[i].emissive.g=.0;
-						object.material.materials[i].emissive.b=.0;
+						object.material.materials[i].specular.r=1;
+						object.material.materials[i].specular.g=.7;
+						object.material.materials[i].specular.b=0;	
+						object.material.materials[i].emissive.r=1;
+						object.material.materials[i].emissive.g=.8;
+						object.material.materials[i].emissive.b=0;
 						object.material.materials[i].shininess=8;	
 			        }
 					macbookScreenGroup.add( object );
@@ -142,10 +145,10 @@ function addProject(section, stage) {
 
 		var desktopGlass = new THREE.Mesh(desktopGeometry, glassMaterial);
 		desktopGlass.receiveShadow = true;
-		desktopGlass.position.z = -3;
+		desktopGlass.position.z = -3.16;
 		desktopGlass.position.y = 3.3;
 		desktopGlass.rotation.x = de2ra(1);
-		macbookScreenGroup.add(desktopGlass);
+		// macbookScreenGroup.add(desktopGlass);
 
 		var macbookPivot = new THREE.Object3D();
 		var tempgeometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
@@ -178,12 +181,12 @@ function addProject(section, stage) {
 		        for (i=0;i<object.material.materials.length;i++) {
 		        	var tC = .75;
 		        	object.material.materials[i].side=2;
-					object.material.materials[i].specular.r=tC;
-					object.material.materials[i].specular.g=tC;
-					object.material.materials[i].specular.b=tC;	
-					object.material.materials[i].emissive.r=.0;
-					object.material.materials[i].emissive.g=.0;
-					object.material.materials[i].emissive.b=.0;
+					object.material.materials[i].specular.r=1;
+					object.material.materials[i].specular.g=.7;
+					object.material.materials[i].specular.b=0;		
+					object.material.materials[i].emissive.r=1;
+						object.material.materials[i].emissive.g=.8;
+						object.material.materials[i].emissive.b=0;
 					object.material.materials[i].shininess=1.5;	
 		        }
 				macbookGroup.add( object );
@@ -208,12 +211,12 @@ function addProject(section, stage) {
 		        for (i=0;i<object.material.materials.length;i++) {
 		        	var tC = .75;
 		        	object.material.materials[i].side=2;
-					object.material.materials[i].specular.r=tC;
-					object.material.materials[i].specular.g=tC;
-					object.material.materials[i].specular.b=tC;	
-					object.material.materials[i].emissive.r=.0;
-					object.material.materials[i].emissive.g=.0;
-					object.material.materials[i].emissive.b=.0;
+					object.material.materials[i].specular.r=1;
+					object.material.materials[i].specular.g=.7;
+					object.material.materials[i].specular.b=0;	
+					object.material.materials[i].emissive.r=1;
+					object.material.materials[i].emissive.g=.8;
+					object.material.materials[i].emissive.b=0;
 					object.material.materials[i].shininess=21;	
 		        }
 				macbookGroup.add( object );

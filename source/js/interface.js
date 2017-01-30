@@ -39,10 +39,10 @@ function init() {
 	animate();
 }
 function setLights() {
-	var shadowMapSize = 512;
+	var shadowMapSize = 1024;
 	var groundGeometry = new THREE.PlaneGeometry( 250, 250, 1 );
 	var groundMaterial = new THREE.ShadowMaterial();
-	groundMaterial.opacity = .3;
+	groundMaterial.opacity = .07;
 	var ground = new THREE.Mesh(groundGeometry, groundMaterial);
 	ground.receiveShadow = true;
 	ground.rotation.x=55;
@@ -54,8 +54,6 @@ function setLights() {
 	spotLight1.castShadow = false;
 	spotLight1.position.set( 20, 55, 20 ); 
 	spotLight1.target.position.set(0, 0, -10 );
-	spotLight1.shadow.mapSize.height = shadowMapSize;
-	spotLight1.shadow.mapSize.width = shadowMapSize;
 	spotLight1.intensity = .45;
 	spotLight1.penumbra = 1.5;
 	spotLight1.decay = 2;
@@ -67,8 +65,8 @@ function setLights() {
 	spotLight2.castShadow = true;
 	spotLight2.position.set( 0, 50, -10 ); 
 	// spotLight2.target.position.set( 0, 5, -10 );
-	spotLight2.shadow.mapSize.height = 1024;
-	spotLight2.shadow.mapSize.width = 1024;
+	spotLight2.shadow.mapSize.height = shadowMapSize;
+	spotLight2.shadow.mapSize.width = shadowMapSize;
 	spotLight2.intensity = .15;
 	spotLight2.exponent = .05;
 	spotLight2.angle = de2ra(75);
@@ -101,8 +99,10 @@ function setEnvironment() {
 	scene = new THREE.Scene();
 	stage = new THREE.Group();
 	scene.add(stage);
+	var color_light = "#fef07a";
+	var color_dark = "#ffd961";
 	$(".projects").bind("scroll",scrollHandler);
-	
+	$(".devices").css("background","radial-gradient(ellipse at center, "+color_light+" 0%, "+color_dark+" 100%)")
 	// var loader = new THREE.JSONLoader();
 	// loader.load(
 	// // resource URL
@@ -139,20 +139,20 @@ function setEnvironment() {
 	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 	container.appendChild( renderer.domElement );
 
-	underlay = document.createElement('canvas');
-	underlayCtx = underlay.getContext('2d');
-	underlay.width=window.innerWidth;
-	underlay.height=window.innerHeight;
-	container.appendChild(underlay);
+	// underlay = document.createElement('canvas');
+	// underlayCtx = underlay.getContext('2d');
+	// underlay.width=window.innerWidth;
+	// underlay.height=window.innerHeight;
+	// container.appendChild(underlay);
 
-	overlay = document.createElement('canvas');
-	overlayCtx = overlay.getContext('2d');
-	overlay.width=window.innerWidth;
-	overlay.height=window.innerHeight;
-	overlay.style.position='absolute';
-	overlay.style.top='1%';
-	overlay.style.left='-1%';
-	container.appendChild(overlay);
+	// overlay = document.createElement('canvas');
+	// overlayCtx = overlay.getContext('2d');
+	// overlay.width=window.innerWidth;
+	// overlay.height=window.innerHeight;
+	// overlay.style.position='absolute';
+	// overlay.style.top='1%';
+	// overlay.style.left='-1%';
+	// container.appendChild(overlay);
 
 	var element = renderer.domElement;
 	element.style.position='absolute';

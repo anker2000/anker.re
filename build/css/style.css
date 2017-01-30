@@ -77,6 +77,6 @@ section {
   height: 100vw; }
 
 .devices {
-  background-color: #181818; }
+  background-color: #ffda48; }
   .devices canvas:nth-child(2) {
     z-index: 200; }
