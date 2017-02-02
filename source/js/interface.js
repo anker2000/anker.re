@@ -21,11 +21,11 @@ $(function() {
 // if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 var camera, scene, stage, renderer;
-var mouseX = 0, prevMouseX = 0, mouseY = 0, mouseDown = false, mouseDirection, overlay, overlayCtx,underlay, underlayCtx;
+var mouseX = 0, prevMouseX = 0, mouseY = 0, mouseDown = false, mouseDirection;
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 var mouseDownCoord = new Object();
-var sections = [];
+var sections = [], activeSection = 0, prevActiveSection = null, background = { light: { r:0, g:0, b:0 }, dark: { r:0, g:0, b:0 } };
 function init() {
 
 	setEnvironment();
@@ -84,7 +84,13 @@ function setLights() {
 
 function scrollHandler() {
 	scrollPercentage = $(".projects").scrollTop() / ($(".projects")[0].scrollHeight-$(window).innerHeight());
-	console.log(scrollPercentage);
+	activeSection = Math.floor(scrollPercentage * sections.length);
+	if (activeSection == sections.length) activeSection -=1;
+	if (activeSection != prevActiveSection) {
+		console.log("starting section ",activeSection)
+		sections[activeSection].start();
+	}
+	prevActiveSection = activeSection;
 	stage.position.x=0-scrollPercentage*(screenWidthFromDistance(60)*(sections.length-1));
 }
 function setEnvironment() {
@@ -99,31 +105,7 @@ function setEnvironment() {
 	scene = new THREE.Scene();
 	stage = new THREE.Group();
 	scene.add(stage);
-	var color_light = "#fef07a";
-	var color_dark = "#ffd961";
 	$(".projects").bind("scroll",scrollHandler);
-	$(".devices").css("background","radial-gradient(ellipse at center, "+color_light+" 0%, "+color_dark+" 100%)")
-	// var loader = new THREE.JSONLoader();
-	// loader.load(
-	// // resource URL
-	// 'models/banana.json',
-	// // Function when resource is loaded
-	// function ( geometry, materials ) {
-	// 	var material = new THREE.MultiMaterial( materials );
-	// 	var object = new THREE.Mesh( geometry, material );
-	// 	object.traverse( function ( child ) {
-	//         if ( child instanceof THREE.Mesh ) {
-	//             child.geometry.computeVertexNormals();
-	//         }
-	//     });
-		
-	// 	object.castShadow=true;
-	// 	object.position.y=-22;
-	// 	object.position.z=-20;
-	// 	object.position.x= -45;
-	// 	object.scale.set(3,3,3);
-	// 	stage.add( object );
- //    });
 	
 
 
@@ -139,24 +121,8 @@ function setEnvironment() {
 	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 	container.appendChild( renderer.domElement );
 
-	// underlay = document.createElement('canvas');
-	// underlayCtx = underlay.getContext('2d');
-	// underlay.width=window.innerWidth;
-	// underlay.height=window.innerHeight;
-	// container.appendChild(underlay);
-
-	// overlay = document.createElement('canvas');
-	// overlayCtx = overlay.getContext('2d');
-	// overlay.width=window.innerWidth;
-	// overlay.height=window.innerHeight;
-	// overlay.style.position='absolute';
-	// overlay.style.top='1%';
-	// overlay.style.left='-1%';
-	// container.appendChild(overlay);
-
 	var element = renderer.domElement;
 	element.style.position='absolute';
-	// element.style.zIndex='1000';
 	window.addEventListener( 'resize', onWindowResize, false );
 	animate();
 }

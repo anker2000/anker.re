@@ -77,6 +77,9 @@ section {
   height: 100vw; }
 
 .devices {
-  background-color: #ffda48; }
+  background-color: #ffda48;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  transition: background 0.5s; }
   .devices canvas:nth-child(2) {
     z-index: 200; }

@@ -1,5 +1,6 @@
 .devices {
 	background-color:#ffda48;
+	@include transition(background 0.5s);
 	canvas:nth-child(2) {
 		z-index:200;
 	}

@@ -237,6 +237,10 @@ function addProject(section, stage) {
 	sectionObject.updatePosition = function() {
 		this.position.x = this.count*screenWidthFromDistance(60);
 	}
+	sectionObject.start = function() {
+		console.log("new section",section, $(section).attr("data-bg-light"), $(section).attr("data-bg-dark"));
+		$(".devices").css("background","radial-gradient(ellipse at center, "+$(section).data("bg-light")+" 0%, "+$(section).data("bg-dark")+" 100%)")
+	}
 	stage.add( sectionObject );
 	
 	setTimeout(function(sectionObject) {
