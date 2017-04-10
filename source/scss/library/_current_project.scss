@@ -1,0 +1,32 @@
+.current_project {
+	// text-shadow: 0 0 100px rgba(black, .3);
+	ul.categories {
+		text-transform:uppercase;
+		color:rgba(white,0.7);
+		font-weight:bold;
+		letter-spacing:0.14em;
+		font-size:11px;
+		position:fixed;
+		bottom:calc(38.2vh + 95px);
+		left:10vw;
+		z-index:3;
+		li {
+			display:inline-block;
+			&:before {
+				content:"/ "
+			}
+		}
+	}
+	h2 {
+		font-size:80px;
+		position:fixed;
+		z-index:3;
+		color:#222;
+		left:10vw;
+		bottom:38.2vh;
+		font-weight:600;
+		// text-transform:uppercase;
+		// font-weight:normal;
+		// letter-spacing:0.14em;
+	}
+}

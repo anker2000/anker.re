@@ -9,6 +9,7 @@ function addProject(section, stage) {
 	resizeHandler();
 
 	var loader = new THREE.JSONLoader();
+	var loader1 = new THREE.JSONLoader();
 	
 	var screenMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });	
 	var video = $(section).find("video")[0];
@@ -21,6 +22,7 @@ function addProject(section, stage) {
 	videoTexture.wrapT = THREE.ClampToEdgeWrapping;
 	screenMaterial.map = videoTexture;
 
+	var screenMaterial2 = new THREE.MeshBasicMaterial({ color: 0xdedede });	
 	var glassMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff  });
 	glassMaterial.specular.r=1;
 	glassMaterial.specular.g=1;
@@ -36,7 +38,7 @@ function addProject(section, stage) {
 	if ($(section).hasClass("mobile")) {
 		var phoneGroup = new THREE.Group();
 		var screenGeometry = new THREE.PlaneGeometry( 0.55, 0.983, 1 );
-		var screen = new THREE.Mesh( screenGeometry, screenMaterial );
+		var screen = new THREE.Mesh( screenGeometry, screenMaterial2 );
 		screen.receiveShadow = false;
 		screen.position.z = 0.0292;
 		screen.position.y = 0.05;
@@ -61,6 +63,7 @@ function addProject(section, stage) {
 				var object = new THREE.Mesh( geometry, material );				
 				object.position.y=-0.6;
 				object.castShadow=true;
+				object.receiveShadow = true;
 				object.traverse( function ( child ) {
 			        phoneGroup.position.y=-5;
 			        phoneGroup.position.z=-1;
@@ -83,20 +86,63 @@ function addProject(section, stage) {
 			phoneGroup.position.y=-1;
 			phoneGroup.scale.set( 30, 30, 30 );
 			phoneGroup.castShadow = true;
+			phoneGroup.rotation.x=de2ra(-65);
+			phoneGroup.rotation.z=de2ra(20);
 
-			// phone1 = phoneGroup.clone();
-			// phone1.position.x=-25;
-			// phone1.position.z = -20;
-			
 			TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
-			var tween = TweenMax.to(phoneGroup.position, 3.5,{ y:0, yoyo:true, repeat:-1, ease:Power2.easeInOut, onComplete:function() {}});
-			// setTimeout(function() {
-			// 	var tween = TweenMax.to(phone1.position, 3.5,{ y:0, yoyo:true, repeat:-1, ease:Power2.easeInOut, onComplete:function() {}});
-			// },1500);
-			
+			var tween = TweenMax.to(phoneGroup.position, 3.5,{ y:0, yoyo:true, repeat:-1, ease:Power2.easeInOut, onComplete:function() {}});	
 			
 		});
 		sectionObject.add(phoneGroup);
+		var phoneGroup1 = new THREE.Group();
+		var screen1 = new THREE.Mesh( screenGeometry, screenMaterial );
+		screen1.receiveShadow = false;
+		screen1.position.z = 0.0292;
+		screen1.position.y = 0.05;
+		screen1.receiveShadow = false;
+		screen1.position.z = 0.0292;
+		screen1.position.y = 0.05;
+		phoneGroup1.add( screen1 );
+		loader1.load(
+			// resource URL
+			'models/phone.json',
+			// Function when resource is loaded
+			function ( geometry, materials ) {
+				var material = new THREE.MultiMaterial( materials );
+				var object = new THREE.Mesh( geometry, material );				
+				object.position.y=-0.6;
+				object.castShadow=true;
+				object.receiveShadow = true;
+				object.traverse( function ( child ) {
+			        phoneGroup1.position.y=-5;
+			        phoneGroup1.position.z=-1;
+			        for (i=0;i<object.material.materials.length;i++) {
+			        	var tC = .75;
+			        	object.material.materials[i].side=2;
+						object.material.materials[i].specular.r = color_dark.r/255;
+						object.material.materials[i].specular.g = color_dark.g/255;
+						object.material.materials[i].specular.b = color_dark.b/255;
+						object.material.materials[i].emissive.r = color_light.r/255;
+						object.material.materials[i].emissive.g = color_light.g/255;
+						object.material.materials[i].emissive.b = color_light.b/255;
+			        } 
+					phoneGroup1.add( object );
+		    	}
+		    );
+
+			phoneObject = object;
+			phoneGroup1.position.z=0;
+			phoneGroup1.position.y=14;
+			phoneGroup1.scale.set( 30, 30, 30 );
+			phoneGroup1.castShadow = true;
+			phoneGroup1.rotation.x=de2ra(-35);
+			phoneGroup1.rotation.z=de2ra(-20);
+
+			TweenMax.to(phoneGroup1.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
+			var tween = TweenMax.to(phoneGroup1.position, 3.5,{ y:13, yoyo:true, repeat:-1, ease:Power2.easeInOut, onComplete:function() {}});	
+			
+		});
+		sectionObject.add(phoneGroup1);
 		
 	} else if ($(section).hasClass("desktop")) {
 		var macbookGroup = new THREE.Group();
@@ -121,12 +167,12 @@ function addProject(section, stage) {
 			        for (i=0;i<object.material.materials.length;i++) {
 			        	var tC = .75;
 			        	object.material.materials[i].side=2;
-						object.material.materials[i].specular.r=1;
-						object.material.materials[i].specular.g=.7;
-						object.material.materials[i].specular.b=0;	
-						object.material.materials[i].emissive.r=1;
-						object.material.materials[i].emissive.g=.8;
-						object.material.materials[i].emissive.b=0;
+						object.material.materials[i].specular.r = color_dark.r/255;
+						object.material.materials[i].specular.g = color_dark.g/255;
+						object.material.materials[i].specular.b = color_dark.b/255;
+						object.material.materials[i].emissive.r = color_light.r/255;
+						object.material.materials[i].emissive.g = color_light.g/255;
+						object.material.materials[i].emissive.b = color_light.b/255;
 						object.material.materials[i].shininess=8;	
 			        }
 					macbookScreenGroup.add( object );
@@ -181,12 +227,12 @@ function addProject(section, stage) {
 		        for (i=0;i<object.material.materials.length;i++) {
 		        	var tC = .75;
 		        	object.material.materials[i].side=2;
-					object.material.materials[i].specular.r=1;
-					object.material.materials[i].specular.g=.7;
-					object.material.materials[i].specular.b=0;		
-					object.material.materials[i].emissive.r=1;
-						object.material.materials[i].emissive.g=.8;
-						object.material.materials[i].emissive.b=0;
+					object.material.materials[i].specular.r = color_dark.r/255;
+					object.material.materials[i].specular.g = color_dark.g/255;
+					object.material.materials[i].specular.b = color_dark.b/255;
+					object.material.materials[i].emissive.r = color_light.r/255;
+					object.material.materials[i].emissive.g = color_light.g/255;
+					object.material.materials[i].emissive.b = color_light.b/255;
 					object.material.materials[i].shininess=1.5;	
 		        }
 				macbookGroup.add( object );
@@ -211,12 +257,12 @@ function addProject(section, stage) {
 		        for (i=0;i<object.material.materials.length;i++) {
 		        	var tC = .75;
 		        	object.material.materials[i].side=2;
-					object.material.materials[i].specular.r=1;
-					object.material.materials[i].specular.g=.7;
-					object.material.materials[i].specular.b=0;	
-					object.material.materials[i].emissive.r=1;
-					object.material.materials[i].emissive.g=.8;
-					object.material.materials[i].emissive.b=0;
+					object.material.materials[i].specular.r = color_dark.r/255;
+					object.material.materials[i].specular.g = color_dark.g/255;
+					object.material.materials[i].specular.b = color_dark.b/255;
+					object.material.materials[i].emissive.r = color_light.r/255;
+					object.material.materials[i].emissive.g = color_light.g/255;
+					object.material.materials[i].emissive.b = color_light.b/255;
 					object.material.materials[i].shininess=21;	
 		        }
 				macbookGroup.add( object );
@@ -239,7 +285,8 @@ function addProject(section, stage) {
 	}
 	sectionObject.start = function() {
 		console.log("new section",section, $(section).attr("data-bg-light"), $(section).attr("data-bg-dark"));
-		$(".devices").css("background","radial-gradient(ellipse at center, "+$(section).data("bg-light")+" 0%, "+$(section).data("bg-dark")+" 100%)")
+		$("body").css("background",$(section).data("bg-dark"));
+		// $(".current_project *").css("color",$(section).data("bg-light"));
 	}
 	stage.add( sectionObject );
 	
