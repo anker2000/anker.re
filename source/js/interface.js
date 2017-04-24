@@ -15,7 +15,12 @@
 // })
 
 $(function() {
-	init();	
+	init();
+	setTimeout(function() {
+		$("video").each(function() {
+			// this.pause();
+		});
+	},2000);
 });
 
 // if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
@@ -35,43 +40,53 @@ function init() {
 		sections.push(addProject(elm,stage));
 		sections[i].count=i;
 	});
+	$("section:first-child").find("video")[0].play();
 	scrollHandler();
 	animate();
 }
 function setLights() {
 	var shadowMapSize = 1024;
-	var groundGeometry = new THREE.PlaneGeometry( 250, 250, 1 );
+	var groundGeometry = new THREE.PlaneGeometry( 1650, 1650, 1 );
 	var groundMaterial = new THREE.ShadowMaterial();
-	groundMaterial.opacity = .07;
+	groundMaterial.opacity = 0.1;
 	var ground = new THREE.Mesh(groundGeometry, groundMaterial);
 	ground.receiveShadow = true;
 	ground.rotation.x=55;
-	ground.position.y=-22;
+	ground.position.y=-30;
 	ground.transparent = true;
 	scene.add(ground);
 
+	var light = new THREE.AmbientLight( 0x666666 ); // soft white light
+	scene.add( light );
+
+
+
 	var spotLight1 = new THREE.SpotLight( 0xffffff); 
+	spotLight1.shadow.mapSize.height = shadowMapSize;
+	spotLight1.shadow.mapSize.width = shadowMapSize;
 	spotLight1.castShadow = false;
-	spotLight1.position.set( 20, 55, 20 ); 
-	spotLight1.target.position.set(0, 0, -10 );
-	spotLight1.intensity = .45;
-	spotLight1.penumbra = 1.5;
+	spotLight1.position.set( 0, 55, 0 );
+	spotLight1.intensity = .2;
+	spotLight1.penumbra = 1;
 	spotLight1.decay = 2;
-	spotLight1.angle = de2ra(15);
+	spotLight1.angle = .45;
 	scene.add( spotLight1 );
 	scene.add(spotLight1.target);
 
 	var spotLight2 = new THREE.SpotLight( 0xFFFFFF); 
 	spotLight2.castShadow = true;
-	spotLight2.position.set( 0, 50, -10 ); 
-	// spotLight2.target.position.set( 0, 5, -10 );
+	spotLight2.position.set( 0, 150, -0 ); 
+	spotLight2.target.position.set( 0, 0, 0 );
 	spotLight2.shadow.mapSize.height = shadowMapSize;
 	spotLight2.shadow.mapSize.width = shadowMapSize;
-	spotLight2.intensity = .15;
+	spotLight2.intensity = .1;
 	spotLight2.exponent = .05;
-	spotLight2.angle = de2ra(75);
+	spotLight2.penumbra = 1;
+	spotLight2.decay = 2;
+	spotLight2.angle = de2ra(80);
 	scene.add( spotLight2 );
 	scene.add(spotLight2.target);
+
 
 	// var shadowGeometry = new THREE.CubeGeometry( 35, 15, 1 );
 	// var transpMaterial = new THREE.ShadowMaterial();
@@ -91,24 +106,22 @@ function scrollHandler() {
 		sections[activeSection].start();
 	}
 	prevActiveSection = activeSection;
-	stage.position.x=0-scrollPercentage*(screenWidthFromDistance(60)*(sections.length-1));
+	stage.position.x=0-scrollPercentage*(screenWidthFromDistance(200)*(sections.length-1));
 }
 function setEnvironment() {
 	var container = document.createElement( 'div' );
 	container.setAttribute("class","content");
 	document.getElementsByClassName('devices')[0].appendChild( container );
 
-	camera = new THREE.PerspectiveCamera( setFOV(), window.innerWidth / window.innerHeight, 1, 2000 );
-	camera.position.z = 60;
-
+	camera = new THREE.PerspectiveCamera( setFOV(), window.innerWidth / window.innerHeight, 1, 5000 );
+	camera.position.z = 120;
+	console.log(camera)
 
 	scene = new THREE.Scene();
 	stage = new THREE.Group();
 	scene.add(stage);
 	$(".projects").bind("scroll",scrollHandler);
 	
-
-
 	var myAntialias=true;
 	if (window.devicePixelRatio>1) {
 		myAntialias=false;
@@ -164,40 +177,8 @@ function render() {
 	// var time = Date.now();
 
 	camera.position.x = ( mousePosition.x - camera.position.x ) * 0.003;
-	camera.position.y = ( - mousePosition.y - camera.position.y ) * 0.003;
+	camera.position.y = (( - mousePosition.y - camera.position.y ) * 0.003);
 	renderer.render( scene, camera );
-	
-	// underlayCtx.clearRect(0,0, window.innerWidth, window.innerHeight);
-	// underlayCtx.save();
-       
- //    // Create a shape, of some sort
- //    underlayCtx.beginPath();
- //    underlayCtx.moveTo(window.innerWidth, 0);
- //    underlayCtx.lineTo(0, window.innerHeight);
- //    underlayCtx.lineTo(window.innerWidth, window.innerHeight);
- //    underlayCtx.lineTo(window.innerWidth, 0);
- //    underlayCtx.closePath();
- //    // Clip to the current path
- //    underlayCtx.clip();
-	// underlayCtx.drawImage(renderer.domElement, 0, 0, window.innerWidth, window.innerHeight);
-	// underlayCtx.restore();
-
-	// overlayCtx.clearRect(0,0, window.innerWidth, window.innerHeight);
-	// overlayCtx.save();
-       
- //    // Create a shape, of some sort
- //    overlayCtx.beginPath();
- //    overlayCtx.moveTo(0, 0);
- //    overlayCtx.lineTo(window.innerWidth, 0);
- //    overlayCtx.lineTo(0, (window.innerHeight-30));
- //    overlayCtx.lineTo(0,0);
- //    overlayCtx.closePath();
- //    // Clip to the current path
- //    overlayCtx.clip();
-	// overlayCtx.drawImage(renderer.domElement, 0, 0, window.innerWidth, window.innerHeight);
-	// overlayCtx.restore();
-	// renderer.domElement.style.display='none';
-	// console.log(renderer.domElement);
 }
 	
 	
@@ -211,9 +192,9 @@ function screenWidthFromDistance(distance) {
 	return frustumWidth;
 }
 function setFOV() {
-	var fov = map_range(window.innerWidth, 375, 1440, 95, 60);
-	if (fov<60) fov=60;
-	if (fov>90) fov=90;
+	// var fov = map_range(window.innerWidth, 0, 100, 60, 305);
+	fov = 40;
+
 	return fov;	
 }
 function hexToRgb(r,t){var n=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(r),a=function(){return void 0==this.alpha?"rgb("+this.r+", "+this.g+", "+this.b+")":(this.alpha>1?this.alpha=1:this.alpha<0&&(this.alpha=0),"rgba("+this.r+", "+this.g+", "+this.b+", "+this.alpha+")")};return void 0==t?n?{r:parseInt(n[1],16),g:parseInt(n[2],16),b:parseInt(n[3],16),toString:a}:null:(t>1?t=1:0>t&&(t=0),n?{r:parseInt(n[1],16),g:parseInt(n[2],16),b:parseInt(n[3],16),alpha:t,toString:a}:null)}

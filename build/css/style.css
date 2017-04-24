@@ -119,3 +119,6 @@ section {
   left: 10vw;
   bottom: 38.2vh;
   font-weight: 600; }
+
+.current_project * {
+  color: #000; }
