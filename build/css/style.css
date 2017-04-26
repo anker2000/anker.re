@@ -1,5 +1,7 @@
 * {
-  font-family: "Anker", system, -apple-system, BlinkMacSystemFont, sans-serif; }
+  font-family: system, -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -77,12 +79,22 @@ body {
   height: 100%;
   position: fixed;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: 200;
+  opacity: 0;
+  -webkit-scroll-snap-type: proximity;
+  -webkit-scroll-snap-points-y: repeat(100vh);
+  -webkit-scroll-snap-destination: 100% 0%;
+  -webkit-scroll-behaviour: smooth;
+  scroll-snap-type: proximity;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-destination: 100% 0%;
+  scroll-behaviour: smooth; }
 
 section {
   display: block;
   width: 100%;
-  height: 100vw;
+  height: 100vh;
   position: relative; }
   section h2 {
     display: none; }
@@ -98,27 +110,28 @@ section {
 
 .current_project ul.categories {
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 0.14em;
   font-size: 11px;
   position: fixed;
-  bottom: calc(38.2vh + 95px);
+  top: calc(60vh + 10px);
   left: 10vw;
-  z-index: 3; }
+  z-index: 3;
+  font-family: "Bagnard Sans";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
   .current_project ul.categories li {
     display: inline-block; }
     .current_project ul.categories li:before {
       content: "/ "; }
 
 .current_project h2 {
-  font-size: 80px;
+  font-size: 60px;
   position: fixed;
   z-index: 3;
-  color: #222;
   left: 10vw;
-  bottom: 38.2vh;
-  font-weight: 600; }
+  top: calc(60vh - 65px);
+  font-weight: 500; }
 
 .current_project * {
   color: #000; }

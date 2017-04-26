@@ -44,20 +44,26 @@ function init() {
 	scrollHandler();
 	animate();
 }
+var mainLight;
+var groundMaterial;
+
 function setLights() {
-	var shadowMapSize = 1024;
+	var shadowMapSize = 512;
 	var groundGeometry = new THREE.PlaneGeometry( 1650, 1650, 1 );
-	var groundMaterial = new THREE.ShadowMaterial();
+	groundMaterial = new THREE.ShadowMaterial();
 	groundMaterial.opacity = 0.1;
 	var ground = new THREE.Mesh(groundGeometry, groundMaterial);
 	ground.receiveShadow = true;
 	ground.rotation.x=55;
-	ground.position.y=-30;
+	ground.position.y=-50;
 	ground.transparent = true;
 	scene.add(ground);
 
-	var light = new THREE.AmbientLight( 0x666666 ); // soft white light
-	scene.add( light );
+	mainLight = new THREE.AmbientLight( { color:0x000000,intensity:0.02 } ); // soft white light
+	mainLight.intensity = 0.37;
+	scene.add( mainLight );
+
+	
 
 
 
@@ -75,8 +81,7 @@ function setLights() {
 
 	var spotLight2 = new THREE.SpotLight( 0xFFFFFF); 
 	spotLight2.castShadow = true;
-	spotLight2.position.set( 0, 150, -0 ); 
-	spotLight2.target.position.set( 0, 0, 0 );
+	spotLight2.position.set( 0, 150, 20 ); 
 	spotLight2.shadow.mapSize.height = shadowMapSize;
 	spotLight2.shadow.mapSize.width = shadowMapSize;
 	spotLight2.intensity = .1;
@@ -84,6 +89,12 @@ function setLights() {
 	spotLight2.penumbra = 1;
 	spotLight2.decay = 2;
 	spotLight2.angle = de2ra(80);
+	spotLight2.target.position = {
+		x:0,
+		y:0,
+		z:-40
+	}
+	console.log(spotLight2);
 	scene.add( spotLight2 );
 	scene.add(spotLight2.target);
 
@@ -102,11 +113,20 @@ function scrollHandler() {
 	activeSection = Math.floor(scrollPercentage * sections.length);
 	if (activeSection == sections.length) activeSection -=1;
 	if (activeSection != prevActiveSection) {
-		console.log("starting section ",activeSection)
 		sections[activeSection].start();
+		for (i=0;i<sections.length;i++) {
+			if (i==activeSection) {
+				console.log("starting section ",activeSection)
+				sections[activeSection].start();
+			} else {
+				sections[i].end();
+			}
+		}
 	}
 	prevActiveSection = activeSection;
-	stage.position.x=0-scrollPercentage*(screenWidthFromDistance(200)*(sections.length-1));
+	var scrollTarget = 0-scrollPercentage*(screenWidthFromDistance(200)*(sections.length-1));
+	// stage.position.x = scrollTarget;
+	TweenMax.to(stage.position, 0.75, {ease: Power4.easeOut, x: scrollTarget});
 }
 function setEnvironment() {
 	var container = document.createElement( 'div' );
@@ -147,8 +167,8 @@ function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
 	renderer.setSize( window.innerWidth, window.innerHeight );
-	overlay.width=window.innerWidth;
-	overlay.height=window.innerHeight;
+	// overlay.width=window.innerWidth;
+	// overlay.height=window.innerHeight;
 	camera.fov = setFOV();
 	scrollHandler();
 	for (i=0;i<sections.length;i++) {
@@ -187,7 +207,7 @@ function de2ra(degree) {
 }
 function screenWidthFromDistance(distance) {
 	var aspect = window.innerWidth / window.innerHeight;
-	var frustumHeight = 2.0 * distance * Math.tan(camera.fov * 0.5 * (Math.PI/180));
+	var frustumHeight = 1.75 * distance * Math.tan(camera.fov * 0.5 * (Math.PI/180));
 	var frustumWidth = frustumHeight * aspect;
 	return frustumWidth;
 }
@@ -197,8 +217,7 @@ function setFOV() {
 
 	return fov;	
 }
-function hexToRgb(r,t){var n=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(r),a=function(){return void 0==this.alpha?"rgb("+this.r+", "+this.g+", "+this.b+")":(this.alpha>1?this.alpha=1:this.alpha<0&&(this.alpha=0),"rgba("+this.r+", "+this.g+", "+this.b+", "+this.alpha+")")};return void 0==t?n?{r:parseInt(n[1],16),g:parseInt(n[2],16),b:parseInt(n[3],16),toString:a}:null:(t>1?t=1:0>t&&(t=0),n?{r:parseInt(n[1],16),g:parseInt(n[2],16),b:parseInt(n[3],16),alpha:t,toString:a}:null)}
-function rgbToHex(r,t,n){function a(r){var t=r.toString(16);return 1==t.length?"0"+t:t}if(void 0==t||void 0==n){if("string"==typeof r){var i=/^rgb[a]?\(([\d]+)[ \n]*,[ \n]*([\d]+)[ \n]*,[ \n]*([\d]+)[ \n]*,?[ \n]*([.\d]+)?[ \n]*\)$/i.exec(r);return rgbToHex(parseInt(i[1]),parseInt(i[2]),parseInt(i[3]))}return void 0==r.r||void 0==r.g||void 0==r.b?null:rgbToHex(r.r,r.g,r.b)}var e=r;return"#"+a(e)+a(t)+a(n)}
+
 $(".controls a").click(function(e) {
 	e.stopPropagation();
 });

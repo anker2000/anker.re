@@ -1,15 +1,19 @@
+$topOffset: 60vh;
 .current_project {
 	// text-shadow: 0 0 100px rgba(black, .3);
+	// display:none;
 	ul.categories {
 		text-transform:uppercase;
-		color:rgba(white,0.7);
-		font-weight:bold;
+		font-weight:600;
 		letter-spacing:0.14em;
 		font-size:11px;
 		position:fixed;
-		bottom:calc(38.2vh + 95px);
+		top:calc(#{$topOffset} + 10px);
 		left:10vw;
 		z-index:3;
+		font-family:"Bagnard Sans";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 		li {
 			display:inline-block;
 			&:before {
@@ -18,13 +22,13 @@
 		}
 	}
 	h2 {
-		font-size:80px;
+		font-size:60px;
 		position:fixed;
 		z-index:3;
-		color:#222;
 		left:10vw;
-		bottom:38.2vh;
-		font-weight:600;
+		top:calc(#{$topOffset} - 65px);
+		font-weight:500;
+		// font-family:""
 		// text-transform:uppercase;
 		// font-weight:normal;
 		// letter-spacing:0.14em;
