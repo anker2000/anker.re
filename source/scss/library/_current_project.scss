@@ -2,11 +2,12 @@ $topOffset: 50vh;
 .current_project {
 	// text-shadow: 0 0 100px rgba(black, .3);
 	// display:none;
-	top: calc(50vh - 35px);
+	top: calc(42vh - 35px);
 	position:fixed;
-	left:26.5vw;
-	width:47vw;
+	left:57vw;
 	z-index:100000;
+	text-align:left;
+	opacity:0;
 	@include transform(translate3d(0,0,0.1px));
 	// text-shadow: 0 0 100px rgba(0,0,0,0.7);
 	ul.categories {
@@ -32,6 +33,9 @@ $topOffset: 50vh;
 		font-weight:700;
 		margin-bottom:30px;
 		text-align:center;
+		span {
+			display:inline-block;
+		}
 		// padding:20px;
 		// background-color:#ff95c9;
 		// font-family:""
@@ -39,12 +43,20 @@ $topOffset: 50vh;
 		// font-weight:normal;
 		// letter-spacing:0.14em;
 	}
-	h3 {
-		font-size:18px;
-		z-index:3;
-		font-weight:500;
-		line-height:30px;
+	button {
+		border-color:inherit;
+		border-style:solid;
+		background-color:transparent;
+		outline:none;
+		cursor:pointer;
+		text-transform:uppercase;
+		font-size:12px;
+		letter-spacing:0.12em;
+		margin:0 auto;
+		font-weight:700;
 		text-align:center;
+		padding:10px 30px;
+		@include appearance(none);
 		display:none;
 	}
 	* {

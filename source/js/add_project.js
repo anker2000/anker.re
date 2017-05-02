@@ -39,15 +39,22 @@ function addProject(section, stage) {
 	var emDarken = 1;
 	var color_light = hexToRgb($(section).data("device-light"));
 	var color_dark = hexToRgb($(section).data("device-dark"));
+
 	sectionObject.video = video;
+	sectionObject.elm = section;
+
+
 	sectionObject.name=$(section).find("h2").html()
 	sectionObject.tween = [];
-	if ($(section).hasClass("mobile")) {		
+	sectionObject.loaded=0;
+	if ($(section).hasClass("mobile")) {
+
 		var phonesGroup = new THREE.Group();
 		addPhone({ x:de2ra(60), y:de2ra(-140), z:de2ra(30) },{ x:-10, y:10, z:-10 }, screenMaterial2, glassMaterial, reflectionCube, video, loader, color_dark, color_light).done(function(phoneGroup) {
 			// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
 			phoneGroup.startRotationPoint = 60;
 			phonesGroup.add(phoneGroup);
+			sectionObject.loaded+=.333333;
 			sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:0, ease:Power2.easeInOut, onComplete:function() {}}));
 		});
 
@@ -56,6 +63,7 @@ function addProject(section, stage) {
 			sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:0.5, ease:Power2.easeInOut, onComplete:function() {}}));	
 			phoneGroup.startRotationPoint = 50;
 			phonesGroup.add(phoneGroup);
+			sectionObject.loaded+=.333333;
 		});
 
 
@@ -64,6 +72,7 @@ function addProject(section, stage) {
 			sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:1.5, ease:Power2.easeInOut, onComplete:function() {}}));
 			phoneGroup.startRotationPoint = 120;
 			phonesGroup.add(phoneGroup);
+			sectionObject.loaded+=.333333;
 		});
 
 		phonesGroup.position.y=8;
@@ -81,8 +90,9 @@ function addProject(section, stage) {
 
 	} else if ($(section).hasClass("desktop")) {
 		// addLaptop({x:de2ra(35), y:de2ra(-65), z:de2ra(40)}, { x:10, y:-15, z:10}, screenMaterial, glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(macbookGroup) {
-			addLaptop({x:de2ra(15), y:de2ra(65), z:de2ra(-7)}, { x:5, y:-10, z:0}, screenMaterial, glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(macbookGroup) {
+		addLaptop({x:de2ra(15), y:de2ra(65), z:de2ra(-7)}, { x:5, y:-10, z:0}, screenMaterial, glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(macbookGroup) {
 			// console.log("received macbook", macbookGroup);
+			sectionObject.loaded=1;
 			macbookGroup.startRotationPoint = 65;
 			sectionObject.add(macbookGroup);
 			sectionObject.tween.push(TweenMax.to(macbookGroup.position, 3.5,{ y:macbookGroup.position.y-1, yoyo:true, repeat:-1, ease:Power2.easeInOut, onComplete:function() {}}));
@@ -132,6 +142,12 @@ function addProject(section, stage) {
 		mainLight.color = rgbPercentage(hexToRgb($(section).data("bg-dark")));
 		var intensity = colorIntensity(hexToRgb($(section).data("bg-light")));
 		groundMaterial.opacity = map_range(intensity, 0, 1, 0.12, 0.04);
+
+		// console.log("headline",section.headline, $(section).find("h2"));
+		// setTimeout(function() {
+		// 	animateText.animateHeadline(sectionObject,true);
+		// },1000);
+		
 	}
 	sectionObject.end = function() {
 		if (typeof sectionObject.children[0] == "object") {
@@ -139,9 +155,19 @@ function addProject(section, stage) {
 			// console.log(sectionObject);
 			// sectionObject.video.pause();
 		}
+		// animateText.animateHeadline(sectionObject,false);
 	}
 	stage.add( sectionObject );
 	
+	sectionObject.checkLoad = function() {
+		if (sectionObject.loaded>0.98) {
+			animateText.register(sectionObject);
+			$(".devices canvas").css("opacity",1)
+		} else {
+			setTimeout(sectionObject.checkLoad,100);
+		}
+	}
+	sectionObject.checkLoad();
 	setTimeout(function(sectionObject) {
 		sectionObject.position.x = sectionObject.count*screenWidthFromDistance(200);
 	},100,sectionObject);
