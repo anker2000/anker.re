@@ -16,11 +16,11 @@
 
 $(function() {
 	init();
-	setTimeout(function() {
-		$("video").each(function() {
-			// this.pause();
-		});
-	},2000);
+	// setTimeout(function() {
+	// 	$("video").each(function() {
+	// 		this.play();
+	// 	});
+	// },2000);
 });
 
 // if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
@@ -30,7 +30,7 @@ var mouseX = 0, prevMouseX = 0, mouseY = 0, mouseDown = false, mouseDirection;
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 var mouseDownCoord = new Object();
-var sections = [], activeSection = 0, prevActiveSection = null, background = { light: { r:0, g:0, b:0 }, dark: { r:0, g:0, b:0 } };
+var sections = [], progression = 0, activeSection = 0, prevActiveSection = null, background = { light: { r:0, g:0, b:0 }, dark: { r:0, g:0, b:0 } };
 function init() {
 
 	setEnvironment();
@@ -40,87 +40,46 @@ function init() {
 		sections.push(addProject(elm,stage));
 		sections[i].count=i;
 	});
-	$("section:first-child").find("video")[0].play();
+	// $("section:first-child").find("video")[0].play();
 	scrollHandler();
 	animate();
 }
-var mainLight;
-var groundMaterial;
 
-function setLights() {
-	var shadowMapSize = 512;
-	var groundGeometry = new THREE.PlaneGeometry( 1650, 1650, 1 );
-	groundMaterial = new THREE.ShadowMaterial();
-	groundMaterial.opacity = 0.1;
-	var ground = new THREE.Mesh(groundGeometry, groundMaterial);
-	ground.receiveShadow = true;
-	ground.rotation.x=55;
-	ground.position.y=-50;
-	ground.transparent = true;
-	scene.add(ground);
-
-	mainLight = new THREE.AmbientLight( { color:0x000000,intensity:0.02 } ); // soft white light
-	mainLight.intensity = 0.37;
-	scene.add( mainLight );
-
-	
-
-
-
-	var spotLight1 = new THREE.SpotLight( 0xffffff); 
-	spotLight1.shadow.mapSize.height = shadowMapSize;
-	spotLight1.shadow.mapSize.width = shadowMapSize;
-	spotLight1.castShadow = false;
-	spotLight1.position.set( 0, 55, 0 );
-	spotLight1.intensity = .2;
-	spotLight1.penumbra = 1;
-	spotLight1.decay = 2;
-	spotLight1.angle = .45;
-	scene.add( spotLight1 );
-	scene.add(spotLight1.target);
-
-	var spotLight2 = new THREE.SpotLight( 0xFFFFFF); 
-	spotLight2.castShadow = true;
-	spotLight2.position.set( 0, 150, 20 ); 
-	spotLight2.shadow.mapSize.height = shadowMapSize;
-	spotLight2.shadow.mapSize.width = shadowMapSize;
-	spotLight2.intensity = .1;
-	spotLight2.exponent = .05;
-	spotLight2.penumbra = 1;
-	spotLight2.decay = 2;
-	spotLight2.angle = de2ra(80);
-	spotLight2.target.position = {
-		x:0,
-		y:0,
-		z:-40
-	}
-	console.log(spotLight2);
-	scene.add( spotLight2 );
-	scene.add(spotLight2.target);
-
-
-	// var shadowGeometry = new THREE.CubeGeometry( 35, 15, 1 );
-	// var transpMaterial = new THREE.ShadowMaterial();
-	// transpMaterial.opacity = 0.1;
-	// var plane = new THREE.Mesh( shadowGeometry, transpMaterial );
-	// plane.receiveShadow = true;
-	// plane.position.z = -2.7;
-	// scene.add( plane );
+function getProximity(sectionNo) {
+	var localScroll = $(".projects").scrollTop() / $(".projects")[0].scrollHeight;
+	return (sectionNo) - (localScroll * sections.length);
 }
-
 function scrollHandler() {
 	scrollPercentage = $(".projects").scrollTop() / ($(".projects")[0].scrollHeight-$(window).innerHeight());
-	activeSection = Math.floor(scrollPercentage * sections.length);
+	progression = scrollPercentage * sections.length;
+
+	activeSection = Math.floor(progression);
+	// if (progression>-0.5 && progression<i+0.5) {
+	// }
+
 	if (activeSection == sections.length) activeSection -=1;
 	if (activeSection != prevActiveSection) {
-		sections[activeSection].start();
 		for (i=0;i<sections.length;i++) {
 			if (i==activeSection) {
-				console.log("starting section ",activeSection)
+				// console.log("starting section ",activeSection)
 				sections[activeSection].start();
 			} else {
 				sections[i].end();
 			}
+		}
+	}
+	var inProximity=[];
+	for (i=0;i<sections.length;i++) {
+		sections[i].proximity = getProximity(i);
+		sections[i].updateRotation();
+		// console.log(sections[i].name,sections[i].visible);
+		// console.log(sections[i].name, sections[i].proximity);
+		if (sections[i].proximity>-0.75 && sections[i].proximity<0.75) {
+			// console.log(sections[i].name, "in proximity");
+			// inProximity.push(sections[i]);
+			sections[i].visible = true;
+		} else {
+			sections[i].visible = false;
 		}
 	}
 	prevActiveSection = activeSection;
@@ -135,6 +94,7 @@ function setEnvironment() {
 
 	camera = new THREE.PerspectiveCamera( setFOV(), window.innerWidth / window.innerHeight, 1, 5000 );
 	camera.position.z = 120;
+	// cameraTrolley.position.z=120;
 	console.log(camera)
 
 	scene = new THREE.Scene();
@@ -157,7 +117,7 @@ function setEnvironment() {
 	var element = renderer.domElement;
 	element.style.position='absolute';
 	window.addEventListener( 'resize', onWindowResize, false );
-	animate();
+	// animate();
 }
 
 function onWindowResize() {
@@ -182,23 +142,25 @@ function onDocumentMouseMove( event ) {
 	mouseX = windowHalfX - event.clientX;
 	mouseY = windowHalfY - event.clientY;
 	prevMouseX=mouseX;
-	TweenMax.to(mousePosition, 1, {x: mouseX, y:mouseY});
+	TweenMax.to(mousePosition, 2, {x: mouseX, y:mouseY, ease: Power1.easeOut});
 }
 
-
+TweenMax.ticker.addEventListener("tick",animate);
 
 
 function animate() {
-	requestAnimationFrame( animate );
+	// requestAnimationFrame( animate );
 	render();
 }
 
 function render() {
 	// var time = Date.now();
-
-	camera.position.x = ( mousePosition.x - camera.position.x ) * 0.003;
-	camera.position.y = (( - mousePosition.y - camera.position.y ) * 0.003);
-	renderer.render( scene, camera );
+	// console.log(camera);
+	if (typeof camera != "undefined") {
+		camera.position.x = 0- ( mousePosition.x - camera.position.x ) * 0.003;
+		camera.position.y = 0-(( - mousePosition.y - camera.position.y ) * 0.003);
+		renderer.render( scene, camera );
+	}
 }
 	
 	

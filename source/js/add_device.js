@@ -1,4 +1,4 @@
-function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionCube, loader, color_dark, color_light) {
+function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionCube, video, loader, color_dark, color_light) {
 
 	var deferred = new $.Deferred();
 	var phoneGroup = new THREE.Group();
@@ -9,10 +9,10 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 	screen.position.y = 0.05;
 	phoneGroup.add( screen );
 
-	var glassMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0x222222, emissive:0x0, metalness:0.7, roughness:0.2, envMap:reflectionCube });
+	// var glassMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0x222222, emissive:0x0, metalness:0.7, roughness:0.2, envMap:reflectionCube });
 	var glass = new THREE.Mesh( screenGeometry, glassMaterial );
 	glass.receiveShadow = false;
-	glass.position.z = 0.022;
+	glass.position.z = 0.0225;
 	glass.position.y = 0.05;
 	phoneGroup.add(glass);
 
@@ -37,7 +37,7 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 					object.material.materials[i].color.r = (color_light.r/255);
 					object.material.materials[i].color.g = (color_light.g/255);
 					object.material.materials[i].color.b = (color_light.b/255);
-					object.material.materials[i].shininess = 10;
+					// object.material.materials[i].shininess = 10;
 		        } 
 	    	});
 	    	loader.load(
@@ -50,7 +50,7 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 					object.receiveShadow = true;
 					phoneGroup.add( object );
 					object.traverse( function ( child ) {
-						// child.geometry.computeFaceNormals();
+						child.geometry.computeFaceNormals();
 				        phoneGroup.position.y=-5;
 				        phoneGroup.position.z=-1;
 
@@ -62,7 +62,7 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 							object.material.materials[i].color.r = (color_light.r/255);
 							object.material.materials[i].color.g = (color_light.g/255);
 							object.material.materials[i].color.b = (color_light.b/255);
-							// object.material.materials[i].shininess = 12;
+							object.material.materials[i].shininess = 10;
 				        } 
 						phoneGroup.position.z=position.z;
 						phoneGroup.position.y=position.y;
@@ -177,10 +177,10 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 					loader.load(
 						'models/keyboard.json',
 						function ( geometry, materials ) {
-							var object = new THREE.Mesh( geometry, material );
+							var bodyMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xffffff, metalness:0.2, roughness:1, map:texture, roughnessMap:texture});
+							var object = new THREE.Mesh( geometry, bodyMaterial );
 							object.position.x=-0.5;
 							object.castShadow=true;
-							console.log("material",material)
 							macbookGroup.add( object );
 							console.log("loaded keyboard 3");
 							loader.load(
@@ -197,7 +197,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 									object.position.x=-0.5;
 									object.position.z=0;
 									
-									object.castShadow=true;
+									object.castShadow=false;
 									var color_dark = {
 										r: 0,
 										g: 0,
@@ -253,7 +253,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 												object.material.materials[i].emissive.b = color_light.b/255;
 												object.material.materials[i].shininess=21;	
 									        }
-											macbookGroup.scale.set(7.5,7.5,7.5);
+											macbookGroup.scale.set(6.25,6.25,6.25);
 											macbookGroup.add( object );
 											console.log(position);
 											// macbookGroup.position = position;
@@ -267,7 +267,6 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 											// screenMaterial.opacity=0;
 											console.log("screenMaterial",screenMaterial);
 											
-											var tween1 = TweenMax.to(macbookGroup.position, 3.5,{ y:macbookGroup.position.y-1, yoyo:true, repeat:-1, ease:Power2.easeInOut, onComplete:function() {}});
 											console.log("loaded keys top 5");
 											macbookGroup.begin = function() {
 												console.log("macbook open");

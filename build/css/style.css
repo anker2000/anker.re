@@ -1,5 +1,5 @@
 * {
-  font-family: system, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "anker",system, -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -44,12 +44,14 @@ html {
 
 * {
   -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
 
 body {
-  -webkit-transition: background 0.5s;
-  -moz-transition: background 0.5s;
-  transition: background 0.5s;
+  -webkit-transition: background 1s;
+  -moz-transition: background 1s;
+  transition: background 1s;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -72,6 +74,14 @@ body {
   pointer-events: none; }
 
 .projects {
+  scroll-snap-type: proximity;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-destination: 100% 0%;
+  scroll-behaviour: smooth;
+  -webkit-scroll-snap-type: proximity;
+  -webkit-scroll-snap-points-y: repeat(100vh);
+  -webkit-scroll-snap-destination: 100% 0%;
+  -webkit-scroll-behaviour: smooth;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
@@ -81,15 +91,7 @@ body {
   top: 0;
   left: 0;
   z-index: 200;
-  opacity: 0;
-  -webkit-scroll-snap-type: proximity;
-  -webkit-scroll-snap-points-y: repeat(100vh);
-  -webkit-scroll-snap-destination: 100% 0%;
-  -webkit-scroll-behaviour: smooth;
-  scroll-snap-type: proximity;
-  scroll-snap-points-y: repeat(100vh);
-  scroll-snap-destination: 100% 0%;
-  scroll-behaviour: smooth; }
+  opacity: 0; }
 
 section {
   display: block;
@@ -108,30 +110,42 @@ section {
   .devices canvas:nth-child(2) {
     z-index: 200; }
 
-.current_project ul.categories {
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  font-size: 11px;
+.current_project {
+  top: calc(50vh - 35px);
   position: fixed;
-  top: calc(60vh + 10px);
-  left: 10vw;
-  z-index: 3;
-  font-family: "Bagnard Sans";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-  .current_project ul.categories li {
-    display: inline-block; }
-    .current_project ul.categories li:before {
-      content: "/ "; }
-
-.current_project h2 {
-  font-size: 60px;
-  position: fixed;
-  z-index: 3;
-  left: 10vw;
-  top: calc(60vh - 65px);
-  font-weight: 500; }
-
-.current_project * {
-  color: #000; }
+  left: 26.5vw;
+  width: 47vw;
+  z-index: 100000;
+  -webkit-transform: translate3d(0, 0, 0.1px);
+  -moz-transform: translate3d(0, 0, 0.1px);
+  -ms-transform: translate3d(0, 0, 0.1px);
+  -o-transform: translate3d(0, 0, 0.1px);
+  transform: translate3d(0, 0, 0.1px); }
+  .current_project ul.categories {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    font-size: 11px;
+    z-index: 3;
+    margin-bottom: 10px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+    .current_project ul.categories li {
+      display: inline-block; }
+      .current_project ul.categories li:before {
+        content: "/ "; }
+  .current_project h2 {
+    font-size: 70px;
+    z-index: 3;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center; }
+  .current_project h3 {
+    font-size: 18px;
+    z-index: 3;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+    display: none; }
+  .current_project * {
+    color: #000; }
