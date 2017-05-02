@@ -109,6 +109,13 @@ section {
   transition: background 0.5s; }
   .devices canvas:nth-child(2) {
     z-index: 200; }
+  .devices canvas {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s; }
+    .devices canvas.loaded {
+      opacity: 1; }
 
 .current_project {
   top: calc(50vh - 35px);
@@ -116,6 +123,8 @@ section {
   left: 26.5vw;
   width: 47vw;
   z-index: 100000;
+  text-align: center;
+  opacity: 0;
   -webkit-transform: translate3d(0, 0, 0.1px);
   -moz-transform: translate3d(0, 0, 0.1px);
   -ms-transform: translate3d(0, 0, 0.1px);
@@ -140,12 +149,26 @@ section {
     font-weight: 700;
     margin-bottom: 30px;
     text-align: center; }
-  .current_project h3 {
-    font-size: 18px;
-    z-index: 3;
-    font-weight: 500;
-    line-height: 30px;
+    .current_project h2 span {
+      display: inline-block; }
+  .current_project button {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0px;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    margin: 0 auto;
+    font-weight: 700;
     text-align: center;
-    display: none; }
+    padding: 10px 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none; }
   .current_project * {
     color: #000; }

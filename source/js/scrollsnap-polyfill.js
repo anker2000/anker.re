@@ -46,7 +46,7 @@
        * time for the smooth scrolling
        * @type {Number}
        */
-      SCROLL_TIME = 768;
+      SCROLL_TIME = 256;
 
   /**
    * Feature detect scroll-snap-type, if it exists then do nothing (return)

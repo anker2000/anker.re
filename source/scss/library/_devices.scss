@@ -5,4 +5,11 @@
 	canvas:nth-child(2) {
 		z-index:200;
 	}
+	canvas {
+		opacity:0;
+		@include transition(opacity 0.5s);
+		&.loaded {
+			opacity:1;
+		}
+	}
 }
