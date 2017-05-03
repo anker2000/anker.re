@@ -34,14 +34,15 @@ var sections = [], progression = 0, activeSection = 0, prevActiveSection = null,
 function init() {
 
 	setEnvironment();
-	setLights();
-	
-	scrollHandler();
-	animate();
 	$("section").each(function(i,elm) {
 		sections.push(addProject(elm,stage));
 		sections[i].count=i;
 	});
+	
+	setLights();
+	
+	scrollHandler();
+	animate();
 	// $("section:first-child").find("video")[0].play();
 
 }
@@ -55,14 +56,11 @@ function scrollHandler() {
 	progression = scrollPercentage * sections.length;
 
 	activeSection = Math.floor(progression);
-	// if (progression>-0.5 && progression<i+0.5) {
-	// }
 
 	if (activeSection == sections.length) activeSection -=1;
 	if (activeSection != prevActiveSection) {
 		for (i=0;i<sections.length;i++) {
 			if (i==activeSection) {
-				// console.log("starting section ",activeSection)
 				sections[activeSection].start();
 			} else {
 				sections[i].end();
@@ -73,11 +71,8 @@ function scrollHandler() {
 	for (i=0;i<sections.length;i++) {
 		sections[i].proximity = getProximity(i);
 		sections[i].updateRotation();
-		// console.log(sections[i].name,sections[i].visible);
-		// console.log(sections[i].name, sections[i].proximity);
+		
 		if (sections[i].proximity>-0.75 && sections[i].proximity<0.75) {
-			// console.log(sections[i].name, "in proximity");
-			// inProximity.push(sections[i]);
 			sections[i].visible = true;
 		} else {
 			sections[i].visible = false;
@@ -85,7 +80,6 @@ function scrollHandler() {
 	}
 	prevActiveSection = activeSection;
 	var scrollTarget = 0-scrollPercentage*(screenWidthFromDistance(200)*(sections.length-1));
-	// stage.position.x = scrollTarget;
 	TweenMax.to(stage.position, 0.75, {ease: Power4.easeOut, x: scrollTarget});
 }
 function setEnvironment() {
@@ -102,6 +96,7 @@ function setEnvironment() {
 	stage = new THREE.Group();
 	scene.add(stage);
 	$(".projects").bind("scroll",scrollHandler);
+
 	
 	var myAntialias=true;
 	if (window.devicePixelRatio>1) {
@@ -118,7 +113,6 @@ function setEnvironment() {
 	var element = renderer.domElement;
 	element.style.position='absolute';
 	window.addEventListener( 'resize', onWindowResize, false );
-	// animate();
 }
 
 function onWindowResize() {
@@ -159,7 +153,7 @@ function render() {
 	// console.log(camera);
 	if (typeof camera != "undefined") {
 		camera.position.x = 0- ( mousePosition.x - camera.position.x ) * 0.003;
-		camera.position.y = 0-(( - mousePosition.y - camera.position.y ) * 0.003);
+		camera.position.y = 4-(( - mousePosition.y - camera.position.y ) * 0.003);
 		renderer.render( scene, camera );
 	}
 }
@@ -177,7 +171,9 @@ function screenWidthFromDistance(distance) {
 function setFOV() {
 	// var fov = map_range(window.innerWidth, 0, 100, 60, 305);
 	fov = 40;
-
+	if (window.innerWidth<600) {
+		fov=70;
+	}
 	return fov;	
 }
 

@@ -27,6 +27,7 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 			phoneGroup.add( object );
 			object.traverse( function ( child ) {
 				// child.geometry.computeFaceNormals();
+				
 		        phoneGroup.position.y=-5;
 		        phoneGroup.position.z=-1;
 		       for (i=0;i<object.material.materials.length;i++) {
@@ -50,7 +51,8 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 					object.receiveShadow = true;
 					phoneGroup.add( object );
 					object.traverse( function ( child ) {
-						child.geometry.computeFaceNormals();
+						// child.geometry.computeFaceNormals();
+						child.geometry.computeVertexNormals();
 				        phoneGroup.position.y=-5;
 				        phoneGroup.position.z=-1;
 
@@ -268,13 +270,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 											console.log("screenMaterial",screenMaterial);
 											
 											console.log("loaded keys top 5");
-											macbookGroup.begin = function() {
-												console.log("macbook open");
-												var openLid = TweenMax.to(macbookGroup.screen.rotation, 1, { x:-de2ra(20), ease:Power4.easeInOut});
-											}
-											macbookGroup.end = function() {
-												var openLid = TweenMax.to(macbookGroup.screen.rotation, 1, { x:de2ra(90), ease:Power4.easeInOut});
-											}
+											
 									    	deferred.resolve(macbookGroup);
 									    }
 									);

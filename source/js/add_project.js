@@ -75,7 +75,7 @@ function addProject(section, stage) {
 			sectionObject.loaded+=.333333;
 		});
 
-		phonesGroup.position.y=8;
+		phonesGroup.position.y=5;
 		phonesGroup.position.z=15;
 		// phonesGroup.rotation.z=de2ra(-15);
 		phonesGroup.position.x=-12
@@ -90,16 +90,24 @@ function addProject(section, stage) {
 
 	} else if ($(section).hasClass("desktop")) {
 		// addLaptop({x:de2ra(35), y:de2ra(-65), z:de2ra(40)}, { x:10, y:-15, z:10}, screenMaterial, glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(macbookGroup) {
-		addLaptop({x:de2ra(15), y:de2ra(65), z:de2ra(-7)}, { x:5, y:-10, z:0}, screenMaterial, glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(macbookGroup) {
+		addLaptop({x:de2ra(15), y:de2ra(65), z:de2ra(-7)}, { x:10, y:-10, z:0}, screenMaterial, glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(macbookGroup) {
 			// console.log("received macbook", macbookGroup);
 			sectionObject.loaded=1;
 			macbookGroup.startRotationPoint = 65;
+			macbookGroup.begin = function() {
+				console.log("macbook open");
+				var openLid = TweenMax.to(macbookGroup.screen.rotation, 1, { x:-de2ra(20), delay:.75, ease:Power4.easeInOut});
+			}
+			macbookGroup.end = function() {
+				var openLid = TweenMax.to(macbookGroup.screen.rotation, 1, { x:de2ra(90), ease:Power4.easeInOut});
+			}
 			sectionObject.add(macbookGroup);
 			sectionObject.tween.push(TweenMax.to(macbookGroup.position, 3.5,{ y:macbookGroup.position.y-1, yoyo:true, repeat:-1, ease:Power2.easeInOut, onComplete:function() {}}));
 			scrollHandler();
 			if (sectionObject.kickstart) {
 				sectionObject.children[0].begin()
-			}						
+			}
+
 		});
 	}
 	sectionObject.updateRotation = function() {
@@ -119,6 +127,9 @@ function addProject(section, stage) {
 			// console.log(this.name,this.type, this.children[0].children[0].type);
 			if (this.name,this.type, this.children[0].children[0].type=="Group") { //phones
 				var targetRotation =  this.children[0].startRotationPoint+(this.proximity*90);
+				for (r=0;r<this.children[0].children.length; r++) {
+					this.children[0].children[r].rotation.x=de2ra(this.children[0].children[r].startRotationPoint+(this.proximity*60));
+				}
 			} else {
 				var targetRotation =  this.children[0].startRotationPoint+(this.proximity*10);
 			}
@@ -138,15 +149,11 @@ function addProject(section, stage) {
 			sectionObject.children[0].begin();
 		}
 		$("body").css("background",$(section).data("bg-dark"));
-		$(".current_project *").css("color",$(section).data("text-color"));
+		$("body").css("color",$(section).data("text-color"));
 		mainLight.color = rgbPercentage(hexToRgb($(section).data("bg-dark")));
 		var intensity = colorIntensity(hexToRgb($(section).data("bg-light")));
-		groundMaterial.opacity = map_range(intensity, 0, 1, 0.12, 0.04);
 
-		// console.log("headline",section.headline, $(section).find("h2"));
-		// setTimeout(function() {
-		// 	animateText.animateHeadline(sectionObject,true);
-		// },1000);
+		TweenMax.to(groundMaterial, 1,{ opacity:map_range(intensity, 0, 1, 0.3, 0.04), onComplete:function() {}})
 		
 	}
 	sectionObject.end = function() {
@@ -163,6 +170,7 @@ function addProject(section, stage) {
 		if (sectionObject.loaded>0.98) {
 			animateText.register(sectionObject);
 			$(".devices canvas").css("opacity",1)
+			scrollHandler();
 		} else {
 			setTimeout(sectionObject.checkLoad,100);
 		}
