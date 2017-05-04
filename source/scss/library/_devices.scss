@@ -1,5 +1,5 @@
 .devices {
-	z-index:2;
+	z-index:200;
 	pointer-events:none;
 	@include transition(background 0.5s);
 	canvas:nth-child(2) {

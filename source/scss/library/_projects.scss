@@ -1,10 +1,10 @@
 .projects {
 	scroll-snap-type: proximity;
-	scroll-snap-points-y: repeat(100vh);
+	scroll-snap-points-y: repeat(100%);
 	scroll-snap-destination: 100% 0%;
     scroll-behaviour: smooth;
     -webkit-scroll-snap-type: proximity;
-	-webkit-scroll-snap-points-y: repeat(100vh);
+	-webkit-scroll-snap-points-y: repeat(100%);
 	-webkit-scroll-snap-destination: 100% 0%;
     -webkit-scroll-behaviour: smooth;
 	overflow:auto;

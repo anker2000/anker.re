@@ -27,7 +27,7 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 			phoneGroup.add( object );
 			object.traverse( function ( child ) {
 				// child.geometry.computeFaceNormals();
-				
+
 		        phoneGroup.position.y=-5;
 		        phoneGroup.position.z=-1;
 		       for (i=0;i<object.material.materials.length;i++) {
@@ -88,7 +88,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 	var macbookGroup = new THREE.Group();
 	var macbookScreenGroup = new THREE.Object3D();
 
-	var texture = new THREE.TextureLoader().load( "models/macbook-texture.png" );
+	var texture = new THREE.TextureLoader().load( "models/macbook-texture.jpg" );
 	texture.wrapS = THREE.RepeatWrapping;
 	texture.wrapT = THREE.RepeatWrapping;
 	texture.repeat.set( 12, 12 );

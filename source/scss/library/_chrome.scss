@@ -1,7 +1,6 @@
 html {
 	height:100%;
 	-webkit-text-size-adjust: 100%;
-	overflow:hidden;
 	@include transition(background 0.5s);
 }
 * {
@@ -16,6 +15,9 @@ body {
 	padding:0;
 	overflow:hidden;
 	height:100%;
+	&.scrollable {
+		overflow:auto;
+	}
 }
 .devices {
 	position:fixed;
@@ -26,7 +28,7 @@ body {
 	// @include transform(translate3d(0,0,0.1px));
 }
 .invisible {
-	// visibility:hidden;
+	visibility:hidden;
 	@include transform(translate3d(0,0,0.1px));
 	pointer-events:none;
 }

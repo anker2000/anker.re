@@ -36,7 +36,7 @@ var animateText = function() {
 			var cta = document.createElement("button");
 			cta.innerHTML = "See more";
 
-			$(".current_project h2").scalem();
+			$(".current_project h2").scalem({maxSize:390});
 
 			$(".projects").bind("scroll",function() {
 				setLetterPosition(obj);

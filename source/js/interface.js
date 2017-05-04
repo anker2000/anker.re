@@ -36,13 +36,15 @@ function init() {
 	setEnvironment();
 	setLights();
 	
-	scrollHandler();
-	animate();
-	$("section").each(function(i,elm) {
-		sections.push(addProject(elm,stage));
-		sections[i].count=i;
-	});
-	// $("section:first-child").find("video")[0].play();
+	setTimeout(function() {
+		scrollHandler();
+		animate();
+		$("section").each(function(i,elm) {
+			sections.push(addProject(elm,stage));
+			sections[i].count=i;
+		});
+		// $("section:first-child").find("video")[0].play();
+	},1000);
 
 }
 

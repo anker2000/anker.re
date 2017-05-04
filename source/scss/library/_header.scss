@@ -17,19 +17,61 @@ header {
 		color:inherit;
 		position:absolute;
 		left:30px;
+		@media (max-width:600px) {
+			left:15px;
+			top:20px;
+		}
 	}
 	nav {
 		position:absolute;
 		display:inline-block;
 		color:inherit;
 		
-		right:0;
+		right:30px;
+		@media (max-width:600px) {
+			right:15px;
+			top:20px;
+		}
 		.toggle {
+			@media (min-width:601px) {
+				display:none;
+			}
+			@media (max-width:600px) {
+				display:block;
+			}
+			margin-top:-9px;
+			background-color:transparent;
 			color:transparent;
-			overflow:hidden;
+			overflow:visible;
+			width:35px;
+			height:30px;
+			position:relative;
 
+			span {
+				background-color:$black;
+				@include transition(background-color 0.3s);
+			}
+			span, span:before, span:after {
+
+				content:" ";
+				display:block;
+				position:absolute;
+				width:35px;
+				height:2px;
+				top:8px;
+				background-color:inherit;
+			}
+			span:after {
+				top:16px;
+			}
 		}
 		ul {
+			@media (max-width:600px) {
+				display:none;
+			}
+			@media (min-width:601px) {
+				display:block;
+			}
 			opacity:1;
 			left:0;
 			li {

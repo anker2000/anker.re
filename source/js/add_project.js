@@ -143,29 +143,29 @@ function addProject(section, stage) {
 		this.position.x = this.count*screenWidthFromDistance(200);
 	}
 	sectionObject.start = function(object) {
-		console.log("starting",typeof this.loaded,typeof sectionObject.headline, this.type);
 		if (typeof this.loaded == "undefined" || typeof sectionObject.headline == "undefined") {
 			setTimeout(function() {
 				sectionObject.start()
 			},50);
 			return false;
 		}
-		if (typeof sectionObject.children[0] == "undefined") {
-			sectionObject.kickstart=true;
-		} else {
-			sectionObject.children[0].begin();
-		}
 		
-		console.log("headline",sectionObject.headline.parentNode)
+		
 		$(sectionObject.headline.parentNode).addClass("active");
 		
 		
 		$("body").css("background",$(section).data("bg-dark"));
 		$("body").css("color",$(section).data("text-color"));
+		$("nav .toggle span").css("background-color",$(section).data("text-color"));
 		mainLight.color = rgbPercentage(hexToRgb($(section).data("bg-dark")));
 		var intensity = colorIntensity(hexToRgb($(section).data("bg-light")));
 		TweenMax.to(groundMaterial, 1,{ opacity:map_range(intensity, 0, 1, 0.3, 0.04), onComplete:function() {}})
-		
+
+		if (typeof sectionObject.children[0] == "undefined") {
+			sectionObject.kickstart=true;
+		} else {
+			sectionObject.children[0].begin();
+		}
 	}
 	sectionObject.end = function() {
 		if (typeof sectionObject.children[0] == "object") {

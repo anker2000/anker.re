@@ -1,4 +1,4 @@
-$topOffset: 50vh;
+
 .current_project {
 	// text-shadow: 0 0 100px rgba(black, .3);
 	// display:none;
@@ -8,19 +8,19 @@ $topOffset: 50vh;
 	text-align:center;
 	opacity:0;
 	color:inherit;
-	padding:0 15vw;
+	padding:0 10vw;
+	@media (max-width:600px) {
+		padding:0;
+		bottom:48%;
+	}
 	pointer-events:none;
-	@include transform(translate3d(0,0,0.1px) scale(.96,.96));
+	@include transform(translate3d(0,0,-0.1px) scale(.96,.96));
+	@media (max-width:600px) {
+		@include transform(translate3d(0,0,-0.1px) scale(1,1));
+	}
 	@include transition(transform 2.5s cubic-bezier(0,.6,.4,1));
 	// text-shadow: 0 0 100px rgba(0,0,0,0.7);
-	@media (max-width:600px) {
-		bottom:63%;
-	}
-	canvas {
-		pointer-events:none;
-	}
 	h2 {
-
 		z-index:3;
 		font-weight:700;
 		margin-bottom:30px;
@@ -53,7 +53,7 @@ $topOffset: 50vh;
 		@include appearance(none);
 	}
 	&.hover {
-		z-index:1000;
+		
 		@include transform(translate3d(0,0,0.1px) scale(1,1));
 	}
 }

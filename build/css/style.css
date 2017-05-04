@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'anker';
+  src: url("fonts/01_anker_bold-webfont.woff2?v=3") format("woff2"), url("fonts/01_anker_bold-webfont.woff?v=3") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'anker';
+  src: url("fonts/01_anker_light-webfont.woff2?v=3") format("woff2"), url("fonts/01_anker_light-webfont.woff?v=3") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 * {
   font-family: "anker",system, -apple-system, BlinkMacSystemFont, sans-serif; }
 
@@ -35,7 +47,6 @@ table {
 html {
   height: 100%;
   -webkit-text-size-adjust: 100%;
-  overflow: hidden;
   -webkit-transition: background 0.5s;
   -moz-transition: background 0.5s;
   transition: background 0.5s; }
@@ -54,6 +65,8 @@ body {
   padding: 0;
   overflow: hidden;
   height: 100%; }
+  body.scrollable {
+    overflow: auto; }
 
 .devices {
   position: fixed;
@@ -63,6 +76,7 @@ body {
   height: 100%; }
 
 .invisible {
+  visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0.1px);
   -moz-transform: translate3d(0, 0, 0.1px);
   -ms-transform: translate3d(0, 0, 0.1px);
@@ -90,30 +104,70 @@ header {
     color: inherit;
     position: absolute;
     left: 30px; }
+    @media (max-width: 600px) {
+      header .home {
+        left: 15px;
+        top: 20px; } }
   header nav {
     position: absolute;
     display: inline-block;
     color: inherit;
-    right: 0; }
+    right: 30px; }
+    @media (max-width: 600px) {
+      header nav {
+        right: 15px;
+        top: 20px; } }
     header nav .toggle {
+      margin-top: -9px;
+      background-color: transparent;
       color: transparent;
-      overflow: hidden; }
+      overflow: visible;
+      width: 35px;
+      height: 30px;
+      position: relative; }
+      @media (min-width: 601px) {
+        header nav .toggle {
+          display: none; } }
+      @media (max-width: 600px) {
+        header nav .toggle {
+          display: block; } }
+      header nav .toggle span {
+        background-color: #181818;
+        -webkit-transition: background-color 0.3s;
+        -moz-transition: background-color 0.3s;
+        transition: background-color 0.3s; }
+      header nav .toggle span, header nav .toggle span:before, header nav .toggle span:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        width: 35px;
+        height: 2px;
+        top: 8px;
+        background-color: inherit; }
+      header nav .toggle span:after {
+        top: 16px; }
     header nav ul {
       opacity: 1;
       left: 0;
       color: inherit;
       display: inline-block; }
+      @media (max-width: 600px) {
+        header nav ul {
+          display: none; } }
+      @media (min-width: 601px) {
+        header nav ul {
+          display: block; } }
       header nav ul li {
         display: inline-block;
         margin: 0 30px; }
 
 .projects {
   scroll-snap-type: proximity;
-  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-points-y: repeat(100%);
   scroll-snap-destination: 100% 0%;
   scroll-behaviour: smooth;
   -webkit-scroll-snap-type: proximity;
-  -webkit-scroll-snap-points-y: repeat(100vh);
+  -webkit-scroll-snap-points-y: repeat(100%);
   -webkit-scroll-snap-destination: 100% 0%;
   -webkit-scroll-behaviour: smooth;
   overflow: auto;
@@ -145,13 +199,13 @@ header {
 section {
   display: block;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: relative; }
   section h2 {
     display: none; }
 
 .devices {
-  z-index: 2;
+  z-index: 200;
   pointer-events: none;
   -webkit-transition: background 0.5s;
   -moz-transition: background 0.5s;
@@ -173,21 +227,27 @@ section {
   text-align: center;
   opacity: 0;
   color: inherit;
-  padding: 0 15vw;
+  padding: 0 10vw;
   pointer-events: none;
-  -webkit-transform: translate3d(0, 0, 0.1px) scale(0.96, 0.96);
-  -moz-transform: translate3d(0, 0, 0.1px) scale(0.96, 0.96);
-  -ms-transform: translate3d(0, 0, 0.1px) scale(0.96, 0.96);
-  -o-transform: translate3d(0, 0, 0.1px) scale(0.96, 0.96);
-  transform: translate3d(0, 0, 0.1px) scale(0.96, 0.96);
+  -webkit-transform: translate3d(0, 0, -0.1px) scale(0.96, 0.96);
+  -moz-transform: translate3d(0, 0, -0.1px) scale(0.96, 0.96);
+  -ms-transform: translate3d(0, 0, -0.1px) scale(0.96, 0.96);
+  -o-transform: translate3d(0, 0, -0.1px) scale(0.96, 0.96);
+  transform: translate3d(0, 0, -0.1px) scale(0.96, 0.96);
   -webkit-transition: -webkit-transform 2.5s cubic-bezier(0, 0.6, 0.4, 1);
   -moz-transition: -moz-transform 2.5s cubic-bezier(0, 0.6, 0.4, 1);
   transition: transform 2.5s cubic-bezier(0, 0.6, 0.4, 1); }
   @media (max-width: 600px) {
     .current_project {
-      bottom: 63%; } }
-  .current_project canvas {
-    pointer-events: none; }
+      padding: 0;
+      bottom: 48%; } }
+  @media (max-width: 600px) {
+    .current_project {
+      -webkit-transform: translate3d(0, 0, -0.1px) scale(1, 1);
+      -moz-transform: translate3d(0, 0, -0.1px) scale(1, 1);
+      -ms-transform: translate3d(0, 0, -0.1px) scale(1, 1);
+      -o-transform: translate3d(0, 0, -0.1px) scale(1, 1);
+      transform: translate3d(0, 0, -0.1px) scale(1, 1); } }
   .current_project h2 {
     z-index: 3;
     font-weight: 700;
@@ -225,7 +285,6 @@ section {
     -o-appearance: none;
     appearance: none; }
   .current_project.hover {
-    z-index: 1000;
     -webkit-transform: translate3d(0, 0, 0.1px) scale(1, 1);
     -moz-transform: translate3d(0, 0, 0.1px) scale(1, 1);
     -ms-transform: translate3d(0, 0, 0.1px) scale(1, 1);

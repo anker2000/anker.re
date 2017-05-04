@@ -12,7 +12,8 @@
     var oSettings = $.extend({
         ratio: 1,        // Scale ratio (1 = 100%)
         reference: null, // Text will scale relative to this element
-        styles: ''       // List of styles to scale (useful for buttons)
+        styles: '',       // List of styles to scale (useful for buttons)
+        maxSize:390
       }, oOptions),
       updateStyles = function(o, e) {
         var $o = $(o),
@@ -29,6 +30,7 @@
           aStyles = ('' + (o.getAttribute('data-scale-styles') || oSettings.styles)).split(' '),
           // Scale ratio
           nRatio = Math.max(parseFloat(o.getAttribute('data-scale-ratio') || oSettings.ratio), 0),
+          nMaxSize = Math.max(parseFloat(o.getAttribute('data-max-size') || oSettings.maxSize), 0),
           // Reference width (set to parent width by default)
           nRefWidth = ($ref.length) ? $ref.width() : $oP.width(),
           nTargetWidth,
@@ -53,7 +55,13 @@
           // (see http://jsperf.com/style-vs-csstext-vs-setattribute)
           o2.style.fontSize = i + 'px';
           if ($o2.width() / nRefWidth > nRatio) {
-            $o.css('font-size', (i-1) + 'px');
+            console.log("font size",i)
+            if (i>nMaxSize) {
+              $o.css('font-size', nMaxSize + 'px');
+            } else {
+              $o.css('font-size', (i-1) + 'px');
+            }
+            
             break;
           }
         }
