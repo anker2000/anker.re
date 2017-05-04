@@ -1,9 +1,6 @@
 var animateText = function() {
 	var _this = this;
-	function scrollHandler(obj) {
-		// console.log(obj.name, obj.proximity);
-		setLetterPosition(obj);
-	}
+	
 	function setLetterPosition(obj) {
 		var headline = $(obj.headline);
 		headline.each(function(i,elm) {
@@ -24,7 +21,6 @@ var animateText = function() {
 
 	return {
 		register: function(obj) {
-			_this.obj = obj;
 			// _this.elm = obj.elm;
 			obj.proximity=.25;
 			var container = document.createElement("div");
@@ -32,22 +28,22 @@ var animateText = function() {
 
 			document.body.appendChild(container);
 			var name = document.createElement("h2");
-			name.innerHTML="<span>"+obj.name+"</span>";
+			name.innerHTML='<a href="#">'+obj.name+'</a>';
 			container.appendChild(name);
 			obj.headline = name;
 
 
 			var cta = document.createElement("button");
 			cta.innerHTML = "See more";
-			// container.appendChild(cta);
 
 			$(".current_project h2").scalem();
 
 			$(".projects").bind("scroll",function() {
-				scrollHandler(obj);
+				setLetterPosition(obj);
 			});
-			scrollHandler(obj);
-			setTimeout(scrollHandler,1000,obj);
+			container.ref= obj.ref;
+			setLetterPosition(obj);
+			setTimeout(setLetterPosition,1000,obj);
 		},
 		animateHeadline: function(obj, animatesIn) {
 			var headline = obj.headline;

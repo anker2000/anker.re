@@ -5,17 +5,20 @@ $topOffset: 50vh;
 	bottom:50%;
 	position:fixed;
 	width:100%;
-	z-index:1;
 	text-align:center;
 	opacity:0;
 	color:inherit;
 	padding:0 15vw;
-	@include transform(translate3d(0,0,0.1px));
+	pointer-events:none;
+	@include transform(translate3d(0,0,0.1px) scale(.96,.96));
+	@include transition(transform 2.5s cubic-bezier(0,.6,.4,1));
 	// text-shadow: 0 0 100px rgba(0,0,0,0.7);
 	@media (max-width:600px) {
 		bottom:63%;
 	}
-
+	canvas {
+		pointer-events:none;
+	}
 	h2 {
 
 		z-index:3;
@@ -24,9 +27,12 @@ $topOffset: 50vh;
 		text-align:center;
 		width:100%;
 		color:inherit;
-		span {
+		
+		a {
 			display:block;
-			@include transform(translateY(50%));
+			text-decoration:none;
+			color:inherit;
+			@include transform(translateY(61.8%));
 		}
 	}
 	button {
@@ -45,5 +51,9 @@ $topOffset: 50vh;
 		text-align:center;
 		padding:10px 30px;
 		@include appearance(none);
+	}
+	&.hover {
+		z-index:1000;
+		@include transform(translate3d(0,0,0.1px) scale(1,1));
 	}
 }

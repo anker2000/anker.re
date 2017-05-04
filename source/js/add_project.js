@@ -47,6 +47,7 @@ function addProject(section, stage) {
 	sectionObject.name=$(section).find("h2").html()
 	sectionObject.tween = [];
 	sectionObject.loaded=0;
+	sectionObject.ref = section;
 	if ($(section).hasClass("mobile")) {
 
 		var phonesGroup = new THREE.Group();
@@ -111,7 +112,7 @@ function addProject(section, stage) {
 		});
 	}
 	sectionObject.updateRotation = function() {
-		// console.log(this.name,this.proximity);
+
 		if (Math.abs(this.proximity)<0.1) {
 			this.video.play();
 			for (t=0;t<this.tween.length;t++) {
@@ -124,7 +125,6 @@ function addProject(section, stage) {
 			}
 		}
 		try {
-			// console.log(this.name,this.type, this.children[0].children[0].type);
 			if (this.name,this.type, this.children[0].children[0].type=="Group") { //phones
 				var targetRotation =  this.children[0].startRotationPoint+(this.proximity*90);
 				for (r=0;r<this.children[0].children.length; r++) {
@@ -136,33 +136,44 @@ function addProject(section, stage) {
 			this.children[0].rotation.y=de2ra(targetRotation);
 			
 		} catch(e) {
-			// console.log(this.name,this.type,this.children[0]);
+
 		}
 	}
 	sectionObject.updatePosition = function() {
 		this.position.x = this.count*screenWidthFromDistance(200);
 	}
-	sectionObject.start = function() {
+	sectionObject.start = function(object) {
+		console.log("starting",typeof this.loaded,typeof sectionObject.headline, this.type);
+		if (typeof this.loaded == "undefined" || typeof sectionObject.headline == "undefined") {
+			setTimeout(function() {
+				sectionObject.start()
+			},50);
+			return false;
+		}
 		if (typeof sectionObject.children[0] == "undefined") {
 			sectionObject.kickstart=true;
 		} else {
 			sectionObject.children[0].begin();
 		}
+		
+		console.log("headline",sectionObject.headline.parentNode)
+		$(sectionObject.headline.parentNode).addClass("active");
+		
+		
 		$("body").css("background",$(section).data("bg-dark"));
 		$("body").css("color",$(section).data("text-color"));
 		mainLight.color = rgbPercentage(hexToRgb($(section).data("bg-dark")));
 		var intensity = colorIntensity(hexToRgb($(section).data("bg-light")));
-
 		TweenMax.to(groundMaterial, 1,{ opacity:map_range(intensity, 0, 1, 0.3, 0.04), onComplete:function() {}})
 		
 	}
 	sectionObject.end = function() {
 		if (typeof sectionObject.children[0] == "object") {
 			sectionObject.children[0].end();
-			// console.log(sectionObject);
-			// sectionObject.video.pause();
 		}
-		// animateText.animateHeadline(sectionObject,false);
+		if (typeof sectionObject.headline =="object") {
+			$(sectionObject.headline.parentNode).removeClass("active");
+		}
 	}
 	stage.add( sectionObject );
 	

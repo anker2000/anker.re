@@ -34,15 +34,14 @@ var sections = [], progression = 0, activeSection = 0, prevActiveSection = null,
 function init() {
 
 	setEnvironment();
-	$("section").each(function(i,elm) {
-		sections.push(addProject(elm,stage));
-		sections[i].count=i;
-	});
-	
 	setLights();
 	
 	scrollHandler();
 	animate();
+	$("section").each(function(i,elm) {
+		sections.push(addProject(elm,stage));
+		sections[i].count=i;
+	});
 	// $("section:first-child").find("video")[0].play();
 
 }
@@ -132,12 +131,42 @@ function onWindowResize() {
 }
 
 var mousePosition = { x:0, y:0 };
-document.addEventListener( 'mousemove', onDocumentMouseMove, false ); 
+document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
+var storedMouse = { x:0, y:0 };
 function onDocumentMouseMove( event ) {
+	if (typeof event == "undefined") {
+		var event = {
+			clientX: storedMouse.x,
+			clientY: storedMouse.y
+		}
+	}
+	storedMouse.x = event.clientX;
+	storedMouse.y = event.clientY;
 	mouseX = windowHalfX - event.clientX;
 	mouseY = windowHalfY - event.clientY;
 	prevMouseX=mouseX;
 	TweenMax.to(mousePosition, 2, {x: mouseX, y:mouseY, ease: Power1.easeOut});
+	$(".current_project.active h2").each(function() {
+		// console.log($(this).find("a")[0].getBoundingClientRect());
+		var bounds = $(this).find("a")[0].getBoundingClientRect();
+		// var bounds = {
+		// 	x1: $(this).offset().left,
+		// 	y1: $(this).offset().top+30,
+		// 	x2: $(this).offset().left+$(this).innerWidth(),
+		// 	y2: $(this).offset().top+$(this).innerHeight()+30
+		// }
+		// if (event.clientX>bounds.x1 && event.clientX<bounds.x2 && event.clientY>bounds.y1 && event.clientY<bounds.y2) {
+		if (event.clientX>bounds.left && event.clientX<bounds.right && event.clientY>bounds.top && event.clientY<bounds.bottom) {
+			$(this.parentNode).addClass("hover");
+			$(this.parentNode.ref).find("a").addClass("clickable");
+			TweenMax.to(camera.position, .6, {z:130, ease: Power1.easeOut});
+		} else {
+			$(this.parentNode).removeClass("hover");
+			$(this.parentNode.ref).find("a").removeClass("clickable");
+			TweenMax.to(camera.position, .6, {z:120, ease: Power1.easeOut});
+		}
+	})
 }
 
 TweenMax.ticker.addEventListener("tick",animate);
