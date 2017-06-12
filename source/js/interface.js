@@ -53,6 +53,7 @@ function getProximity(sectionNo) {
 	return (sectionNo) - (localScroll * sections.length);
 }
 function scrollHandler() {
+
 	scrollPercentage = $(".projects").scrollTop() / ($(".projects")[0].scrollHeight-$(window).innerHeight());
 	progression = scrollPercentage * sections.length;
 
@@ -84,6 +85,7 @@ function scrollHandler() {
 	TweenMax.to(stage.position, 0.75, {ease: Power4.easeOut, x: scrollTarget});
 }
 function setEnvironment() {
+	var pixelRatio = window.devicePixelRatio;
 	var container = document.createElement( 'div' );
 	container.setAttribute("class","content");
 	document.getElementsByClassName('devices')[0].appendChild( container );
@@ -100,12 +102,13 @@ function setEnvironment() {
 
 	
 	var myAntialias=true;
-	if (window.devicePixelRatio>1) {
+	if (pixelRatio>1) {
 		myAntialias=false;
 	}
+
 	renderer = new THREE.WebGLRenderer( {alpha: true, antialias: myAntialias });
 	renderer.setClearColor( 0xff0000, 0 );
-	renderer.setPixelRatio( window.devicePixelRatio );
+	renderer.setPixelRatio( pixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.shadowMap.enabled	= true;
 	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -162,21 +165,76 @@ function onDocumentMouseMove( event ) {
 		if (event.clientX>bounds.left && event.clientX<bounds.right && event.clientY>bounds.top && event.clientY<bounds.bottom) {
 			$(this.parentNode).addClass("hover");
 			$(this.parentNode.ref).find("a").addClass("clickable");
-			TweenMax.to(camera.position, .6, {z:130, ease: Power1.easeOut});
 		} else {
 			$(this.parentNode).removeClass("hover");
 			$(this.parentNode.ref).find("a").removeClass("clickable");
-			TweenMax.to(camera.position, .6, {z:120, ease: Power1.easeOut});
 		}
 	})
 }
 
 TweenMax.ticker.addEventListener("tick",animate);
+var hasData=false;
+setTimeout(function() {
+	hasData=true
+},4000);
+var pixelRatioSwitchCount=-1;
+setInterval(fps.reset, 10000);
+var windowInFocus=false;
+$(window).focus(function() {
+	windowInFocus=true;
+	console.log("window in focus");
+});
+$(window).blur(function() {
+	windowInFocus=false;
+	console.log("window out of focus");
+});
 
-
+frameCount=0;
 function animate() {
-	// requestAnimationFrame( animate );
-	render();
+	if (!windowInFocus) {
+		if (frameCount>3) {
+			// console.log(frameCount);
+			render();
+			frameCount=0;
+			pixelRatioSwitchCount=0;
+		} 
+	} else {
+		render();
+	}
+	frameCount++;
+	if (typeof renderer!="undefined" && windowInFocus) {
+		if (renderer.getPixelRatio()<2 && !renderer.antialias) {
+			renderer.antialias=true;
+		} else {
+			if (renderer.antialias && renderer.getPixelRatio()>=2) renderer.antialias=false;
+		}
+		fps.getFPS()
+		if (pixelRatioSwitchCount<4 && hasData) {
+			if (fps.average < 30) {
+				if (renderer.getPixelRatio() != 1) {
+					renderer.setPixelRatio( 1 );
+					pixelRatioSwitchCount+=1;
+				}
+			} else if (fps.average < 40) {
+				if (renderer.getPixelRatio() != 1.5) {
+					renderer.setPixelRatio( 1.5 );
+					pixelRatioSwitchCount+=1;
+				}
+			} else {
+				if (renderer.getPixelRatio() != 2) {
+					renderer.setPixelRatio( 2 );
+					pixelRatioSwitchCount+=1;
+				}
+			}
+		} else {
+			if (fps.average>30) {
+				renderer.setPixelRatio( 1.5 );
+			} else {
+				renderer.setPixelRatio( 1 );
+			}
+			
+		}
+	}
 }
 
 function render() {
