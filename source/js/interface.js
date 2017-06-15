@@ -179,7 +179,7 @@ setTimeout(function() {
 },4000);
 var pixelRatioSwitchCount=-1;
 setInterval(fps.reset, 10000);
-var windowInFocus=false;
+var windowInFocus=true;
 $(window).focus(function() {
 	windowInFocus=true;
 	console.log("window in focus");
