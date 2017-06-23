@@ -19,7 +19,7 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 	loader.load(
 		'models/iphones7.json',
 		function ( geometry, materials ) {
-			var material = new THREE.MultiMaterial( materials );
+			var material = new THREE.MeshPhongMaterial(materials[0])
 			var object = new THREE.Mesh( geometry, material );				
 			object.position.y=-0.6;
 			object.castShadow=true;
@@ -29,22 +29,19 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 				// child.geometry.computeFaceNormals();
 
 		        phoneGroup.position.y=-5;
-		        phoneGroup.position.z=-1;
-		       for (i=0;i<object.material.materials.length;i++) {
-		        	var tC = .75;
-					object.material.materials[i].emissive.r = (color_dark.r/255);
-					object.material.materials[i].emissive.g = (color_dark.g/255);
-					object.material.materials[i].emissive.b = (color_dark.b/255);
-					object.material.materials[i].color.r = (color_light.r/255);
-					object.material.materials[i].color.g = (color_light.g/255);
-					object.material.materials[i].color.b = (color_light.b/255);
-					// object.material.materials[i].shininess = 10;
-		        } 
+		        phoneGroup.position.z=-1;		      
+				object.material.emissive.r = (color_dark.r/255);
+				object.material.emissive.g = (color_dark.g/255);
+				object.material.emissive.b = (color_dark.b/255);
+				object.material.color.r = (color_light.r/255);
+				object.material.color.g = (color_light.g/255);
+				object.material.color.b = (color_light.b/255);
+					
 	    	});
 	    	loader.load(
 				'models/iphone-back.json',
 				function ( geometry, materials ) {
-					var material = new THREE.MultiMaterial( materials );
+					var material = new THREE.MeshPhongMaterial(materials[0])
 					var object = new THREE.Mesh( geometry, material );				
 					object.position.y=-0.6;
 					object.castShadow=true;
@@ -56,16 +53,15 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 				        phoneGroup.position.y=-5;
 				        phoneGroup.position.z=-1;
 
-				       for (i=0;i<object.material.materials.length;i++) {
-				        	var tC = .75;
-							object.material.materials[i].emissive.r = (color_dark.r/255);
-							object.material.materials[i].emissive.g = (color_dark.g/255);
-							object.material.materials[i].emissive.b = (color_dark.b/255);
-							object.material.materials[i].color.r = (color_light.r/255);
-							object.material.materials[i].color.g = (color_light.g/255);
-							object.material.materials[i].color.b = (color_light.b/255);
-							object.material.materials[i].shininess = 10;
-				        } 
+				       
+						object.material.emissive.r = (color_dark.r/255);
+						object.material.emissive.g = (color_dark.g/255);
+						object.material.emissive.b = (color_dark.b/255);
+						object.material.color.r = (color_light.r/255);
+						object.material.color.g = (color_light.g/255);
+						object.material.color.b = (color_light.b/255);
+						object.material.shininess = 10;
+
 						phoneGroup.position.z=position.z;
 						phoneGroup.position.y=position.y;
 						phoneGroup.position.x=position.x;
@@ -88,13 +84,13 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 	var macbookGroup = new THREE.Group();
 	var macbookScreenGroup = new THREE.Object3D();
 
-	var texture = new THREE.TextureLoader().load( "models/macbook-texture.jpg" );
-	texture.wrapS = THREE.RepeatWrapping;
-	texture.wrapT = THREE.RepeatWrapping;
-	texture.repeat.set( 12, 12 );
+	// var texture = new THREE.TextureLoader().load( "models/macbook-texture.jpg" );
+	// texture.wrapS = THREE.RepeatWrapping;
+	// texture.wrapT = THREE.RepeatWrapping;
+	// texture.repeat.set( 12, 12 );
 
 	
-    var material = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xffffff, metalness:0.5, roughness:1, map:texture, roughnessMap:texture});
+    var material = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xffffff, metalness:0.5, roughness:1});
 
 	var macbookPivot = new THREE.Object3D();
 	
@@ -105,7 +101,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 		// Function when resource is loaded
 		function ( geometry, materials ) {
 			// var material = new THREE.MultiMaterial( materials );
-			
+			var material = new THREE.MeshPhongMaterial(materials[0])
 			var object = new THREE.Mesh( geometry, material );
 			// scene.add( object );
 			
@@ -117,10 +113,11 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 			object.castShadow=true;
 			object.traverse( function ( child ) {
 		        // console.log("screen",object);
+		        object.material.side=THREE.DoubleSide;
 		        var color_dark = {
-		        	r:40,
-		        	g:40,
-		        	b:40
+		        	r:20,
+		        	g:20,
+		        	b:20
 		        }
 		        var color_light = color_dark;
 				macbookScreenGroup.add( object );
@@ -179,7 +176,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 					loader.load(
 						'models/keyboard.json',
 						function ( geometry, materials ) {
-							var bodyMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xffffff, metalness:0.2, roughness:1, map:texture, roughnessMap:texture});
+							var bodyMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xFFFFFF, metalness:0.2, roughness:1});
 							var object = new THREE.Mesh( geometry, bodyMaterial );
 							object.position.x=-0.5;
 							object.castShadow=true;
@@ -190,7 +187,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 								'models/keys.json',
 								// Function when resource is loaded
 								function ( geometry, materials ) {
-									var material = new THREE.MultiMaterial( materials );
+									var material = new THREE.MeshPhongMaterial(materials[0])
 									var object = new THREE.Mesh( geometry, material );
 									// scene.add( object );
 									
@@ -206,17 +203,16 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 										b: 0
 									}
 									var color_light = color_dark;
-							        for (i=0;i<object.material.materials.length;i++) {
-							        	var tC = .75;
-							        	object.material.materials[i].side=THREE.DoubleSide;
-										object.material.materials[i].specular.r = color_dark.r/255;
-										object.material.materials[i].specular.g = color_dark.g/255;
-										object.material.materials[i].specular.b = color_dark.b/255;
-										object.material.materials[i].emissive.r = color_light.r/255;
-										object.material.materials[i].emissive.g = color_light.g/255;
-										object.material.materials[i].emissive.b = color_light.b/255;
-										object.material.materials[i].shininess=21;	
-							        }
+							       
+						        	object.material.side=THREE.DoubleSide;
+									object.material.specular.r = color_dark.r/255;
+									object.material.specular.g = color_dark.g/255;
+									object.material.specular.b = color_dark.b/255;
+									object.material.emissive.r = color_light.r/255;
+									object.material.emissive.g = color_light.g/255;
+									object.material.emissive.b = color_light.b/255;
+									object.material.shininess=15;	
+
 									macbookGroup.add( object );
 									console.log("loaded keys 4");
 							    	loader.load(
@@ -224,7 +220,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 										'models/keys-top.json',
 										// Function when resource is loaded
 										function ( geometry, materials ) {
-											var material = new THREE.MultiMaterial( materials );
+											var material = new THREE.MeshPhongMaterial(materials[0])
 											var object = new THREE.Mesh( geometry, material );
 											// scene.add( object );
 											
@@ -244,17 +240,16 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 												g:25,
 												b:25
 											};
-									        for (i=0;i<object.material.materials.length;i++) {
-									        	var tC = .75;
-									        	object.material.materials[i].side=THREE.DoubleSide;
-												object.material.materials[i].specular.r = color_dark.r/255;
-												object.material.materials[i].specular.g = color_dark.g/255;
-												object.material.materials[i].specular.b = color_dark.b/255;
-												object.material.materials[i].emissive.r = color_light.r/255;
-												object.material.materials[i].emissive.g = color_light.g/255;
-												object.material.materials[i].emissive.b = color_light.b/255;
-												object.material.materials[i].shininess=21;	
-									        }
+									        
+								        	object.material.side=THREE.DoubleSide;
+											object.material.specular.r = color_dark.r/255;
+											object.material.specular.g = color_dark.g/255;
+											object.material.specular.b = color_dark.b/255;
+											object.material.emissive.r = color_light.r/255;
+											object.material.emissive.g = color_light.g/255;
+											object.material.emissive.b = color_light.b/255;
+											object.material.shininess=21;	
+								        
 											macbookGroup.scale.set(6.25,6.25,6.25);
 											macbookGroup.add( object );
 											console.log(position);

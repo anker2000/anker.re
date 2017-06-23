@@ -1,12 +1,10 @@
 .projects {
-	scroll-snap-type: proximity;
-	scroll-snap-points-y: repeat(100%);
-	scroll-snap-destination: 100% 0%;
-    scroll-behaviour: smooth;
     -webkit-scroll-snap-type: proximity;
 	-webkit-scroll-snap-points-y: repeat(100%);
-	-webkit-scroll-snap-destination: 100% 0%;
-    -webkit-scroll-behaviour: smooth;
+    -webkit-scroll-snap-stop:always;
+    scroll-snap-type: proximity;
+	scroll-snap-points-y: repeat(100%);
+    scroll-snap-stop:always;
 	overflow:auto;
 	-webkit-overflow-scrolling: touch;
 	overflow-scrolling: touch;
@@ -16,8 +14,22 @@
 	top:0;
 	left:0;
 	z-index:0;
+	@media (pointer:coarse) {
+		white-space:nowrap;
+		overflow-y:hidden;
+		-webkit-scroll-snap-type: proximity;
+		-webkit-scroll-snap-points-x: repeat(100%);
+		-webkit-scroll-snap-stop:always;
+		scroll-snap-type: proximity;
+		scroll-snap-points-x: repeat(100%);
+		scroll-snap-stop:always;
+		section {
+			display:inline-block;
+		}
+	}
 	section {
 		opacity:0;
+		visibility:hidden;
 		width:100%;
 		height:100%;
 		position:relative;

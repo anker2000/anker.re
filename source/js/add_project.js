@@ -57,6 +57,7 @@ function addProject(section, stage) {
 			phonesGroup.add(phoneGroup);
 			sectionObject.loaded+=.333333;
 			sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:0, ease:Power2.easeInOut, onComplete:function() {}}));
+			console.log("phone added");
 		});
 
 		addPhone({ x:de2ra(50), y:de2ra(35), z:de2ra(-80) },{ x:15, y:7, z:-10 }, screenMaterial, glassMaterial, reflectionCube, video, loader, color_dark, color_light).done(function(phoneGroup) {
@@ -65,6 +66,7 @@ function addProject(section, stage) {
 			phoneGroup.startRotationPoint = 50;
 			phonesGroup.add(phoneGroup);
 			sectionObject.loaded+=.333333;
+			console.log("phone added");
 		});
 
 
@@ -74,6 +76,7 @@ function addProject(section, stage) {
 			phoneGroup.startRotationPoint = 120;
 			phonesGroup.add(phoneGroup);
 			sectionObject.loaded+=.333333;
+			console.log("phone added");
 		});
 
 		phonesGroup.position.y=5;
@@ -95,6 +98,7 @@ function addProject(section, stage) {
 			// console.log("received macbook", macbookGroup);
 			sectionObject.loaded=1;
 			macbookGroup.startRotationPoint = 65;
+			macbookGroup.opacity = 0;
 			macbookGroup.begin = function() {
 				console.log("macbook open");
 				var openLid = TweenMax.to(macbookGroup.screen.rotation, 1, { x:-de2ra(20), delay:.75, ease:Power4.easeInOut});
@@ -108,7 +112,7 @@ function addProject(section, stage) {
 			if (sectionObject.kickstart) {
 				sectionObject.children[0].begin()
 			}
-
+			console.log("macbook added");
 		});
 	}
 	sectionObject.updateRotation = function() {
@@ -160,6 +164,7 @@ function addProject(section, stage) {
 		mainLight.color = rgbPercentage(hexToRgb($(section).data("bg-dark")));
 		var intensity = colorIntensity(hexToRgb($(section).data("bg-light")));
 		TweenMax.to(groundMaterial, 1,{ opacity:map_range(intensity, 0, 1, 0.3, 0.04), onComplete:function() {}})
+		$(".fog").css("opacity",map_range(intensity, 0, 1, 0, 0.75));
 
 		if (typeof sectionObject.children[0] == "undefined") {
 			sectionObject.kickstart=true;

@@ -49,12 +49,20 @@ function init() {
 }
 
 function getProximity(sectionNo) {
-	var localScroll = $(".projects").scrollTop() / $(".projects")[0].scrollHeight;
+	if ($(".projects")[0].scrollHeight>$(".projects")[0].scrollWidth) {
+		var localScroll = $(".projects").scrollTop() / $(".projects")[0].scrollHeight;
+	} else {
+		var localScroll = $(".projects").scrollLeft() / $(".projects")[0].scrollWidth;
+	}
 	return (sectionNo) - (localScroll * sections.length);
 }
 function scrollHandler() {
-
-	scrollPercentage = $(".projects").scrollTop() / ($(".projects")[0].scrollHeight-$(window).innerHeight());
+	if ($(".projects")[0].scrollHeight>$(".projects")[0].scrollWidth) {
+		scrollPercentage = $(".projects").scrollTop() / ($(".projects")[0].scrollHeight-$(window).innerHeight());	
+	} else {
+		scrollPercentage = $(".projects").scrollLeft() / ($(".projects")[0].scrollWidth-$(window).innerWidth());
+	}
+	
 	progression = scrollPercentage * sections.length;
 
 	activeSection = Math.floor(progression);
@@ -100,15 +108,17 @@ function setEnvironment() {
 	scene.add(stage);
 	$(".projects").bind("scroll",scrollHandler);
 
+
 	
-	var myAntialias=true;
+	var myAntialias=false;
 	if (pixelRatio>1) {
 		myAntialias=false;
 	}
 
 	renderer = new THREE.WebGLRenderer( {alpha: true, antialias: myAntialias });
-	renderer.setClearColor( 0xff0000, 0 );
-	renderer.setPixelRatio( pixelRatio );
+	// renderer.setClearColor( 0xff0000, 0 );
+	renderer.setClearColor( 0x000000, 0 );
+	renderer.setPixelRatio( 2 );
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.shadowMap.enabled	= true;
 	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -152,24 +162,24 @@ function onDocumentMouseMove( event ) {
 	mouseY = windowHalfY - event.clientY;
 	prevMouseX=mouseX;
 	TweenMax.to(mousePosition, 2, {x: mouseX, y:mouseY, ease: Power1.easeOut});
-	$(".current_project.active h2").each(function() {
-		// console.log($(this).find("a")[0].getBoundingClientRect());
-		var bounds = $(this).find("a")[0].getBoundingClientRect();
-		// var bounds = {
-		// 	x1: $(this).offset().left,
-		// 	y1: $(this).offset().top+30,
-		// 	x2: $(this).offset().left+$(this).innerWidth(),
-		// 	y2: $(this).offset().top+$(this).innerHeight()+30
-		// }
-		// if (event.clientX>bounds.x1 && event.clientX<bounds.x2 && event.clientY>bounds.y1 && event.clientY<bounds.y2) {
-		if (event.clientX>bounds.left && event.clientX<bounds.right && event.clientY>bounds.top && event.clientY<bounds.bottom) {
-			$(this.parentNode).addClass("hover");
-			$(this.parentNode.ref).find("a").addClass("clickable");
-		} else {
-			$(this.parentNode).removeClass("hover");
-			$(this.parentNode.ref).find("a").removeClass("clickable");
-		}
-	})
+	// $(".current_project.active h2").each(function() {
+	// 	// console.log($(this).find("a")[0].getBoundingClientRect());
+	// 	var bounds = $(this).find("a")[0].getBoundingClientRect();
+	// 	// var bounds = {
+	// 	// 	x1: $(this).offset().left,
+	// 	// 	y1: $(this).offset().top+30,
+	// 	// 	x2: $(this).offset().left+$(this).innerWidth(),
+	// 	// 	y2: $(this).offset().top+$(this).innerHeight()+30
+	// 	// }
+	// 	// if (event.clientX>bounds.x1 && event.clientX<bounds.x2 && event.clientY>bounds.y1 && event.clientY<bounds.y2) {
+	// 	if (event.clientX>bounds.left && event.clientX<bounds.right && event.clientY>bounds.top && event.clientY<bounds.bottom) {
+	// 		$(this.parentNode).addClass("hover");
+	// 		$(this.parentNode.ref).find("a").addClass("clickable");
+	// 	} else {
+	// 		$(this.parentNode).removeClass("hover");
+	// 		$(this.parentNode.ref).find("a").removeClass("clickable");
+	// 	}
+	// })
 }
 
 TweenMax.ticker.addEventListener("tick",animate);
@@ -210,29 +220,33 @@ function animate() {
 		}
 		fps.getFPS()
 		if (pixelRatioSwitchCount<4 && hasData) {
-			if (fps.average < 30) {
+			if (fps.average < 25) {
 				if (renderer.getPixelRatio() != 1) {
 					renderer.setPixelRatio( 1 );
 					pixelRatioSwitchCount+=1;
 				}
-			} else if (fps.average < 40) {
+			} else if (fps.average < 35) {
 				if (renderer.getPixelRatio() != 1.5) {
+					console.log("set pixel ratio 1.5");
 					renderer.setPixelRatio( 1.5 );
 					pixelRatioSwitchCount+=1;
 				}
 			} else {
 				if (renderer.getPixelRatio() != 2) {
+					console.log("set pixel ratio 2");
 					renderer.setPixelRatio( 2 );
 					pixelRatioSwitchCount+=1;
 				}
 			}
 		} else {
-			if (fps.average>30) {
-				renderer.setPixelRatio( 1.5 );
-			} else {
-				renderer.setPixelRatio( 1 );
+			if (hasData) {
+				if (fps.average>25) {
+					console.log("set pixel ratio 1.5");
+					renderer.setPixelRatio( 1.5 );
+				} else {
+					renderer.setPixelRatio( 1 );
+				}
 			}
-			
 		}
 	}
 }

@@ -46,15 +46,11 @@ table {
 
 html {
   height: 100%;
-  -webkit-text-size-adjust: 100%;
-  -webkit-transition: background 0.5s;
-  -moz-transition: background 0.5s;
-  transition: background 0.5s; }
+  -webkit-text-size-adjust: 100%; }
 
 * {
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
 body {
@@ -64,7 +60,8 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  height: 100%; }
+  height: 100%;
+  background-color: black; }
   body.scrollable {
     overflow: auto; }
 
@@ -98,7 +95,7 @@ header {
     -webkit-transition: color 0.3s;
     -moz-transition: color 0.3s;
     transition: color 0.3s;
-    letter-spacing: 0.02em; }
+    letter-spacing: 0.04em; }
   header .home {
     font-weight: bold;
     color: inherit;
@@ -162,14 +159,12 @@ header {
         margin: 0 30px; }
 
 .projects {
-  scroll-snap-type: proximity;
-  scroll-snap-points-y: repeat(100%);
-  scroll-snap-destination: 100% 0%;
-  scroll-behaviour: smooth;
   -webkit-scroll-snap-type: proximity;
   -webkit-scroll-snap-points-y: repeat(100%);
-  -webkit-scroll-snap-destination: 100% 0%;
-  -webkit-scroll-behaviour: smooth;
+  -webkit-scroll-snap-stop: always;
+  scroll-snap-type: proximity;
+  scroll-snap-points-y: repeat(100%);
+  scroll-snap-stop: always;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
@@ -179,8 +174,21 @@ header {
   top: 0;
   left: 0;
   z-index: 0; }
+  @media (pointer: coarse) {
+    .projects {
+      white-space: nowrap;
+      overflow-y: hidden;
+      -webkit-scroll-snap-type: proximity;
+      -webkit-scroll-snap-points-x: repeat(100%);
+      -webkit-scroll-snap-stop: always;
+      scroll-snap-type: proximity;
+      scroll-snap-points-x: repeat(100%);
+      scroll-snap-stop: always; }
+      .projects section {
+        display: inline-block; } }
   .projects section {
     opacity: 0;
+    visibility: hidden;
     width: 100%;
     height: 100%;
     position: relative; }
@@ -220,6 +228,55 @@ section {
     .devices canvas.loaded {
       opacity: 1; }
 
+@keyframes move {
+  from {
+    -webkit-transform: translateY(75px);
+    -moz-transform: translateY(75px);
+    -ms-transform: translateY(75px);
+    -o-transform: translateY(75px);
+    transform: translateY(75px); }
+  to {
+    transform: transform(translateY(0px)); } }
+
+.fog {
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 201;
+  opacity: 0.05;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  transition: opacity 1s;
+  -webkit-transform: translate3d(0, 0, 0.1px);
+  -moz-transform: translate3d(0, 0, 0.1px);
+  -ms-transform: translate3d(0, 0, 0.1px);
+  -o-transform: translate3d(0, 0, 0.1px);
+  transform: translate3d(0, 0, 0.1px); }
+  .fog:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/fog.png);
+    background-size: cover; }
+  .fog:before {
+    background-position: -50%;
+    -webkit-animation: move 8s ease-in-out;
+    -moz-animation: move 8s ease-in-out;
+    animation: move 8s ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    animation-direction: alternate; }
+
 .current_project {
   bottom: 50%;
   position: fixed;
@@ -229,11 +286,6 @@ section {
   color: inherit;
   padding: 0 13vw;
   pointer-events: none;
-  -webkit-transform: translate3d(0, 0, -0.1px) scale(1, 1);
-  -moz-transform: translate3d(0, 0, -0.1px) scale(1, 1);
-  -ms-transform: translate3d(0, 0, -0.1px) scale(1, 1);
-  -o-transform: translate3d(0, 0, -0.1px) scale(1, 1);
-  transform: translate3d(0, 0, -0.1px) scale(1, 1);
   -webkit-transition: -webkit-transform 2.5s cubic-bezier(0, 0.6, 0.4, 1);
   -moz-transition: -moz-transform 2.5s cubic-bezier(0, 0.6, 0.4, 1);
   transition: transform 2.5s cubic-bezier(0, 0.6, 0.4, 1); }

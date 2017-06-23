@@ -10,7 +10,7 @@ header {
 		text-decoration: none;
 		color:inherit;
 		@include transition(color 0.3s);
-		letter-spacing: 0.02em;
+		letter-spacing: 0.04em;
 	}
 	.home {
 		font-weight:bold;
@@ -77,6 +77,7 @@ header {
 			li {
 				display:inline-block;
 				margin:0 30px;
+
 			}
 			color:inherit;
 			

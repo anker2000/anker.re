@@ -14,7 +14,6 @@
 		bottom:48%;
 	}
 	pointer-events:none;
-	@include transform(translate3d(0,0,-0.1px) scale(1,1));
 	@include transition(transform 2.5s cubic-bezier(0,.6,.4,1));
 	// text-shadow: 0 0 100px rgba(0,0,0,0.7);
 	h2 {
