@@ -27,20 +27,26 @@ var animateText = function() {
 			container.className = "current_project";
 
 			document.body.appendChild(container);
+
+			var cta = document.createElement("button");
+			cta.className="cta";
+			cta.innerHTML = "See more";
+			// $("footer")[0].appendChild(cta);
+			
 			var name = document.createElement("h2");
 			name.innerHTML='<a href="#">'+obj.name+'</a>';
 			container.appendChild(name);
 			obj.headline = name;
 
 
-			var cta = document.createElement("button");
-			cta.innerHTML = "See more";
+
 
 			$(".current_project h2").scalem({maxSize:390});
 
 			$(".projects").bind("scroll",function() {
 				setLetterPosition(obj);
 			});
+			
 			container.ref= obj.ref;
 			setLetterPosition(obj);
 			setTimeout(setLetterPosition,1000,obj);

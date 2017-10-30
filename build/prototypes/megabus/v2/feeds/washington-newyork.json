@@ -1,0 +1,1107 @@
+[
+  {
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":480,
+    "price":10,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":480,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":420,
+    "price":10,
+    "seats_left":7,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":420,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":480,
+    "price":5,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":480,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":47,
+    "price":6,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":470,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":480,
+    "price":5,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":480,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":480,
+    "price":5,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":480,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":500,
+    "price":5,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":500,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":480,
+    "price":5,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":480,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":480,
+    "price":5,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":480,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":480,
+    "price":12,
+    "seats_left":2,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":365,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":390,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":480,
+    "price":5,
+    "seats_left":12,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":480,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":480,
+    "price":5,
+    "seats_left":6,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":480,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":460,
+    "price":7,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":460,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":480,
+    "price":5,
+    "seats_left":5,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":480,
+                "departure_time":null
+            }
+            ]
+        }] 
+    },{
+    "departure_city":"Washington, DC",
+    "departure_station":"Union Station",
+    "arrival_city":"New York, NY",
+    "arrival_station":"34th St b/t 11th Ave and 12th Ave",
+    "duration":480,
+    "price":10,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Union Station",
+                "city":"Washington, DC",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Hyattsville",
+                "arrival_time":50,
+                "departure_time":50
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Greenbelt",
+                "arrival_time":120,
+                "departure_time":120
+            },{
+                "gpsloc":"coordinates",
+                "station":"Unknown",
+                "city":"Fort Meade",
+                "arrival_time":200,
+                "departure_time":200
+            },{
+                "gpsloc":"coordinates",
+                "station":"White Marsh Mall (opposite Red Lobster)",
+                "city":"Baltimore, MD",
+                "arrival_time":230,
+                "departure_time":null
+            }
+            ]
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"White Marsh MTA Park & Ride",
+                "city":"Baltimore, MD",
+                "arrival_time":null,
+                "departure_time":285
+            },{
+                "gpsloc":"coordinates",
+                "station":"50 Massachusetts Ave NE",
+                "city":"Washington, DC",
+                "arrival_time":350,
+                "departure_time":365
+            },{
+                "gpsloc":"coordinates",
+                "station":"U of Delaware - Parking lot #6 on Christiana Dr",
+                "city":"Newark",
+                "arrival_time":410,
+                "departure_time":410
+            },{
+                "gpsloc":"coordinates", 
+                "station":"34th St b/t 11th Ave and 12th Ave",
+                "city":"New York, NY",
+                "arrival_time":430,
+                "departure_time":null
+            }
+            ]
+        }] 
+    }
+]

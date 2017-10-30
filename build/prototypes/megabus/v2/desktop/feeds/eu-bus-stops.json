@@ -1,0 +1,1296 @@
+[
+  {
+    "country": "Belgium",
+    "city": "Antwerp",
+    "latitude": 51.2603015,
+    "longitude": 4.2176376,
+    "type": "A"
+  },
+  {
+    "country": "Belgium",
+    "city": "Brussels",
+    "latitude": 50.8333,
+    "longitude": 4.3333,
+    "type": "A"
+  },
+  {
+    "country": "Belgium",
+    "city": "Gent",
+    "latitude": 51.05,
+    "longitude": 3.7167,
+    "type": "A"
+  },
+  {
+    "country": "England",
+    "city": "Axminster",
+    "latitude": 50.7833,
+    "longitude": -2.9833,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Banbury",
+    "latitude": 52.05,
+    "longitude": -1.3333,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Barnsley",
+    "latitude": -32.9333,
+    "longitude": 151.5833,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Bath Spa",
+    "latitude": 51.3855556,
+    "longitude": -2.4191506,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Bedford",
+    "latitude": 52.1390716,
+    "longitude": -0.5216211,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Birmingham",
+    "latitude": 52.4667,
+    "longitude": -1.9167,
+    "type": "A",
+    "stations": [
+    	{
+    		"city": "Birmingham International Airport",
+		    "latitude": 52.4523821,
+		    "longitude": -1.7457011
+    	},{
+    		"city": "City",
+	    	"latitude": 52.4667,
+	    	"longitude": -1.9167
+		}
+    ]
+  },
+  {
+    "country": "England",
+    "city": "Blackburn",
+    "latitude": -37.8167,
+    "longitude": 145.1667,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Bolton",
+    "latitude": -34.9667,
+    "longitude": 142.8833,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Bournemouth",
+    "latitude": 50.7167,
+    "longitude": -1.8833,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Bradford",
+    "latitude": 53.7833,
+    "longitude": -1.75,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Brighton",
+    "latitude": 50.8374151,
+    "longitude": -0.1412947,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Bristol",
+    "latitude": 51.4684055,
+    "longitude": -2.7307918,
+    "type": "A",
+    "stations": [
+    	{
+			"city": "Aztec",
+			"latitude": 51.5431854,
+			"longitude": -2.5678579
+    	},
+    	{
+    		"city": "Cribbs Causeway",
+		    "latitude": 51.525085,
+		    "longitude": -2.5973137
+    	},
+    	{
+    		"city": "Filton",
+		    "latitude": 51.5140339,
+		    "longitude": -2.5782213
+    	},
+    	{
+		    "city": "Bristol Airport",
+		    "latitude": 51.3836304,
+		    "longitude": -2.7157403
+		},{
+			"city": "UWE",
+			"latitude": 51.483516,
+			"longitude": -2.547203
+		}
+ 	]
+  },
+  {
+    "country": "England",
+    "city": "Camborne",
+    "latitude": 50.2122,
+    "longitude": -5.2944,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Cambridge",
+    "latitude": -42.8333,
+    "longitude": 147.45,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Canterbury",
+    "latitude": 51.2785426,
+    "longitude": 1.0662984,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Castleford",
+    "latitude": 53.7167,
+    "longitude": -1.35,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Cheltenham",
+    "latitude": 51.889855,
+    "longitude": -2.1175787,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Chester",
+    "latitude": 53.2,
+    "longitude": -2.9167,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Chesterfield",
+    "latitude": 53.25,
+    "longitude": -1.4167,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Colchester",
+    "latitude": 51.8833,
+    "longitude": 0.9,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Coventry",
+    "latitude": 52.4167,
+    "longitude": -1.55,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Crawley",
+    "latitude": 51.1197414,
+    "longitude": -0.2181422,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Daventry",
+    "latitude": 52.25,
+    "longitude": -1.1667,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Derby",
+    "latitude": 52.9145809,
+    "longitude": -1.5050726,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Doncaster",
+    "latitude": 53.5189285,
+    "longitude": -1.1900632,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "East Dereham",
+    "latitude": 52.6833,
+    "longitude": 0.9333,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "East Midlands Parkway",
+    "latitude": 52.86252,
+    "longitude": -1.265424,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Exeter",
+    "latitude": 50.7244229,
+    "longitude": -3.5486525,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Gloucester",
+    "latitude": 51.8571416,
+    "longitude": -2.3125521,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Grantham",
+    "latitude": 52.9169482,
+    "longitude": -0.6634085,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Grimsby",
+    "latitude": 53.5333,
+    "longitude": -0.05,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Havant",
+    "latitude": 50.85,
+    "longitude": -0.9833,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "High Wycombe",
+    "latitude": 51.6270687,
+    "longitude": -0.7879888,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Honiton",
+    "latitude": 50.8,
+    "longitude": -3.1833,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Huddersfield",
+    "latitude": 53.65,
+    "longitude": -1.7833,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Hull",
+    "latitude": 53.7167,
+    "longitude": -0.3333,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Ipswich",
+    "latitude": 51.6267285,
+    "longitude": -1.0339099,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Kettering",
+    "latitude": 52.3968002,
+    "longitude": -0.7334427,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Kings Lynn",
+    "latitude": 52.7513241,
+    "longitude": 0.3925488,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Lancaster",
+    "latitude": 54.0441576,
+    "longitude": -2.8361623,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Leeds",
+    "latitude": 53.7971339,
+    "longitude": -1.5378366,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Leicester",
+    "latitude": 52.6333,
+    "longitude": -1.1333,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Lincoln",
+    "latitude": -34.8665,
+    "longitude": -61.5302,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Liverpool",
+    "latitude": 53.419824,
+    "longitude": -3.0509283,
+    "type": "A"
+  },
+  {
+    "country": "England",
+    "city": "London",
+    "latitude": 51.5142,
+    "longitude": -0.0931,
+    "type": "A"
+  },
+  {
+    "country": "England",
+    "city": "Loughborough",
+    "latitude": 52.7667,
+    "longitude": -1.2,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Luton",
+    "latitude": 51.8833,
+    "longitude": -0.4167,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Manchester",
+    "latitude": 53.5,
+    "longitude": -2.2167,
+    "type": "A"
+  },
+  {
+    "country": "England",
+    "city": "Middlesbrough",
+    "latitude": 54.5728,
+    "longitude": -1.1628,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Milton Keynes",
+    "latitude": 52.0333,
+    "longitude": -0.7,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Newark-on-Trent",
+    "latitude": 53.0741603,
+    "longitude": -0.8447996,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Newbury",
+    "latitude": 51.3885327,
+    "longitude": -1.3434823,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Newcastle",
+    "latitude": 55.0023519,
+    "longitude": -1.7270539,
+    "type": "A"
+  },
+  {
+    "country": "England",
+    "city": "Newquay",
+    "latitude": 50.4167,
+    "longitude": -5.0833,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Newton Abbot",
+    "latitude": 50.5333,
+    "longitude": -3.6,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Northampton",
+    "latitude": 52.2397791,
+    "longitude": -0.9155032,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Norwich",
+    "latitude": 52.6333,
+    "longitude": 1.3,
+    "type": "B",
+    "stations": [
+    	{
+    		"city": "Norwich",
+   			"latitude": 52.6333,
+    		"longitude": 1.3
+    	},{
+    		"city": "Norwich, University of East Anglia",
+		    "latitude": 52.6219215,
+		    "longitude": 1.2369821
+    	}
+    ]
+  },
+  {
+    "country": "England",
+    "city": "Nottingham",
+    "latitude": 52.9667,
+    "longitude": -1.1667,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Oxford",
+    "latitude": 51.75,
+    "longitude": -1.25,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Paignton",
+    "latitude": 50.4333,
+    "longitude": -3.5667,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Penzance",
+    "latitude": 50.1136,
+    "longitude": -5.5478,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Peterborough",
+    "latitude": 52.5849121,
+    "longitude": -0.3706637,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Plymouth",
+    "latitude": 50.3964,
+    "longitude": -4.1386,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Poole",
+    "latitude": 50.7167,
+    "longitude": -2,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Portsmouth",
+    "latitude": 50.8184538,
+    "longitude": -1.1328965,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Preston",
+    "latitude": 53.7702355,
+    "longitude": -2.7673626,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Reading",
+    "latitude": 51.4333,
+    "longitude": -1,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Redruth",
+    "latitude": 50.2303,
+    "longitude": -5.2272,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Rugby",
+    "latitude": 52.3772355,
+    "longitude": -1.287303,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Salisbury",
+    "latitude": 51.0797058,
+    "longitude": -1.8434485,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Scunthorpe",
+    "latitude": 53.5833,
+    "longitude": -0.65,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Sheffield",
+    "latitude": 53.3956961,
+    "longitude": -1.5696667,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Silverstone",
+    "latitude": 52.0833,
+    "longitude": -1.0167,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Southampton",
+    "latitude": 50.9,
+    "longitude": -1.4,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Southampton Airport",
+    "latitude": 50.950752,
+    "longitude": -1.363886,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "St Erth",
+    "latitude": 50.1655301,
+    "longitude": -5.4393944,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Stockport",
+    "latitude": 53.4175095,
+    "longitude": -2.184167,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Stoke-On-Trent",
+    "latitude": 53,
+    "longitude": -2.1833,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Sunderland",
+    "latitude": 54.9119,
+    "longitude": -1.3833,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Swindon",
+    "latitude": 51.5167,
+    "longitude": -1.7833,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Taunton",
+    "latitude": 51.0211,
+    "longitude": -3.1047,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Thetford",
+    "latitude": 52.4167,
+    "longitude": 0.75,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Torquay",
+    "latitude": 50.4767347,
+    "longitude": -3.5667478,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Towcester",
+    "latitude": 52.1333,
+    "longitude": -0.9833,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Wakefield/Woolley Edge",
+    "latitude": 53.6250062,
+    "longitude": -1.6150013,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Warrington",
+    "latitude": 53.3833,
+    "longitude": -2.6,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Weymouth",
+    "latitude": 50.6268299,
+    "longitude": -2.4929296,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Wigan",
+    "latitude": 53.5333,
+    "longitude": -2.6167,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Winchester",
+    "latitude": 51.0167,
+    "longitude": -1.3167,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Worcester",
+    "latitude": 52.2,
+    "longitude": -2.2,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Worthing",
+    "latitude": 50.8331798,
+    "longitude": -0.4244362,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "Yeovil Junction",
+    "latitude": 50.92474,
+    "longitude": -2.614654,
+    "type": "B"
+  },
+  {
+    "country": "England",
+    "city": "York",
+    "latitude": 53.958576,
+    "longitude": -1.1508024,
+    "type": "A"
+  },
+  {
+    "country": "France",
+    "city": "Amiens",
+    "latitude": 49.8985566,
+    "longitude": 2.2495324,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Angers",
+    "latitude": 47.4738,
+    "longitude": -0.5477,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Avignon",
+    "latitude": 43.9454,
+    "longitude": 4.8102,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Bordeaux",
+    "latitude": 44.8404,
+    "longitude": -0.5805,
+    "type": "A"
+  },
+  {
+    "country": "France",
+    "city": "Bourges",
+    "latitude": 47.0833,
+    "longitude": 2.4,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Brive-la-Gaillarde",
+    "latitude": 45.158,
+    "longitude": 1.535,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Chatellerault",
+    "latitude": 46.8153,
+    "longitude": 0.5413,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Clermont-Ferrand",
+    "latitude": 45.7797,
+    "longitude": 3.0863,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Dijon",
+    "latitude": 47.3167,
+    "longitude": 5.0167,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Le Havre",
+    "latitude": 49.5,
+    "longitude": 0.1333,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Le Mans",
+    "latitude": 48.0004,
+    "longitude": 0.2047,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Lille",
+    "latitude": 50.6311167,
+    "longitude": 3.0121412,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Limoges",
+    "latitude": 50.65,
+    "longitude": 4.5333,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Lyon",
+    "latitude": 45.7485,
+    "longitude": 4.8467,
+    "type": "A"
+  },
+  {
+    "country": "France",
+    "city": "Marseille",
+    "latitude": 43.2854,
+    "longitude": 5.3761,
+    "type": "A"
+  },
+  {
+    "country": "France",
+    "city": "Metz",
+    "latitude": 49.1155,
+    "longitude": 6.1759,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Nantes",
+    "latitude": 42.4333,
+    "longitude": -8.8,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Paris",
+    "latitude": 48.8667,
+    "longitude": 2.3333,
+    "type": "A"
+  },
+  {
+    "country": "France",
+    "city": "Poitiers",
+    "latitude": 46.5833,
+    "longitude": 0.3333,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Reims",
+    "latitude": 49.25,
+    "longitude": 4.0333,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Rennes",
+    "latitude": 48.112,
+    "longitude": -1.6743,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Rouen",
+    "latitude": 49.4333,
+    "longitude": 1.0833,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "St Etienne",
+    "latitude": 45.2474,
+    "longitude": 4.7825,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Strasbourg",
+    "latitude": 50.25,
+    "longitude": 5.3833,
+    "type": "A"
+  },
+  {
+    "country": "France",
+    "city": "Toulon",
+    "latitude": 43.1177,
+    "longitude": 5.9417,
+    "type": "B"
+  },
+  {
+    "country": "France",
+    "city": "Toulouse",
+    "latitude": 43.5995,
+    "longitude": 1.4332,
+    "type": "A"
+  },
+  {
+    "country": "France",
+    "city": "Tours",
+    "latitude": 47.3948,
+    "longitude": 0.704,
+    "type": "B"
+  },
+  {
+    "country": "Germany",
+    "city": "Berlin",
+    "latitude": 52.5167,
+    "longitude": 13.4,
+    "type": "A"
+  },
+  {
+    "country": "Germany",
+    "city": "Bremen",
+    "latitude": 53.0833,
+    "longitude": 8.8,
+    "type": "A"
+  },
+  {
+    "country": "Germany",
+    "city": "Cologne",
+    "latitude": 50.9333,
+    "longitude": 6.95,
+    "type": "A"
+  },
+  {
+    "country": "Germany",
+    "city": "Dortmund",
+    "latitude": 51.5167,
+    "longitude": 7.45,
+    "type": "B"
+  },
+  {
+    "country": "Germany",
+    "city": "Feldkirchen",
+    "latitude": 46.7167,
+    "longitude": 14.1,
+    "type": "B"
+  },
+  {
+    "country": "Germany",
+    "city": "Frankfurt / Main",
+    "latitude": 50.1167,
+    "longitude": 8.6833,
+    "type": "A"
+  },
+  {
+    "country": "Germany",
+    "city": "Gottingen",
+    "latitude": 51.5333,
+    "longitude": 9.9333,
+    "type": "B"
+  },
+  {
+    "country": "Germany",
+    "city": "Hamburg",
+    "latitude": 53.55,
+    "longitude": 10,
+    "type": "A"
+  },
+  {
+    "country": "Germany",
+    "city": "Hannover",
+    "latitude": 52.3667,
+    "longitude": 9.7167,
+    "type": "A"
+  },
+  {
+    "country": "Germany",
+    "city": "Kassel",
+    "latitude": 51.3167,
+    "longitude": 9.5,
+    "type": "B"
+  },
+  {
+    "country": "Germany",
+    "city": "Leipzig",
+    "latitude": 51.3,
+    "longitude": 12.3333,
+    "type": "A"
+  },
+  {
+    "country": "Germany",
+    "city": "Munich",
+    "latitude": 48.15,
+    "longitude": 11.5833,
+    "type": "A"
+  },
+  {
+    "country": "Germany",
+    "city": "Nuremburg",
+    "latitude": 49.4478,
+    "longitude": 11.0683,
+    "type": "B"
+  },
+  {
+    "country": "Germany",
+    "city": "Stuttgart",
+    "latitude": 48.7667,
+    "longitude": 9.1833,
+    "type": "A"
+  },
+  {
+    "country": "Italy",
+    "city": "Bologna",
+    "latitude": 44.5833,
+    "longitude": 11.3333,
+    "type": "A"
+  },
+  {
+    "country": "Italy",
+    "city": "Florence",
+    "latitude": 43.7800607,
+    "longitude": 11.170928,
+    "type": "A"
+  },
+  {
+    "country": "Italy",
+    "city": "Genoa",
+    "latitude": 44.4462271,
+    "longitude": 8.7923611,
+    "type": "B"
+  },
+  {
+    "country": "Italy",
+    "city": "La Spezia (Sarzana)",
+    "latitude": 44.1167,
+    "longitude": 9.8333,
+    "type": "B"
+  },
+  {
+    "country": "Italy",
+    "city": "Milan",
+    "latitude": 45.4626482,
+    "longitude": 9.0376489,
+    "type": "A"
+  },
+  {
+    "country": "Italy",
+    "city": "Naples",
+    "latitude": 40.8333,
+    "longitude": 14.25,
+    "type": "A"
+  },
+  {
+    "country": "Italy",
+    "city": "Padua",
+    "latitude": 45.4167,
+    "longitude": 11.8833,
+    "type": "B"
+  },
+  {
+    "country": "Italy",
+    "city": "Pisa",
+    "latitude": 43.4067293,
+    "longitude": 10.3253383,
+    "type": "A"
+  },
+  {
+    "country": "Italy",
+    "city": "Rome",
+    "latitude": 41.9097306,
+    "longitude": 12.2558141,
+    "type": "A"
+  },
+  {
+    "country": "Italy",
+    "city": "Siena",
+    "latitude": 43.3167,
+    "longitude": 11.35,
+    "type": "B"
+  },
+  {
+    "country": "Italy",
+    "city": "Turin",
+    "latitude": 45.05,
+    "longitude": 7.6667,
+    "type": "A"
+  },
+  {
+    "country": "Italy",
+    "city": "Venice",
+    "latitude": 45.4386,
+    "longitude": 12.3267,
+    "type": "A"
+  },
+  {
+    "country": "Italy",
+    "city": "Verona",
+    "latitude": -36.4667,
+    "longitude": 149.8167,
+    "type": "A"
+  },
+  {
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "latitude": 52.3747388,
+    "longitude": 4.7585312,
+    "type": "A"
+  },
+  {
+    "country": "Netherlands",
+    "city": "Rotterdam",
+    "latitude": 51.9167,
+    "longitude": 4.5,
+    "type": "B"
+  },
+  {
+    "country": "Republic of Ireland",
+    "city": "Rosslare",
+    "latitude": 52.2758,
+    "longitude": -6.3844,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Aberdeen",
+    "latitude": -32.1659,
+    "longitude": 150.89,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Aviemore",
+    "latitude": 57.2,
+    "longitude": -3.8333,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Cumbernauld",
+    "latitude": 55.95,
+    "longitude": -3.9833,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Dundee",
+    "latitude": -29.5667,
+    "longitude": 151.8333,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Dunfermline",
+    "latitude": 56.0833,
+    "longitude": -3.4667,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Edinburgh",
+    "latitude": -34.7462,
+    "longitude": 138.6375,
+    "type": "A"
+  },
+  {
+    "country": "Scotland",
+    "city": "Edinburgh Airport",
+    "latitude": 55.9488016,
+    "longitude": -3.3699811,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Falkirk",
+    "latitude": 56,
+    "longitude": -3.7667,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Glasgow",
+    "latitude": 55.8333,
+    "longitude": -4.25,
+    "type": "A"
+  },
+  {
+    "country": "Scotland",
+    "city": "Halbeath Interchange",
+    "latitude": -36.4667,
+    "longitude": 149.8167,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Inverkeithing",
+    "latitude": 56.0333,
+    "longitude": -3.3833,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Inverness",
+    "latitude": 57.4667,
+    "longitude": -4.2333,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Kinross",
+    "latitude": -32.7667,
+    "longitude": 151.75,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Perth",
+    "latitude": 56.3904303,
+    "longitude": -3.4843571,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Pitlochry",
+    "latitude": 56.7,
+    "longitude": -3.7167,
+    "type": "B"
+  },
+  {
+    "country": "Scotland",
+    "city": "Stirling",
+    "latitude": -37.4333,
+    "longitude": 147.75,
+    "type": "B"
+  },
+  {
+    "country": "Spain",
+    "city": "Barcelona",
+    "latitude": 41.374874,
+    "longitude": 2.1472633,
+    "type": "A"
+  },
+  {
+    "country": "Wales",
+    "city": "Aberystwyth",
+    "latitude": 52.4167,
+    "longitude": -4.0667,
+    "type": "B"
+  },
+  {
+    "country": "Wales",
+    "city": "Cardiff",
+    "latitude": 51.5022199,
+    "longitude": -3.2694491,
+    "type": "B"
+  },
+  {
+    "country": "Wales",
+    "city": "Carmarthen",
+    "latitude": 51.8592,
+    "longitude": -4.3117,
+    "type": "B"
+  },
+  {
+    "country": "Wales",
+    "city": "Cwmbran",
+    "latitude": 51.6531,
+    "longitude": -3.0267,
+    "type": "B"
+  },
+  {
+    "country": "Wales",
+    "city": "Lampeter",
+    "latitude": 52.1167,
+    "longitude": -4.0667,
+    "type": "B"
+  },
+  {
+    "country": "Wales",
+    "city": "Newport",
+    "latitude": 51.5742958,
+    "longitude": -3.0143871,
+    "type": "B"
+  },
+  {
+    "country": "Wales",
+    "city": "Pembroke Dock",
+    "latitude": 51.6919,
+    "longitude": -4.9508,
+    "type": "B"
+  },
+  {
+    "country": "Wales",
+    "city": "Swansea",
+    "latitude": 51.6255151,
+    "longitude": -3.9567731,
+    "type": "B"
+  }
+]

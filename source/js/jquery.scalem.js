@@ -42,6 +42,7 @@
         if ($oP[0].scrollHeight>$oP.height()) nRefWidth -= 17;
         nTargetWidth = nRefWidth * nRatio;
         // Append clone to body to get inline width
+        $o2.addClass("currentProjectH2");
         $o2.appendTo('body');
         nTextWidth = $o2.width();
         // Exit if something doesn't look right
@@ -55,7 +56,7 @@
           // (see http://jsperf.com/style-vs-csstext-vs-setattribute)
           o2.style.fontSize = i + 'px';
           if ($o2.width() / nRefWidth > nRatio) {
-            console.log("font size",i)
+            // console.log("font size",i)
             if (i>nMaxSize) {
               $o.css('font-size', nMaxSize + 'px');
             } else {

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Theme Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="css/jquery-ui.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/theme.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--    <script src="js/ie-emulation-modes-warning.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body role="document">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <button type="button" class="navbar-account">
+                    <img src="img/account.svg">
+                </button>
+                <a class="navbar-brand" href="#">
+                    <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 468.5 67.5" enable-background="new 0 0 468.5 67.5" xml:space="preserve">
+                        <path fill="#030167" d="M0,26.6c0-10,6.7-15.8,14.5-15.8c6,0,10.3,2.9,11.9,7h0.1c1.6-4.2,5.9-7,11.8-7c7.8,0,14.5,5.8,14.5,15.8
+	v24.8h-8.5V26.6c0-4.7-3.1-7.4-6.6-7.4c-4.1,0-7.1,2.4-7.1,8.6v23.5h-8.5V27.8c0-6.1-3-8.6-7.1-8.6c-3.5,0-6.6,2.7-6.6,7.4v24.7H0
+	V26.6" />
+                        <path fill="#030167" d="M89.3,27.5c-1.8-6.1-6.3-9.2-11.7-9.2c-5.4,0-9.8,3.3-11.2,9.2H89.3 M97.1,42.7c-4.7,6-11.3,9.6-18.4,9.6
+	c-13.8,0-21.8-10.4-21.8-20.8c0-10.5,8-20.8,21.8-20.8c8.3,0,20.5,6.8,20.5,22.2v1.6H66.4c0.5,6,6.1,10.4,12.1,10.4
+	c4.6,0,8.5-2.2,11.5-6.1L97.1,42.7z" />
+                        <path fill="#030167" d="M121.3,43.3c6.9,0,11.7-5.5,11.7-12.3c0-6.9-5.3-12.3-11.7-12.3c-6.6,0-11.9,5.5-11.9,12.2
+	C109.4,37.8,114.1,43.3,121.3,43.3 M141.1,46.9c0,13.1-10,20.6-20.7,20.6c-5.5,0-12.2-2.3-16.7-7.9l7-5.1c1.6,2.3,5.3,4.9,9.3,4.9
+	c8.6,0,13.1-5.6,13.1-11.7v-2.6c-3.6,4-7.7,6.1-13.5,6.1c-10.2,0-19.2-7.7-19.2-20.2c0-13,9.7-20.4,20.2-20.4c5.3,0,9.6,2,12.4,5.7
+	h0.1v-4.7h8V46.9z" />
+                        <path fill="#030167" d="M166.1,44.4c6.7,0,12.4-5.7,12.4-12.8c0-7.1-5.7-12.8-12.4-12.8c-6.9,0-12.6,5.7-12.6,12.8
+	C153.5,38.7,159.2,44.4,166.1,44.4 M178.2,46.5H178c-2.7,3.6-7.6,5.9-13,5.9c-13,0-20.5-10.6-20.5-20.8c0-9.7,8.1-20.9,21-20.9
+	c5.9,0,10.4,2.5,12.5,5.9h0.2v-4.8h8.5v39.6h-8.5V46.5z" />
+                        <path fill="#030167" d="M213.9,18.7c-7.1,0-12.3,5.5-12.3,12.8c0,7.3,5.2,12.8,12.3,12.8c7.1,0,12.4-5.5,12.4-12.8
+	C226.3,24.2,221,18.7,213.9,18.7 M193.1,0h8.5v16.6h0.1c2.1-3.3,7.4-5.9,12.9-5.9c10.3,0,20.6,7.6,20.6,20.8
+	c0,13.2-10.3,20.8-20.6,20.8c-5.5,0-10.9-2.6-12.9-5.9h-0.1v4.8h-8.5V0z" />
+                        <path fill="#030167" d="M238.7,11.8h8.5v22.2c0,5.8,4.2,10,9.5,10c5.3,0,9.6-4.2,9.6-10V11.8h8.5v22.9c0,11.1-8.7,17.7-18.1,17.7
+	c-9.4,0-18-6.6-18-17.7V11.8" />
+                        <path fill="#030167" d="M283.2,39.6c3.1,3.3,8,5.8,12.4,5.8c4.9,0,7.8-2.8,7.8-5c0-2.6-2.1-4-5.2-4.6l-4.8-0.9
+	c-11.1-2.1-14.2-5.6-14.2-11.3c0-6.7,5.6-12.9,15.5-12.9c5.5,0,10.3,1.6,15.7,5.5l-4.8,6c-4.2-3.5-7.8-4.4-10.7-4.4
+	c-3.7,0-7.2,1.8-7.2,5c0,2.4,1.9,3.6,5.1,4.2l8.6,1.6c7,1.3,10.5,4.7,10.5,10.6c0,5.8-4.8,13.3-16.8,13.3c-6.7,0-12.4-2.4-17.8-6.9
+	L283.2,39.6" />
+                        <path fill="#030167" d="M320.2,42.4c2.8,0,5,2.2,5,5s-2.2,5-5,5c-2.8,0-5-2.2-5-5S317.4,42.4,320.2,42.4" />
+                        <path fill="#030167" d="M361.3,24.7c-2.3-3.5-5.5-6-10.3-6c-7.5,0-12.9,5.7-12.9,12.8c0,7.1,5.4,12.8,12.9,12.8c4.6,0,8-2.4,10.3-6
+	l7.4,4.4c-3.5,5.6-10.2,9.6-17.7,9.6c-13.8,0-21.8-10.4-21.8-20.8c0-10.5,8-20.8,21.8-20.8c8.4,0,13.9,4,17.7,9.6L361.3,24.7" />
+                        <path fill="#030167" d="M390.5,44.4c7.5,0,12.8-5.7,12.8-12.8c0-7.1-5.4-12.8-12.8-12.8c-7.4,0-12.8,5.7-12.8,12.8
+	C377.6,38.7,383,44.4,390.5,44.4 M390.5,10.7c13.8,0,21.8,10.4,21.8,20.8c0,10.4-8,20.8-21.8,20.8c-13.8,0-21.8-10.4-21.8-20.8
+	C368.7,21.1,376.7,10.7,390.5,10.7" />
+                        <path fill="#030167" d="M415.7,26.6c0-10,6.7-15.8,14.5-15.8c6,0,10.3,2.9,11.8,7h0.2c1.5-4.2,5.9-7,11.8-7
+	c7.7,0,14.5,5.8,14.5,15.8v24.8H460V26.6c0-4.7-3-7.4-6.5-7.4c-4.1,0-7.1,2.4-7.1,8.6v23.5h-8.5V27.8c0-6.1-3-8.6-7.1-8.6
+	c-3.5,0-6.5,2.7-6.5,7.4v24.7h-8.5V26.6" />
+                    </svg>
+                </a>
+
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active" style="margin-left: auto;"><a href="#">Book</a></li>
+                    <li><a href="#about">Experience</a></li>
+                    <li><a href="#contact">Help</a></li>
+                    <li class="border-allowed" style="margin-left: auto;"><a href="#contact">Sign-in</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">UK <span class="caret"></span></a>
+                        <!--
+                        <ul class="dropdown-menu">
+                            <li><a href="#">UK</a></li>
+                                                        <li role="separator" class="divider"></li>
+                            <li><a href="#">US</a></li>
+                            <li><a href="#">France</a></li>
+                            <li><a href="#">Germany</a></li>
+                            <li><a href="#">Italy</a></li>
+                        </ul>
+-->
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <h1>Morning traveller,
+where would you 
+like to go?</h1>
+        <span></span>
+    </div>
+
+    <div class="container theme-showcase" role="main">
+
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation"><a href="#">Your recent searches<img src="img/recent-search.jpg"></a></li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-default departure"><span>Starting at</span>
+            <br/>
+            <p>Choose a departure</p>
+        </button>
+        <div class="geoloc" onclick="locate()"><img src="img/geoloc.svg"></div>
+        <button type="button" class="btn btn-lg btn-default destination" style="margin-top:15px" onclick="destination()"><span>Going to</span>
+            <br/>
+            <p>Choose destination</p>
+        </button>
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation"><a href="#">Live status updates <span class="badge">3</span></a></li>
+        </ul>
+
+    </div>
+    <div class="popover dest">
+        <div class="container" style="background-color: #2c287f;">
+
+            <div class="header">
+                <p>Going to</p>
+                <div class="close" onclick="destination()"></div>
+            </div>
+            <div class="right-inner-addon" style="padding:15px 0">
+                <i><img src="img/search.svg"></i>
+                <input type=search name=search placeholder="Search a city or post-code">
+            </div>
+        </div>
+        <ul class="menu">
+            <li style="width:25%; pointer-events:none; opacity:0">placeholder</li>
+            <li class="highlight">Near you</li>
+            <li class="next">Recent</li>
+            <li>Saved</li>
+            <li>Network</li>
+            <li style="width:25%; pointer-events:none; opacity:0">placeholder</li>
+        </ul>
+        <div class="overscroll" style="height: calc(100% - 219px);margin-top: 74px;">
+            <div class="container">
+
+                <ul class="results">
+                    <li>Bristol
+                        <br/><span>Aztec coach station</span>
+                    </li>
+                    <li>
+                        <div class="distance">0.1 mi</div>
+                        Brighton
+                        <br/><span>Queens Road Station</span>
+                    </li>
+                    <li>
+                        <div class="distance">0.2 mi</div>
+                        Bristol
+                        <br/><span>Any</span>
+                    </li>
+                </ul>
+                <ul class="results">
+                    <li>
+                        <p>Manchester</p>
+                        <span>Picadilly coach station</span></li>
+                    <li id="theone">
+                        <p>Amsterdam</p>
+                        <span>Amsterdam central station</span></li>
+                    <li>
+                        <p>Lille</p>
+                    </li>
+                </ul>
+                <ul class="results">
+                    <li>
+                        <p>Cardiff</p>
+                        <span>Picadilly coach station</span></li>
+                    <li>
+                        <p>Bristol</p>
+                        <span>Any</span></li>
+                </ul>
+                <ul class="results">
+                    <li class="noresult"><img src="img/noresult.jpg">
+                        <h3>No result Found</h3>
+                        <h5>Try a different search</h5></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container theme-showcase" role="secondary" style="opacity:0; height:0">
+        <h1><u>London</u> <span>to</span><br/> <u>Amsterdam</u></h1>
+        <div class="toggle">
+            <div class="element left">Single trip</div>
+            <div class="element right current">Return trip</div>
+            <div class="switch"></div>
+        </div>
+        <div class="box">
+            <div id="jrange" class="dates">
+                <input type="text" class="btn btn-lg btn-default half singleB" onclick="dateSingle()" id="date" placeholder="Select date" />
+                <label for="date" class="otherLabel">Leaving</label>
+                <input type="text" class="btn btn-lg btn-default half returnB" onclick="dateDouble()" id="date" placeholder="Select date" />
+                <label for="date" class="otherLabel">Returning</label>
+            </div>
+        </div>
+        <button type="button" class="btn btn-lg btn-default activated" style="float:right; margin-bottom:15px"><span>Travellers</span>
+            <br/>
+            <p>2 adults</p>
+        </button>
+        <button type="button" class="btn btn-lg btn-default"><span>Discount</span>
+            <br/>
+            <p>Add a discount card</p>
+        </button>
+        <div class="switchname">Assisted travel</div>
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+            <label class="onoffswitch-label otherLabel" for="myonoffswitch">No</label>
+        </div>
+        <form>
+            <input type="text" maxlength="20" placeholder="Add a promo code" id="promo" />
+            <label for="promo" class="otherLabel" style="margin-top:-75px; left: 40px;">Promotion code</label>
+        </form>
+        <ul class="nav nav-pills" role="tablist" style="clear: both">
+            <li role="presentation">
+                <a href="#"><img src="img/alert.svg">Delays expected</a>
+            </li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-primary" style="margin-bottom:20px" onclick="time()">Return tickets from £2</button>
+        <div class="popover date">
+            <div class="container">
+                <div class="header">
+                    <p>Select dates</p>
+                    <div class="close" onclick="dateSingle(this)"></div>
+                </div>
+            </div>
+            <ul class="weekdays">
+                <li><span>Sun</span></li>
+                <li><span>Mon</span></li>
+                <li><span>Tue</span></li>
+                <li><span>Wed</span></li>
+                <li><span>Thu</span></li>
+                <li><span>Fri</span></li>
+                <li><span>Sat</span></li>
+            </ul>
+            <div class="overscroll" style="height:calc(100% - 118px)">
+                <div class="container">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+            <div class="container" style="position:absolute;margin-top: -78px;width:100%">
+                <button type="button" class="btn btn-lg btn-primary activated" onclick="dateSingle()">Continue</button>
+            </div>
+        </div>
+        <div class="popover time">
+            <img class="spin" src="img/tail-spin.svg">
+            <div class="container">
+                <div class="header">
+                    <p>Outbound ticket</p>
+                    <div class="close" onclick="time(this)"></div>
+                    <div class="filters" onclick="filters()"><img src="img/filters.svg"></div>
+
+                </div>
+            </div>
+            <div class="overscroll" style="height:calc(100% - 79px)">
+                <div class="controls">
+                    <div id="left"></div>
+                    <div id="right"></div>
+                </div>
+                <ul class="datepicker">
+                    <li style="width:25%; pointer-events:none; opacity:0">placeholder</li>
+                    <li class="highlight">
+                        <div class="date">Fri. 18th Apr.
+                            <br/><span>From £2*</span></div>
+                    </li>
+                    <li class="next">
+                        <div class="date">Sat. 19th Apr.
+                            <br/><span>From £2*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Sun. 20th Apr.
+                            <br/><span>From £4*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Mon. 21th Apr.
+                            <br/><span>From £3*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Tue. 22th Apr.
+                            <br/><span>From £2*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Wed. 23th Apr.
+                            <br/><span>From £2*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Thu. 24th Apr.
+                            <br/><span>From £5*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Fri. 25th Apr.
+                            <br/><span>From £3*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Sat. 26th Apr.
+                            <br/><span>From £8*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Sun. 27th Apr.
+                            <br/><span>From £12*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Mon. 28th Apr.
+                            <br/><span>From £3*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Tue. 29th Apr.
+                            <br/><span>From £2*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Wed. 30th Apr.
+                            <br/><span>From £5*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Thur. 1st May
+                            <br/><span>From £4*</span></div>
+                    </li>
+                    <li>
+                        <div class="date">Fri. 2nd May
+                            <br/><span>From £2*</span></div>
+                    </li>
+                    <li style="width:25%; pointer-events:none; opacity:0">placeholder</li>
+                </ul>
+                <div class="cards">
+                    <ul>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                                <div class="travellers">For 2 travellers</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                        <li>
+                            <div class="deptime">
+                                <p>07:30 <span> <img src="img/arrowright.svg"> </span> 17:32</p>
+                                <div class="price">£4.00</div>
+                                <div class="duration">7h 30min</div>
+                                <div class="transfer">1 transfer</div>
+                            </div>
+
+                            <div class="hero">
+                                <p>Megabus UK
+                                    <br/><span>8 seats left</span></p>
+                            </div>
+                            <div class="facilities"><img src="img/wifi.svg"><img src="img/handi.svg"><img src="img/plug.svg"></div>
+                            <div class="timetable">
+                                <div class="departure">07:30
+                                    <br/><span>London, Victoria</span></div>
+                                <div class="change">10:02
+                                    <br/><span>Paris Airport</span></div>
+                                <div class="destination">17:32
+                                    <br/><span>Amsterdam, Sloterdijk</span></div>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary">Select ticket</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="popover filters">
+            <div class="container" style="background-color: #2c287f;">
+                <div class="header">
+                    <p>Filters</p>
+                    <div class="close" onclick="filters()"></div>
+                </div>
+            </div>
+            <div class="overscroll" style="height:calc(100% - 68px)">
+                <div class="container">
+
+                    <h2>Find me the...</h2>
+                    <div class="toggle">
+                        <div class="element left current">Fastest</div>
+                        <div class="element right">Cheapest</div>
+                        <div class="switch"></div>
+                    </div>
+                    <h2>coaches that are...</h2>
+                    <div class="toggle">
+                        <div class="element left current">Direct</div>
+                        <div class="element right">Any route</div>
+                        <div class="switch"></div>
+                    </div>
+                    <h2>and include...</h2>
+                    <div class="toggle">
+                        <div class="element left current">All services</div>
+                        <div class="element right">Only sleeper</div>
+                        <div class="switch"></div>
+                    </div>
+                    <h2>between these times</h2>
+                    <div class="range">
+                        <p>
+                            <input type="text" id="start" readonly style="border:none; box-shadow:none">
+                            <input type="text" id="end" readonly style="border:none; box-shadow:none">
+                        </p>
+                        <div id="slider-range"></div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="container">
+                        <p class="accordionToggle" onclick="expand($(this))">More options</p>
+                        <form>
+                            <fieldset>
+                                <legend>From...</legend>
+                                <input type="radio" name="from" id="any" value="any" checked>
+                                <label for="any">
+                                    <p>Bristol</p>
+                                    <span>Any</span></label>
+                                <br>
+                                <input type="radio" name="from" id="aztec" value="aztec">
+                                <label for="aztec">
+                                    <p>Bristol</p>
+                                    <span>Aztec</span></label>
+                                <br>
+                                <input type="radio" name="from" id="cribbs" value="cribbs">
+                                <label for="cribbs">
+                                    <p>Bristol</p>
+                                    <span>Cribbs causeway</span></label>
+                                <br>
+                                <input type="radio" name="from" id="filton" value="filton">
+                                <label for="filton">
+                                    <p>Bristol</p>
+                                    <span>Filton</span></label>
+                                <br>
+                                <input type="radio" name="from" id="uwe" value="uwe">
+                                <label for="uwe">
+                                    <p>Bristol</p>
+                                    <span>UWE</span></label>
+                                <br>
+                                <input type="radio" name="from" id="airport" value="airport">
+                                <label for="airport">
+                                    <p>Bristol airport</p>
+                                </label>
+                            </fieldset>
+                            <fieldset>
+                                <legend>To...</legend>
+                                <input type="radio" name="to" id="any2" value="any" checked>
+                                <label for="any2">
+                                    <p>London</p>
+                                    <span>Any</span></label>
+                                <br>
+                                <input type="radio" name="to" id="victoria" value="victoria">
+                                <label for="victoria">
+                                    <p>London</p>
+                                    <span>Victoria coach station</span></label>
+                                <br>
+                                <input type="radio" name="to" id="meads" value="meads">
+                                <label for="meads">
+                                    <p>London</p>
+                                    <span>Temple Meads train station</span></label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="container">
+                    <button type="button" class="btn btn-lg btn-primary" style="margin:20px 0;">
+                        See 3 results
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+    <script src="https://crypto-js.googlecode.com/svn/tags/3.1.2/src/core.js"></script>
+    <script src="https://crypto-js.googlecode.com/svn/tags/3.1.2/src/md5.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

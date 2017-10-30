@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Nexa Heavy';
+  src: url('../fonts/NexaHeavy.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/NexaHeavy.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/NexaHeavy.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/NexaHeavy.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/NexaHeavy.svg#47998cb5524d98142a3c228578718f58') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Nexa Regular';
+  src: url('../fonts/NexaRegular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/NexaRegular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/NexaRegular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/NexaRegular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/NexaRegular.svg#4e334cde95716905ea5c4a74d072e8b7') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Nexa Bold';
+  src: url('../fonts/Nexa-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Nexa-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Nexa-Bold.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Nexa-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Nexa-Bold.svg#47bebd947bc9776ca33e78f4df905448') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  700;
+}
+
+
+@font-face {
+  font-family: 'Nexa Light';
+  src: url('../fonts/Nexa-Light.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Nexa-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Nexa-Light.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Nexa-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Nexa-Light.svg#1bdbacd91a1c2150ba7c352787cb2ab3') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  200;
+}

@@ -1,0 +1,93 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<title>Clive Christian</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/CSSPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/easing/EasePack.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenLite.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<script src="js/site.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+ 
+	<body>
+		<div class="scent_wheel">
+			<div class="navigation">
+				<a href="#" class="back">Back</a>
+					<ul>
+						<li>Top Notes</li>
+						<li>Heart Notes</li>
+						<li>Base Notes</li>
+					</ul>
+				<a href="#" class="forward">Forward"</a>
+			</div>
+			<div class="descriptions">
+				<div class="section_container">
+					<section>
+						<div class="text">
+							<h2 class="gold">Base Notes</h2>
+							<p>The base notes of Sandalwood, Cedarwood, Guaiac Wood, Patchouli, Erogen Musk and, most interestingly, Oak Moss add depth and complexity, making it an extraordinarily
+compelling perfume.</p>
+						</div>
+					</section>
+					<section>
+						<div class="text">
+							<h2 class="gold">Heart Notes</h2>
+							<p>Most interesting of all is Clary Sage, the sacred herb that Emperor Nero used to sprinkle over his troops before they went into battle, so invigorating and energizing did he deem it to be. Clary Sage reminds us of Neroli, Lavender, Musk and Ambergris.</p>
+						</div>
+					</section>
+					<section>
+						<div class="text">
+							<h2 class="gold">Top Notes</h2>
+							<p>Bergamot, ginger, lemon,<br>coriander, tangerine,<br>blueberry. </p>
+						</div>
+					</section>
+					<section>
+						<div class="text active">
+							<h2 class="small gold">The notes</h2>
+							<h2 class="white">Discover the <wbr>scent as it evolves through time.</h2>
+							<p><a href="#" class="discover">Discover</a></p>
+						</div>
+					</section>
+				</div>
+			</div>
+			<svg viewBox="0 0 1000 1000" class="progress_container" >
+				<pattern  width="1000" height="1000" patternUnits="userSpaceOnUse" id="gold_pattern" viewBox="0 0 1000 1000" style="overflow:visible;">
+					<image style="overflow:visible;" width="1500" height="1000" xlink:href="img/gold.jpg" transform="rotate(90 500 500)"></image>
+				</pattern>
+				<circle cx="500" cy="500" r="450" stroke="white" stroke-width="1" fill="transparent" class="background"/>
+				<circle cx="500" cy="500" r="450" stroke="url(#gold_pattern)" stroke-width="4" fill="transparent" class="progress transition" transform="rotate(-90 500 500)" stroke-linecap="round"/>
+				<g class="section">
+					<circle cx="500" cy="50" r="8" stroke="white" stroke-width="0" fill="white" class="point" data-section="1"/>
+					<circle cx="889.7114317029974" cy="725" r="8" stroke="white" stroke-width="0" fill="white" class="point" data-section="2"/>
+					<circle cx="110.2885682970026" cy="725" r="8" stroke="white" stroke-width="0" fill="white" class="point" data-section="3"/>
+				</g>
+			</svg>
+			<div class="backgrounds">
+				<div class="section_container">
+					<section>
+						<img src="img/introduction.jpg" width="95vw">
+					</section>
+					<section>
+						<img src="img/top-notes.jpg">
+					</section>
+					<section>
+						<img src="img/heart-notes.jpg">
+					</section>
+					<section>
+						<img src="img/base-notes.jpg">
+					</section>
+				</div>
+			</div>
+		</div>
+		<script>
+		if (location.host.indexOf("test.somethingyoulove.com")<0) {
+			 document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+		}
+	</script>
+	</body>
+
+	</html>

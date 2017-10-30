@@ -1,0 +1,175 @@
+* {
+	font-family:"AudiType";
+	-webkit-font-smoothing: antialiased;
+	
+}
+h1, h2, h3, h4 {
+	font-family:"AudiTypeExtended";
+}
+h3, h4 {
+	font-weight:normal;
+}
+p, td, li {
+	color:#fff;
+}
+canvas {
+	/*-webkit-transform:scale(-1,1);*/
+}
+* {
+	margin:0;
+}
+body {
+	overflow:hidden;
+	background-color:#545e6c;
+	background-image:url(../3d/css/background.png);
+	background-size:100vw 70vh;
+	background-position: top;
+	background-repeat:no-repeat;
+	transition:background-color 1s;
+
+}
+.content {
+	
+}
+.controls {
+	position:fixed;
+	bottom:55px;
+	z-index:21;
+	width:100%;
+	left:0;
+	/*-webkit-transform:scale(-1,1);*/
+}
+.controls ul {
+	position:relative;
+	padding:45px 0 0;
+	border-top:2px solid rgba(255,255,255,0.2);
+	left:50%;
+	-webkit-transform:translateX(-50%);
+	-moz-transform:translateX(-50%);
+	display:inline-block;
+	-webkit-user-select: none; 
+	-moz-user-select: none; 
+	user-select: none; 
+}
+.controls li {
+	list-style:none;
+	margin:0 20px 0 0;
+	float:left;
+	display:inline-block;
+	width:280px;
+	color:rgba(255,255,255,0.25);
+	-webkit-transform:scale(0.9);
+	-webkit-transition:all 0.2s;
+}
+.controls li:last-child {
+	margin-right:0;
+}
+.controls li strong {
+	color:rgba(255,255,255,0.5);
+	-webkit-transition:color 0.2s;
+}
+.controls li div {
+	height:40px;
+	width:40px;
+	margin-right:10px;
+	display:block;
+	float:left;
+	border-radius:3px;
+	position:relative;
+	top:-2px;
+}
+.controls li.active  {
+	color:rgba(255,255,255,0.5);
+	-webkit-transform:scale(1,1);
+}
+.controls li.active strong {
+	color:rgba(255,255,255,1);
+}
+.background {
+	position:fixed;
+	top:36%;
+	left:35%;
+	pointer-events:none;
+	-webkit-user-select: none; 
+	-moz-user-select: none; 
+	user-select: none; 
+	/*-webkit-transform:scale(-1,1);*/
+}
+.content {
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:10;
+}
+.content::before {
+	content:" ";
+	background-image:url(../3d/css/foreground.png);
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position: center center;
+	position:absolute;
+	top:0;
+	left:0;
+	pointer-events: none;
+	z-index:11;
+	width:100%;
+	height:100%;
+}
+.fade {
+	position:fixed;
+	z-index:40;
+	pointer-events: none;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	display:block;
+	opacity:1;
+	background-color:black;
+	transition:opacity 2s 0.5s ease-in-out;
+	/*-webkit-transform:scale(-1,1);*/
+}
+.content {
+	cursor:-webkit-grab;
+}
+.content:active {
+	cursor:-webkit-grabbing;
+}
+h1 {
+	color:#fff;
+	font-size:20vh;
+	font-weight:bold;
+	-webkit-transform:translate3d(-50%,50%,0);
+	-moz-transform:translate3d(-50%,50%,0);
+	transition:all 3s cubic-bezier(0,.73,.21,1);
+}
+h1.active {
+	-webkit-transform:translate3d(-50%,-50%,0);
+	-moz-transform:translate3d(-50%,-50%,0);
+}
+h2 {
+	color:#fff;
+	text-align:center;
+	top:45%;
+	position:relative;
+	opacity:0;
+	-webkit-transform:translate3d(0,100%,0);
+	-moz-transform:translate3d(0,100%,0);
+	transition:all 0.7s cubic-bezier(.76,.02,1,.19);
+}
+h2.active {
+	opacity:1;
+	transition:all 1s cubic-bezier(0,.77,.27,1);
+	-webkit-transform:translate3d(0,-50%,0);
+	-moz-transform:translate3d(0,-50%,0);
+}
+.carColor {
+	font-size:14px;
+	font-weight:normal;
+	color:rgba(255,255,255,.5);
+}
+.carColor strong {
+	cursor:pointer;
+	font-family:"AudiTypeExtended";
+	color:rgba(255,255,255,1);
+}

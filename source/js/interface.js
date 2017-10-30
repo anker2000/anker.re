@@ -16,13 +16,13 @@
 
 $(function() {
 	init();
+	$('.projects').panelSnap();
 	// setTimeout(function() {
 	// 	$("video").each(function() {
 	// 		this.play();
 	// 	});
 	// },2000);
 });
-
 // if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 var camera, scene, stage, renderer;
@@ -57,12 +57,7 @@ function getProximity(sectionNo) {
 	return (sectionNo) - (localScroll * sections.length);
 }
 function scrollHandler() {
-	if ($(".projects")[0].scrollHeight>$(".projects")[0].scrollWidth) {
-		scrollPercentage = $(".projects").scrollTop() / ($(".projects")[0].scrollHeight-$(window).innerHeight());	
-	} else {
-		scrollPercentage = $(".projects").scrollLeft() / ($(".projects")[0].scrollWidth-$(window).innerWidth());
-	}
-	
+	scrollPercentage = $(".projects").scrollTop() / ($(".projects")[0].scrollHeight-$(window).innerHeight());	
 	progression = scrollPercentage * sections.length;
 
 	activeSection = Math.floor(progression);
@@ -72,8 +67,14 @@ function scrollHandler() {
 		for (i=0;i<sections.length;i++) {
 			if (i==activeSection) {
 				sections[activeSection].start();
+				for (no=0;no<sections[i].tween.length;no++) {
+					sections[i].tween[no].resume();
+				}
 			} else {
 				sections[i].end();
+				for (no=0;no<sections[i].tween.length;no++) {
+					sections[i].tween[no].pause();
+				}
 			}
 		}
 	}
@@ -85,12 +86,12 @@ function scrollHandler() {
 		if (sections[i].proximity>-0.75 && sections[i].proximity<0.75) {
 			sections[i].visible = true;
 		} else {
-			sections[i].visible = false;
+			sections[i].visible = true;
 		}
 	}
 	prevActiveSection = activeSection;
 	var scrollTarget = 0-scrollPercentage*(screenWidthFromDistance(200)*(sections.length-1));
-	TweenMax.to(stage.position, 0.75, {ease: Power4.easeOut, x: scrollTarget});
+	TweenMax.to(stage.position, 0.75, {ease: Power4.easeOut, y: -1*scrollTarget});
 }
 function setEnvironment() {
 	var pixelRatio = window.devicePixelRatio;
@@ -100,15 +101,10 @@ function setEnvironment() {
 
 	camera = new THREE.PerspectiveCamera( setFOV(), window.innerWidth / window.innerHeight, 1, 5000 );
 	camera.position.z = 120;
-	// cameraTrolley.position.z=120;
-	console.log(camera)
-
 	scene = new THREE.Scene();
 	stage = new THREE.Group();
 	scene.add(stage);
 	$(".projects").bind("scroll",scrollHandler);
-
-
 	
 	var myAntialias=false;
 	if (pixelRatio>1) {
@@ -146,7 +142,7 @@ function onWindowResize() {
 }
 
 var mousePosition = { x:0, y:0 };
-document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+// document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 var storedMouse = { x:0, y:0 };
 function onDocumentMouseMove( event ) {
@@ -161,25 +157,7 @@ function onDocumentMouseMove( event ) {
 	mouseX = windowHalfX - event.clientX;
 	mouseY = windowHalfY - event.clientY;
 	prevMouseX=mouseX;
-	TweenMax.to(mousePosition, 2, {x: mouseX, y:mouseY, ease: Power1.easeOut});
-	// $(".current_project.active h2").each(function() {
-	// 	// console.log($(this).find("a")[0].getBoundingClientRect());
-	// 	var bounds = $(this).find("a")[0].getBoundingClientRect();
-	// 	// var bounds = {
-	// 	// 	x1: $(this).offset().left,
-	// 	// 	y1: $(this).offset().top+30,
-	// 	// 	x2: $(this).offset().left+$(this).innerWidth(),
-	// 	// 	y2: $(this).offset().top+$(this).innerHeight()+30
-	// 	// }
-	// 	// if (event.clientX>bounds.x1 && event.clientX<bounds.x2 && event.clientY>bounds.y1 && event.clientY<bounds.y2) {
-	// 	if (event.clientX>bounds.left && event.clientX<bounds.right && event.clientY>bounds.top && event.clientY<bounds.bottom) {
-	// 		$(this.parentNode).addClass("hover");
-	// 		$(this.parentNode.ref).find("a").addClass("clickable");
-	// 	} else {
-	// 		$(this.parentNode).removeClass("hover");
-	// 		$(this.parentNode.ref).find("a").removeClass("clickable");
-	// 	}
-	// })
+	TweenMax.to(mousePosition, 2, {x: 0, y:mouseY, ease: Power1.easeOut});
 }
 
 TweenMax.ticker.addEventListener("tick",animate);

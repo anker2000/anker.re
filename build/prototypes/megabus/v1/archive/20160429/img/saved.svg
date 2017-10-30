@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 12 20" style="enable-background:new 0 0 12 20;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#CCCCCC;}
+	.st1{display:none;}
+	.st2{display:inline;opacity:0.5;}
+	.st3{fill:#2AACE3;}
+</style>
+<g id="ICON">
+	<g>
+		<path class="st0" d="M9.1,2C9.6,2,10,2.5,10,3.1v13.6l-2.7-2.4L6,13.1l-1.3,1.2L2,16.6V3.1C2,2.5,2.4,2,2.9,2H9.1 M9.1,0H2.9
+			C1.3,0,0,1.4,0,3.1v16C0,19.6,0.4,20,0.9,20c0.2,0,0.4-0.1,0.6-0.2l4.5-4l4.5,4c0.2,0.2,0.4,0.2,0.6,0.2c0.5,0,0.9-0.4,0.9-0.9
+			v-16C12,1.4,10.7,0,9.1,0L9.1,0z"/>
+	</g>
+</g>
+<g id="PADDING" class="st1">
+	<g class="st2">
+		<rect x="-6" y="-2" class="st3" width="2" height="24"/>
+		<rect x="-4" y="20" class="st3" width="22" height="2"/>
+		<rect x="-4" y="-2" class="st3" width="22" height="2"/>
+		<rect x="16" y="-1.7" class="st3" width="2" height="22.4"/>
+	</g>
+</g>
+</svg>

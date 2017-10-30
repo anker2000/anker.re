@@ -1,0 +1,22 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+	<defs>
+		<style>
+			.cls-1 {
+				opacity:0.1;
+				transform-origin:50% 50%;
+			}
+			.cls-2 {
+				fill:#222288;
+				fill-rule:evenodd;
+			}
+			.cls-3 {
+				fill:#fff;
+			}
+			
+		</style>
+	</defs>
+	<title>maps-marker-city-selected</title>
+
+	<path class="cls-2" d="M17,26a9,9,0,1,1,9-9A9.01015,9.01015,0,0,1,17,26Z"/>
+	<path class="cls-3" d="M17,9a8,8,0,1,1-8,8,8.00907,8.00907,0,0,1,8-8m0-2A10,10,0,1,0,27,17,10,10,0,0,0,17,7h0Z"/>
+</svg>

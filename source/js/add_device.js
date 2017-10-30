@@ -1,4 +1,4 @@
-function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionCube, video, loader, color_dark, color_light) {
+function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionCube, loader, color_dark, color_light) {
 
 	var deferred = new $.Deferred();
 	var phoneGroup = new THREE.Group();
@@ -88,7 +88,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 	// texture.wrapS = THREE.RepeatWrapping;
 	// texture.wrapT = THREE.RepeatWrapping;
 	// texture.repeat.set( 12, 12 );
-
+console.log("rotation y",rotation.y)
 	
     var material = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xffffff, metalness:0.5, roughness:1});
 
@@ -111,16 +111,21 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 			// object.rotation.y=de2ra(180);
 
 			object.castShadow=true;
+			material.shininess = 0.2;
 			object.traverse( function ( child ) {
 		        // console.log("screen",object);
+		        if ( child instanceof THREE.Mesh ) {
+		            child.geometry.computeVertexNormals();
+		        }
 		        object.material.side=THREE.DoubleSide;
 		        var color_dark = {
-		        	r:20,
-		        	g:20,
-		        	b:20
+		        	r:10,
+		        	g:10,
+		        	b:10
 		        }
 		        var color_light = color_dark;
 				macbookScreenGroup.add( object );
+		        
 		    });
 		    console.log("loaded screen back 1");
 		    loader.load(
@@ -176,7 +181,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 					loader.load(
 						'models/keyboard.json',
 						function ( geometry, materials ) {
-							var bodyMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xFFFFFF, metalness:0.2, roughness:1});
+							var bodyMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xaaaaaa, metalness:0.2, roughness:1});
 							var object = new THREE.Mesh( geometry, bodyMaterial );
 							object.position.x=-0.5;
 							object.castShadow=true;
@@ -231,14 +236,14 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 											
 											object.castShadow=true;
 											var color_dark = {
-												r: 15,
-												g: 15,
-												b: 15
+												r: 0,
+												g: 0,
+												b: 0
 											}
 											var color_light = {
-												r:25,
-												g:25,
-												b:25
+												r:15,
+												g:15,
+												b:15
 											};
 									        
 								        	object.material.side=THREE.DoubleSide;
@@ -259,6 +264,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 											macbookGroup.position.x=position.x;
 											macbookGroup.rotation.x = rotation.x;
 											macbookGroup.rotation.y = rotation.y;
+											console.log("rotation y",rotation.y)
 											macbookGroup.rotation.z = rotation.z;
 											macbookGroup.screen = macbookPivot;
 											// screenMaterial.opacity=0;

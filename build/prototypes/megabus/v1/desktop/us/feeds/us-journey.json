@@ -1,0 +1,338 @@
+[
+	{
+		"from":"New York",
+		"to":"Albany",
+		"stops":[
+			{
+				"city":"Ridgewood"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Amherst",
+		"stops":[
+			{
+				"city":"Hartford"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Athens",
+		"stops":[
+			{
+				"city":"Baltimore"
+			},{
+				"city":"Washington DC"
+			},{
+				"city":"Richmond"
+			},{
+				"city":"Durham"
+			},{
+				"city":"Charlotte"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Atlanta",
+		"stops":[
+			{
+				"city":"Philadelphia"
+			},{
+				"city":"Baltimore"
+			},{
+				"city":"Washington DC"
+			},{
+				"city":"Christiansburg"
+			},{
+				"city":"Knoxville"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Atlantic City"
+	},{
+		"from":"New York",
+		"to":"Baltimore",
+		"stops":[
+			{
+				"city":"Philadelphia"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Binghamton"
+	},{
+		"from":"New York",
+		"to":"Boston"
+	},{
+		"from":"New York",
+		"to":"Buffalo",
+		"stops":[
+			{
+				"city":"Syracuse"
+			},{
+				"city":"Rochester"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Burlington",
+		"stops":[
+			{
+				"city":"Hartford"
+			},{
+				"city":"Amherst"
+			},{
+				"city":"Montpelier"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Charlotte",
+		"stops":[
+			{
+				"city":"Baltimore"
+			},{
+				"city":"Washington DC"
+			},{
+				"city":"Richmond"
+			},{
+				"city":"Durham"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Chicago",
+		"stops":[
+			{
+				"city":"State College"
+			},{
+				"city":"Cleveland"
+			},{
+				"city":"Toledo"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Christiansburg",
+		"stops":[
+			{
+				"city":"Philadelphia"
+			},{
+				"city":"Baltimore"
+			},{
+				"city":"Washington DC"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Cleveland",
+		"stops":[
+			{
+				"city":"State College"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Columbia",
+		"stops":[
+			{
+				"city":"Baltimore"
+			},{
+				"city":"Washington DC"
+			},{
+				"city":"Richmond"
+			},{
+				"city":"Durham"
+			},{
+				"city":"Fayetteville"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Dartmouth UMass",
+		"stops":[
+			{
+				"city":"Providence"
+			},{
+				"city":"Fall River"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Durham",
+		"stops":[
+			{
+				"city":"Baltimore"
+			},{
+				"city":"Washington DC"
+			},{
+				"city":"Richmond"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Fairhaven/New Bedford",
+		"stops":[
+			{
+				"city":"Providence"
+			},{
+				"city":"Fall River"
+			},{
+				"city":"Dartmouth Umass"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Fall River",
+		"stops":[
+			{
+				"city":"Providence"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Fayetteville",
+		"stops":[
+			{
+				"city":"Baltimore"
+			},{
+				"city":"Washington DC"
+			},{
+				"city":"Richmond"
+			},{
+				"city":"Durham"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Hartford"
+	},{
+		"from":"New York",
+		"to":"Kingston URI",
+		"stops":[
+			{
+				"city":"New Haven"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Knoxville",
+		"stops":[
+			{
+				"city":"Philadelphia"
+			},{
+				"city":"Baltimore"
+			},{
+				"city":"Washington DC"
+			},{
+				"city":"Christiansburg"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Montpelier",
+		"stops":[
+			{
+				"city":"Hartford"
+			},{
+				"city":"Amherst"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"New Brunswick"
+	},{
+		"from":"New York",
+		"to":"New Haven"
+	},{
+		"from":"New York",
+		"to":"Newark"
+	},{
+		"from":"New York",
+		"to":"Newport"
+	},{
+		"from":"New York",
+		"to":"Newton"
+	},{
+		"from":"New York",
+		"to":"Philadelphia"
+	},{
+		"from":"New York",
+		"to":"Pittsburgh",
+		"stops":[
+			{
+				"city":"State College"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Princeton",
+		"stops":[
+			{
+				"city":"New Brunswick"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Providence"
+	},{
+		"from":"New York",
+		"to":"Richmond",
+		"stops":[
+			{
+				"city":"Baltimore"
+			},{
+				"city":"Washington DC"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Rochester",
+		"stops":[
+			{
+				"city":"Syracuse"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"State College"
+	},{
+		"from":"New York",
+		"to":"Syracuse"
+	},{
+		"from":"New York",
+		"to":"Toledo",
+		"stops":[
+			{
+				"city":"State College"
+			},{
+				"city":"Cleveland"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Toronto",
+		"stops":[
+			{
+				"city":"Syracuse"
+			},{
+				"city":"Rochester"
+			},{
+				"city":"Buffalo"
+			}
+		]
+	},{
+		"from":"New York",
+		"to":"Washington DC",
+		"stops":[
+			{
+				"city":"Philadelphia"
+			},{
+				"city":"Baltimore"
+			},{
+				"city":"Paris"
+			}
+		]
+	}
+]

@@ -1,0 +1,141 @@
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>SWTrains</title>
+		<meta charset="UTF-8">
+		<link href='http://fonts.googleapis.com/css?family=Roboto:700,500,400,300,100' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel="apple-touch-icon" href="img/icon-swtrains.png?v=1">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/site.js?2"></script>
+		<script src="js/jquery.textfill.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css?1">
+	</head>
+
+	<body>
+		<div class="setup_commute">
+			<header class="controls">
+				<span class="burger"><img src="img/bg-burger.svg" width="80" height="55"></span>
+			</header>
+			<div class="container-fluid outer">
+				<div class="splash screen">
+					<div class="flex">
+						<img src="img/logo.svg" width="70%" class="logo opacityZero">
+						<img src="img/gfx_splash.svg" width="75%" class="bump opacityZero">
+					</div>
+				</div>
+				<div class="locating screen">
+					<div class="message opacityZero">
+						<h1>Locating the nearest station</h1>
+						<p>(You can change this whenever you want)</p>
+					</div>
+					<div class="radar opacityZero"></div>
+					<div class="station">Oxshott</div>
+				</div>
+				<div class="from station_info screen">
+					<div class="date opacityZero">Today</div>
+					<br style="clear:both;"><div class="station">From Oxshott</div><br style="clear:both;">
+					<button class="opacityZero choose_destination no_delay_button">Choose Destination</button>
+				</div>
+				<div class="screen search_station">
+					<div class="where_to">Where to?</div>
+					<div class="help">Station, street or post code</div>
+					<input type="search" class="station" name="search" placeholder="Search">
+					<div class="results">
+						<div class="title">Nearby stations:</div>
+						<ul class="list">
+							<li>No results</li>
+						</ul>
+					</div>
+				</div>
+				<div class="home screen">
+					<div class="top">
+						<div class="date opacityZero">Today</div>
+						<br style="clear:both;"><div class="station opacityZero">From Oxshott</div>
+						<div class="clock_slider topslider opacityZero">
+							<div class="options">	
+								<span><time class="bucket" datetime="2015-07-23 05:55:00" data-message="3"><span class="time">05:55</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 06:30:00" data-message="3"><span class="time">06:30</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 07:05:00" data-message="3"><span class="time">07:05</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 07:40:00" data-message="3"><span class="time">07:40</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 08:15:00" data-message="3"><span class="time">08:15</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 08:50:00" data-message="3"><span class="time">08:50</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 09:25:00" data-message="3"><span class="time">09:25</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 10:00:00" data-message="3"><span class="time">10:00</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 10:35:00" data-message="3"><span class="time">10:35</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 11:10:00" data-message="3"><span class="time">11:10</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 11:45:00" data-message="3"><span class="time">11:45</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 12:20:00" data-message="3"><span class="time">12:20</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 12:55:00" data-message="3"><span class="time">12:55</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 13:30:00" data-message="3"><span class="time">13:30</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 14:05:00" data-message="2"><span class="time">14:05</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 14:40:00" data-message="2"><span class="time">14:40</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 15:15:00" data-message="2"><span class="time">15:15</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 15:50:00" data-message="2"><span class="time">15:50</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 16:25:00" data-message="2"><span class="time">16:25</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 17:00:00" data-message="2"><span class="time">17:00</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 17:35:00" data-message="2"><span class="time">17:35</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 18:10:00" data-message="2"><span class="time">18:10</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 18:45:00" data-message="2"><span class="time">18:45</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 19:20:00" data-message="2"><span class="time">19:20</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 19:55:00" data-message="2"><span class="time">19:55</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 20:30:00" data-message="2"><span class="time">20:30</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 21:05:00" data-message="2"><span class="time">21:05</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 21:40:00" data-message="2"><span class="time">21:40</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 22:15:00" data-message="2"><span class="time">22:15</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 22:50:00" data-message="2"><span class="time">22:50</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-23 23:25:00" data-message="2"><span class="time">23:25</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-24 00:00:00" data-message="2"><span class="time">00:00</span><div class="message"></div></time></span><span><time class="bucket" datetime="2015-07-24 00:35:00" data-message="2"><span class="time">00:35</span><div class="message"></div></time></span>							</div>
+						</div>
+						<div class="info depart">
+							<span class="platform"></span>
+							<span class="delay"></span>
+						</div>
+					</div>
+					<div class="bottom">
+							<div class="station opacityZero">To Vauxhall</div>
+						<div class="clock_slider bottomslider opacityZero">
+							<div class="options">	
+								<span><time class="bucket" datetime="06:31:00"><span class="time">06:31</span></time></span><span><time class="bucket" datetime="07:06:00"><span class="time">07:06</span></time></span><span><time class="bucket" datetime="07:41:00"><span class="time">07:41</span></time></span><span><time class="bucket" datetime="08:16:00"><span class="time">08:16</span></time></span><span><time class="bucket" datetime="08:51:00"><span class="time">08:51</span></time></span><span><time class="bucket" datetime="09:26:00"><span class="time">09:26</span></time></span><span><time class="bucket" datetime="10:01:00"><span class="time">10:01</span></time></span><span><time class="bucket" datetime="10:36:00"><span class="time">10:36</span></time></span><span><time class="bucket" datetime="11:11:00"><span class="time">11:11</span></time></span><span><time class="bucket" datetime="11:46:00"><span class="time">11:46</span></time></span><span><time class="bucket" datetime="12:21:00"><span class="time">12:21</span></time></span><span><time class="bucket" datetime="12:56:00"><span class="time">12:56</span></time></span><span><time class="bucket" datetime="13:31:00"><span class="time">13:31</span></time></span><span><time class="bucket" datetime="14:06:00"><span class="time">14:06</span></time></span><span><time class="bucket" datetime="14:41:00"><span class="time">14:41</span></time></span><span><time class="bucket" datetime="15:16:00"><span class="time">15:16</span></time></span><span><time class="bucket" datetime="15:51:00"><span class="time">15:51</span></time></span><span><time class="bucket" datetime="16:26:00"><span class="time">16:26</span></time></span><span><time class="bucket" datetime="17:01:00"><span class="time">17:01</span></time></span><span><time class="bucket" datetime="17:36:00"><span class="time">17:36</span></time></span><span><time class="bucket" datetime="18:11:00"><span class="time">18:11</span></time></span><span><time class="bucket" datetime="18:46:00"><span class="time">18:46</span></time></span><span><time class="bucket" datetime="19:21:00"><span class="time">19:21</span></time></span><span><time class="bucket" datetime="19:56:00"><span class="time">19:56</span></time></span><span><time class="bucket" datetime="20:31:00"><span class="time">20:31</span></time></span><span><time class="bucket" datetime="21:06:00"><span class="time">21:06</span></time></span><span><time class="bucket" datetime="21:41:00"><span class="time">21:41</span></time></span><span><time class="bucket" datetime="22:16:00"><span class="time">22:16</span></time></span><span><time class="bucket" datetime="22:51:00"><span class="time">22:51</span></time></span><span><time class="bucket" datetime="23:26:00"><span class="time">23:26</span></time></span><span><time class="bucket" datetime="00:01:00"><span class="time">00:01</span></time></span><span><time class="bucket" datetime="00:36:00"><span class="time">00:36</span></time></span><span><time class="bucket" datetime="01:11:00"><span class="time">01:11</span></time></span>							</div>
+						</div>
+						<div class="info arrive">
+							<span class="platform"></span>
+							<span class="delay"></span>
+						</div>
+					</div>
+					<div class="cards clickaction">
+						<div class="card">
+							<img src="img/gfx_hand-green.svg" width="75">
+							<div class="message_1 message">
+								<h3>Right now</h3>
+								<p>Trains are running on time.<br>You're 5 min from the station.</p>
+							</div>
+							<div class="message_2 message">
+								<h3>Right now</h3>
+								<p>A 22 minute delay expected<br>on your train.</p>
+								<hr>
+								<span class="icon-twitter"></span><h3>Reason</h3>
+								<p><span class="hashtag">#ClaphamJunction</span> A signal box has malfunctioned at Clapham Junction. A team is working to fix the problem.</p>
+								<hr>
+								<h3>Alternative route</h3>
+								<p>No faster route available right now.</p>
+								<hr>
+								<h3>Refund</h3>
+								<span class="info"></span><p>Available in 14 minutes</p>
+								<button disabled>Claim a refund</button>
+								<hr>
+								<h3>Customer service</h3>
+								<p>Operatives available.</p>
+								<button>Contact us</button>
+							</div>
+
+						</div>
+						<div class="card"></div>
+						<div class="card"></div>
+					</div>
+				</div>
+				<div class="journey screen">
+					
+					<div class="plan">
+						<div class="date">
+							<div class="top_item opacityZero link_arrow closed">Close</div>
+						</div>
+						<ul>
+							<li class="passed" data-distance="0"><div class="station"><strong class="time">10:30</strong>Oxshott</div></li>
+							<li class="passed" data-distance="3"><div class="station"><strong class="time">10:33</strong>Claygate</div></li>
+							<li class="passed" data-distance="6"><div class="station"><strong class="time">10:36</strong>Hinchley Wood</div></li>
+							<li class="passed" data-distance="11"><div class="station"><strong class="time">10:41</strong>Surbiton</div></li>
+							<li data-distance="20"><div class="station"><strong class="time">10:50</strong>Wimbledon Station</div></li>
+							<li data-distance="24"><div class="station"><strong class="time">10:54</strong>Earlsfield</div></li>
+							<li data-distance="28"><div class="station"><strong class="time">10:58</strong>Clapham Junction</div></li>
+							<li data-distance="33"><div class="station"><strong class="time">11:03</strong>Vauxhall</div></li>
+							<div class="current_status">here</div>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="bg-container intro">
+				<div class="gfx background"></div>
+				<div class="gfx people"></div>
+			</div>
+			<div class="bg-container search_1">
+				<div class="gfx background"></div>
+				<div class="gfx people"></div>
+			</div>
+		</div>
+	</body>
+
+	</html>

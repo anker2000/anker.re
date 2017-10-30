@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Password Protected Area"
+AuthUserFile /home/hellohuge/test.somethingyoulove.com/swtweb/.htpasswd
+Require valid-user

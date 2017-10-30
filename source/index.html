@@ -7,53 +7,86 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+		<script src="/js/jquery-3.2.1.min.js"></script>
+		<script src="/js/TweenMax.min.js"></script>
 		<script src="/js/three.min.js"></script>
 		<script src="/js/detector.js"></script>
+		<script src="/js/jquery.panelSnap.js"></script>
 		<link rel="stylesheet" href="/css/style.css">
-		<script src="/js/polyfill.min.js"></script>
-		<script src="https://use.typekit.net/nau8usm.js"></script>
-		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
 
-	<body>
+	<body style="background:#eaeaea">
 		<header>
 			<a href="/" class="home">Anker.re <span class="fps"></span></a>
 			<nav>
-
 				<a href="#" class="toggle"><span>menu</span></a>
 				<ul>
-					
-					<li><a href="#">Projects</a></li>
-					<li><a href="#">About</a></li>
+					<li><a href="#">About<!--overlay triggered--></a></li>
 				</ul>
 			</nav>
 		</header>
+		<footer>
+			<button class="cta">See project</button>
+		</footer>
 		<div class="devices">
 
 		</div>
 		
 		<div class="projects">
-			<section class="desktop" data-bg-light="#111111" data-bg-dark="#1c1c1c" data-device-light="#111111" data-device-dark="#000000" data-text-color="#ffffff">
-				<a href="/kaktus"><h2>Kaktus Kbh</h2></a>
-				<video id="desktop" loop="loop" muted controls="false" style="display:none" playsinline webkit-playsinline>
-					<source src="rapha.mp4" type="video/mp4">
+			<section class="desktop" data-bg-light="#111111" data-bg-dark="#111111" data-device-light="#111111" data-device-dark="#000000" data-text-color="#ffffff">
+				<a href="/kaktus"><h2>HugeTunes</h2></a>
+				<video poster="/img/poster.png" autoplay="autoplay" id="desktop" loop="loop" muted controls="false" style="display:none" playsinline webkit-playsinline>
+					<source src="cases/hugetunes/frontpage-video.mp4" type="video/mp4">
 				</video>
+				<img src="cases/hugetunes/frontpage-mobile.jpg">
+			</section>
+			<section class="mobile" data-bg-light="#ffffff" data-bg-dark="#eaeaea" data-device-light="#dddddd" data-device-dark="#aaaaaa" data-text-color="#ea7575">
+				<a href="/tacle"><h2>Conscious Life</h2></a>
+				<video poster="/img/poster.png" autoplay="autoplay" id="mobile" loop="true" muted controls="false" style="display:none" playsinline webkit-playsinline>
+					<source src="cases/consciouslife/frontpage-video.mp4" type="video/mp4">
+				</video>
+				<img src="cases/clivechristian/frontpage-mobile.jpg">
+				<img src="cases/clivechristian/frontpage-mobile.jpg">
+			</section>
+			<section class="desktop" data-bg-light="#111111" data-bg-dark="#0e0e0e" data-device-light="#111111" data-device-dark="#000000" data-text-color="#ffffff">
+				<a href="/kaktus"><h2>Clive Christian</h2></a>
+				<video poster="/img/poster.png" autoplay="autoplay" id="desktop" loop="loop" muted controls="false" style="display:none" playsinline webkit-playsinline>
+					<source src="cases/clivechristian/frontpage-video.mp4" type="video/mp4">
+				</video>
+				<img src="cases/clivechristian/frontpage-mobile.jpg">
+			</section>
+			<section class="mobile" data-bg-light="#ffffff" data-bg-dark="#583079" data-device-light="#bababa" data-device-dark="#dadada" data-text-color="#ffffff">
+				<a href="/cripple"><h2>Tesco Bank</h2></a>
+				<video poster="/img/poster.png" autoplay="autoplay" id="mobile" loop="loop" muted controls="false" style="display:none" playsinline webkit-playsinline>
+					<source src="cases/tescobank/frontpage-video.mp4" type="video/mp4">
+				</video>
+				<img src="cases/clivechristian/frontpage-mobile.jpg">
+				<img src="cases/clivechristian/frontpage-mobile.jpg">
+			</section>
+			<section class="mobile" data-bg-light="#ffffff" data-bg-dark="#f0f0f0" data-device-light="#dddddd" data-device-dark="#aaaaaa" data-text-color="#EA7575">
+				<a href="/cripple"><h2>Ashtanga Yoga</h2></a>
+				<img src="cases/ashtangayoga/frontpage-mobile.jpg">
+				<img src="cases/ashtangayoga/frontpage-mobile.jpg">
+				<img src="cases/ashtangayoga/frontpage-mobile.jpg">
 			</section>
 			<section class="mobile" data-bg-light="#111111" data-bg-dark="#1c1c1c" data-device-light="#000000" data-device-dark="#000000" data-text-color="#FFFFFF">
-				<a href="/cripple"><h2>Cripple</h2></a>
-				<video id="mobile" loop="loop" muted controls="false" style="display:none" playsinline webkit-playsinline>
-					<source src="iphone.mp4" type="video/mp4">
+				<a href="/cripple"><h2>Tacle Smart Home</h2></a>
+				<video poster="/img/poster.png" autoplay="autoplay" id="mobile" loop="loop" muted controls="false" style="display:none" playsinline webkit-playsinline>
+					<source src="iphone.mp4?1" type="video/mp4">
 				</video>
+				<img src="cases/clivechristian/frontpage-mobile.jpg">
+				<img src="cases/clivechristian/frontpage-mobile.jpg">
 			</section>
-			<section class="mobile" data-bg-light="#ffffff" data-bg-dark="#eaeaea" data-device-light="#dddddd" data-device-dark="#aaaaaa" data-text-color="#0000ee">
-				<a href="/tacle"><h2>Tacle</h2></a>
-				<video id="mobile" loop="loop" muted controls="false" style="display:none" playsinline webkit-playsinline>
-					<source src="iphone.mp4" type="video/mp4">
+			<section class="mobile" data-bg-light="#111111" data-bg-dark="#1c1c1c" data-device-light="#000000" data-device-dark="#000000" data-text-color="#FFFFFF">
+				<a href="/cripple"><h2>South West Trains</h2></a>
+				<video poster="/img/poster.png" autoplay="autoplay" id="mobile" loop="loop" muted controls="false" style="display:none" playsinline webkit-playsinline>
+					<source src="iphone.mp4?1" type="video/mp4">
 				</video>
+				<img src="cases/clivechristian/frontpage-mobile.jpg">
+				<img src="cases/clivechristian/frontpage-mobile.jpg">
 			</section>
+			
 		</div>
-		<script src="/js/site.js?1"></script>
+		<script src="/js/site.js?5"></script>
 	</body>
 </html>

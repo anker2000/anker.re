@@ -1,0 +1,1182 @@
+[
+  {
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2045,
+    "price":35,
+    "seats_left":7,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":835,
+                "departure_time":null
+            }] 
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":null,
+                "departure_time":1010
+            },
+            {
+                "gpsloc":"coordinates",
+                "station":"Boulevard de Turin",
+                "city":"Lille",
+                "arrival_time":1200,
+                "departure_time":1200
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":1640,
+                "departure_time":null
+            }
+            ]
+        },{
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2045,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2045,
+    "price":35,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":835,
+                "departure_time":null
+            }] 
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":null,
+                "departure_time":1010
+            },
+            {
+                "gpsloc":"coordinates",
+                "station":"Boulevard de Turin",
+                "city":"Lille",
+                "arrival_time":1200,
+                "departure_time":1200
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":1640,
+                "departure_time":null
+            }
+            ]
+        },{
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2045,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2145,
+    "price":35,
+    "seats_left":4,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":835,
+                "departure_time":null
+            }] 
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":null,
+                "departure_time":1010
+            },
+            {
+                "gpsloc":"coordinates",
+                "station":"Boulevard de Turin",
+                "city":"Lille",
+                "arrival_time":1200,
+                "departure_time":1200
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":1640,
+                "departure_time":null
+            }
+            ]
+        },{
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2145,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":1945,
+    "price":40,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":835,
+                "departure_time":null
+            }] 
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":null,
+                "departure_time":1010
+            },
+            {
+                "gpsloc":"coordinates",
+                "station":"Boulevard de Turin",
+                "city":"Lille",
+                "arrival_time":1200,
+                "departure_time":1200
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":1640,
+                "departure_time":null
+            }
+            ]
+        },{
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":1840,
+                "departure_time":1840
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":1945,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2045,
+    "price":40,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2045,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2045,
+    "price":35,
+    "seats_left":2,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":835,
+                "departure_time":null
+            }] 
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":null,
+                "departure_time":1010
+            },
+            {
+                "gpsloc":"coordinates",
+                "station":"Boulevard de Turin",
+                "city":"Lille",
+                "arrival_time":1200,
+                "departure_time":1200
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":1640,
+                "departure_time":null
+            }
+            ]
+        },{
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2045,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2245,
+    "price":40,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2245,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2045,
+    "price":40,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":835,
+                "departure_time":null
+            }] 
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":null,
+                "departure_time":1010
+            },
+            {
+                "gpsloc":"coordinates",
+                "station":"Boulevard de Turin",
+                "city":"Lille",
+                "arrival_time":1200,
+                "departure_time":1200
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":1640,
+                "departure_time":null
+            }
+            ]
+        },{
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2045,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2045,
+    "price":40,
+    "seats_left":6,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2045,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2045,
+    "price":40,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":835,
+                "departure_time":null
+            }] 
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":null,
+                "departure_time":1010
+            },
+            {
+                "gpsloc":"coordinates",
+                "station":"Boulevard de Turin",
+                "city":"Lille",
+                "arrival_time":1200,
+                "departure_time":1200
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":1640,
+                "departure_time":null
+            }
+            ]
+        },{
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2045,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2045,
+    "price":40,
+    "seats_left":4,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":835,
+                "departure_time":null
+            }] 
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":null,
+                "departure_time":1010
+            },
+            {
+                "gpsloc":"coordinates",
+                "station":"Boulevard de Turin",
+                "city":"Lille",
+                "arrival_time":1200,
+                "departure_time":1200
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":1640,
+                "departure_time":null
+            }
+            ]
+        },{
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2045,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2045,
+    "price":35,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":835,
+                "departure_time":null
+            }] 
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":null,
+                "departure_time":1010
+            },
+            {
+                "gpsloc":"coordinates",
+                "station":"Boulevard de Turin",
+                "city":"Lille",
+                "arrival_time":1200,
+                "departure_time":1200
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":1640,
+                "departure_time":null
+            }
+            ]
+        },{
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2045,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2045,
+    "price":40,
+    "seats_left":7,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":835,
+                "departure_time":null
+            }] 
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":null,
+                "departure_time":1010
+            },
+            {
+                "gpsloc":"coordinates",
+                "station":"Boulevard de Turin",
+                "city":"Lille",
+                "arrival_time":1200,
+                "departure_time":1200
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":1640,
+                "departure_time":null
+            }
+            ]
+        },{
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2045,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2045,
+    "price":35,
+    "seats_left":8,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":835,
+                "departure_time":null
+            }] 
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":null,
+                "departure_time":1010
+            },
+            {
+                "gpsloc":"coordinates",
+                "station":"Boulevard de Turin",
+                "city":"Lille",
+                "arrival_time":1200,
+                "departure_time":1200
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":1640,
+                "departure_time":null
+            }
+            ]
+        },{
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2045,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  },{
+    "departure_city":"Milan",
+    "departure_station":"Autostazione Lampugnano",
+    "arrival_city":"Birmingham",
+    "arrival_station":"Hill Street",
+    "duration":2045,
+    "price":40,
+    "seats_left":24,
+    "facilities": [1,2,3],
+    "leg":[
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Autostazione Lampugnano",
+                "city":"Milan",
+                "arrival_time":null,
+                "departure_time":0
+            },{
+                "gpsloc":"coordinates",
+                "station":"Corso Vittorio Emanuele 131",
+                "city":"Turin",
+                "arrival_time":130,
+                "departure_time":130
+            },{
+                "gpsloc":"coordinates",
+                "station":"Gare Part-Dieu - Rue de la Villette",
+                "city":"Lyon",
+                "arrival_time":455,
+                "departure_time":465
+            },{
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":835,
+                "departure_time":null
+            }] 
+        },
+        {
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Quai de Seine Arret Megabus, 208 Quai de Bercy, 75012",
+                "city":"Paris",
+                "arrival_time":null,
+                "departure_time":1010
+            },
+            {
+                "gpsloc":"coordinates",
+                "station":"Boulevard de Turin",
+                "city":"Lille",
+                "arrival_time":1200,
+                "departure_time":1200
+            },{
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":1640,
+                "departure_time":null
+            }
+            ]
+        },{
+            "carrier":"Megabus",
+            "stop": [
+            {
+                "gpsloc":"coordinates",
+                "station":"Victoria Coach Station",
+                "city":"London",
+                "arrival_time":null,
+                "departure_time":1815
+            },{
+                "gpsloc":"coordinates",
+                "station":"Cannon Park",
+                "city":"Coventry",
+                "arrival_time":2010,
+                "departure_time":2010
+            },{
+                "gpsloc":"coordinates", 
+                "station":"Hill Street",
+                "city":"Birmingham",
+                "arrival_time":2045,
+                "departure_time":null
+            }
+            ]
+        }
+    ]
+  }
+]

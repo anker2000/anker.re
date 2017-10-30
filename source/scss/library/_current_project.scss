@@ -1,4 +1,21 @@
-
+.currentProjectH2 {
+	z-index:3;
+	font-weight:700;
+	margin-bottom:100px;
+	text-align:center;
+	width:100%;
+	color:inherit;
+	// font-family:"Replica-Regular";
+	a {
+		font-family:inherit !important;
+		font-weight:inherit;
+		display:block;
+		text-decoration:none;
+		color:inherit;
+		
+		@include transform(translateY(61.8%));
+	}
+}
 .current_project {
 	// text-shadow: 0 0 100px rgba(black, .3);
 	// display:none;
@@ -13,26 +30,16 @@
 		padding:0;
 		bottom:48%;
 	}
+	@include perspective(900px);
 	pointer-events:none;
 	@include transition(transform 2.5s cubic-bezier(0,.6,.4,1));
 	// text-shadow: 0 0 100px rgba(0,0,0,0.7);
 	h2 {
-		z-index:3;
-		font-weight:700;
-		margin-bottom:30px;
-		text-align:center;
-		width:100%;
-		color:inherit;
-		
-		a {
-			display:block;
-			text-decoration:none;
-			color:inherit;
-			@include transform(translateY(61.8%));
-		}
+		@extend .currentProjectH2;
 	}
 	button {
 		position:absolute;
+		z-index:2000000;
 		border-color:inherit;
 		border-style:solid;
 		border-width:0px;
@@ -42,10 +49,12 @@
 		text-transform:uppercase;
 		font-size:12px;
 		letter-spacing:0.15em;
-		margin:0 auto;
+		bottom:-200px;
+		@include transform(translate3d(-50%,0,100px));
 		font-weight:700;
 		text-align:center;
-		padding:10px 30px;
+		padding:17px 40px;
+		border-radius:100px;
 		@include appearance(none);
 	}
 	&.hover {

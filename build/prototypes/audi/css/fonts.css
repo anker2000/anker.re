@@ -1,0 +1,49 @@
+@font-face {
+	font-family:"AudiType";
+	src:url(fonts/auditype-normal.woff) format("woff");
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:"AudiType";
+	src:url(fonts/auditype-italic.woff) format("woff");
+	font-weight:normal;
+	font-style:italic;
+}
+@font-face {
+	font-family:"AudiType";
+	src:url(fonts/auditype-bold.woff) format("woff");
+	font-weight:bold;
+	font-style:normal;
+}
+@font-face {
+	font-family:"AudiType";
+	src:url(fonts/auditype-bolditalic.woff) format("woff");
+	font-weight:bold;
+	font-style:italic;
+}
+@font-face {
+	font-family:"AudiTypeExtended";
+	src:url(fonts/auditype-extendednormal.woff) format("woff");
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:"AudiTypeExtended";
+	src:url(fonts/auditype-extendedbold.woff) format("woff");
+	font-weight:bold;
+	font-style:normal;
+}
+
+@font-face {
+	font-family:"AudiTypeExtended";
+	src:url(fonts/auditype-extendeditalic.woff) format("woff");
+	font-weight:normal;
+	font-style:italic;
+}
+@font-face {
+	font-family:"AudiTypeExtended";
+	src:url(fonts/auditype-extendedbolditalic.woff) format("woff");
+	font-weight:bold;
+	font-style:italic;
+}
