@@ -1,34 +1,76 @@
 footer {
-	bottom:0;
+	bottom:5%;
+	right:40px;
 	position:fixed;
-	width:100%;
-	text-align:center;
+	text-align:right;
 	color:inherit;
-	padding:0 13vw;
-	@media (max-width:600px) {
-		padding:0;
-		bottom:48%;
-	}
+	padding:0;
 	z-index:300;
 }
 button {
-	position:absolute;
-	z-index:2000000;
+	position:relative;
 	border-color:inherit;
 	border-style:solid;
 	border-width:0px;
 	background-color:transparent;
 	outline:none;
 	cursor:pointer;
-	text-transform:uppercase;
-	font-size:12px;
-	letter-spacing:0.15em;
-	bottom:25vh;
-	@include transform(translate3d(-50%,0,0));
-	font-weight:700;
+	font-size:18px;	
+	font-weight:300;
 	font-family:anker;
+	display:inline-block;
 	text-align:center;
-	padding:17px 40px;
-	border-radius:100px;
+	padding:0;
 	@include appearance(none);
+	text-align:right;
+	width:280px;
+	padding:10px 0;
+	opacity:1;
+	@include transition(opacity 0.2s);
+	.arrow {
+		position:relative;
+		top:0px;
+		margin:8px 0 4px 20px;
+		display:inline-block;
+		content:" ";
+		border-radius:10px;
+		height:2px;
+		width:120px;
+		line-height:inherit;
+		@include transition(all 0.3s cubic-bezier(.6,0,.4,1));
+		&:before, &:after {
+			right:-3px;
+			content: " ";
+			display:block;
+			height:15px;
+			width:2px;
+			background-color:inherit;
+			position:absolute;
+			border-radius:10px;
+			transform-origin:center top;
+			@include transition(all 0.3s 0.2s cubic-bezier(0,.7,.3,1));
+			@include transform(translateY(1px) rotate(125deg));
+		}
+		&:after {
+			@include transform(translateY(1px) rotate(55deg));
+		}
+	}
+	&:hover {
+		.arrow {
+			width:61px;
+		}
+	}
+	&.off {
+		opacity:0;
+		@include transition(opacity 0.2s 0.3s);
+		.arrow {
+			width:0;
+			@include transition(all 0.3s 0.2s cubic-bezier(.6,0,.4,1));
+			&:before, &:after {
+				height:0;
+				opacity:1 !important;
+				@include transition(all 0.3s cubic-bezier(.7,0,1,.3));
+			}
+		}
+	}
 }

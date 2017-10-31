@@ -197,7 +197,11 @@ function addProject(section, stage) {
 		
 		$("body").css("background",$(section).data("bg-dark"));
 		$("body").css("color",$(section).data("text-color"));
-		$("button.cta").css("background-color",$(section).data("text-color"));
+		// $("button.cta").css("background-color",$(section).data("text-color"));
+		$("button.cta .arrow").css("background-color",$(section).data("text-color"));
+		setTimeout(function() {
+			$("button.cta").removeClass("off").css("color",$(section).data("text-color"));
+		},1500);
 		$("nav .toggle span").css("background-color",$(section).data("text-color"));
 		mainLight.color = rgbPercentage(hexToRgb($(section).data("bg-dark")));
 		var intensity = colorIntensity(hexToRgb($(section).data("bg-light")));
@@ -219,7 +223,7 @@ function addProject(section, stage) {
 				sectionObject.children[a].end();
 			}
 		}
-		
+		$("button.cta").addClass("off");
 		if (typeof sectionObject.headline =="object") {
 			$(sectionObject.headline.parentNode).removeClass("active");
 		}

@@ -166,48 +166,101 @@ header {
       header nav ul li {
         display: inline-block;
         margin: 0 30px; }
+        header nav ul li:first-child {
+          margin-left: 0; }
+        header nav ul li:last-child {
+          margin-right: 0; }
 
 footer {
-  bottom: 0;
+  bottom: 5%;
+  right: 40px;
   position: fixed;
-  width: 100%;
-  text-align: center;
+  text-align: right;
   color: inherit;
-  padding: 0 13vw;
+  padding: 0;
   z-index: 300; }
-  @media (max-width: 600px) {
-    footer {
-      padding: 0;
-      bottom: 48%; } }
 
 button {
-  position: absolute;
-  z-index: 2000000;
+  position: relative;
   border-color: inherit;
   border-style: solid;
   border-width: 0px;
   background-color: transparent;
   outline: none;
   cursor: pointer;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 0.15em;
-  bottom: 25vh;
-  -webkit-transform: translate3d(-50%, 0, 0);
-  -moz-transform: translate3d(-50%, 0, 0);
-  -ms-transform: translate3d(-50%, 0, 0);
-  -o-transform: translate3d(-50%, 0, 0);
-  transform: translate3d(-50%, 0, 0);
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 300;
   font-family: anker;
+  display: inline-block;
   text-align: center;
-  padding: 17px 40px;
-  border-radius: 100px;
+  padding: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   -o-appearance: none;
-  appearance: none; }
+  appearance: none;
+  text-align: right;
+  width: 280px;
+  padding: 10px 0;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  transition: opacity 0.2s; }
+  button .arrow {
+    position: relative;
+    top: 0px;
+    margin: 8px 0 4px 20px;
+    display: inline-block;
+    content: " ";
+    border-radius: 10px;
+    height: 2px;
+    width: 120px;
+    line-height: inherit;
+    -webkit-transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1);
+    -moz-transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1);
+    transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1); }
+    button .arrow:before, button .arrow:after {
+      right: -3px;
+      content: " ";
+      display: block;
+      height: 15px;
+      width: 2px;
+      background-color: inherit;
+      position: absolute;
+      border-radius: 10px;
+      transform-origin: center top;
+      -webkit-transition: all 0.3s 0.2s cubic-bezier(0, 0.7, 0.3, 1);
+      -moz-transition: all 0.3s 0.2s cubic-bezier(0, 0.7, 0.3, 1);
+      transition: all 0.3s 0.2s cubic-bezier(0, 0.7, 0.3, 1);
+      -webkit-transform: translateY(1px) rotate(125deg);
+      -moz-transform: translateY(1px) rotate(125deg);
+      -ms-transform: translateY(1px) rotate(125deg);
+      -o-transform: translateY(1px) rotate(125deg);
+      transform: translateY(1px) rotate(125deg); }
+    button .arrow:after {
+      -webkit-transform: translateY(1px) rotate(55deg);
+      -moz-transform: translateY(1px) rotate(55deg);
+      -ms-transform: translateY(1px) rotate(55deg);
+      -o-transform: translateY(1px) rotate(55deg);
+      transform: translateY(1px) rotate(55deg); }
+  button:hover .arrow {
+    width: 61px; }
+  button.off {
+    opacity: 0;
+    -webkit-transition: opacity 0.2s 0.3s;
+    -moz-transition: opacity 0.2s 0.3s;
+    transition: opacity 0.2s 0.3s; }
+    button.off .arrow {
+      width: 0;
+      -webkit-transition: all 0.3s 0.2s cubic-bezier(0.6, 0, 0.4, 1);
+      -moz-transition: all 0.3s 0.2s cubic-bezier(0.6, 0, 0.4, 1);
+      transition: all 0.3s 0.2s cubic-bezier(0.6, 0, 0.4, 1); }
+      button.off .arrow:before, button.off .arrow:after {
+        height: 0;
+        opacity: 1 !important;
+        -webkit-transition: all 0.3s cubic-bezier(0.7, 0, 1, 0.3);
+        -moz-transition: all 0.3s cubic-bezier(0.7, 0, 1, 0.3);
+        transition: all 0.3s cubic-bezier(0.7, 0, 1, 0.3); }
 
 .projects {
   -webkit-scroll-snap-type: proximity;
@@ -333,7 +386,7 @@ section {
 .currentProjectH2, .current_project h2 {
   z-index: 3;
   font-weight: 700;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
   text-align: center;
   width: 100%;
   color: inherit; }
