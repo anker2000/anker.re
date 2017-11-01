@@ -7,7 +7,7 @@
 		z-index:200;
 	}
 	canvas {
-		opacity:0;
+		
 		@include transition(opacity 1s);
 		&.loaded {
 			opacity:1;

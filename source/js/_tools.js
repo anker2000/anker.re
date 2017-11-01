@@ -10,7 +10,6 @@ function rgbPercentage(obj) {
 	return obj;
 }
 function colorIntensity(obj) {
-	console.log("intensity",obj)
 	return (obj.r/255+obj.g/255+obj.b/255)/3;
 }
 var fps = {	

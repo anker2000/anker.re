@@ -3,7 +3,6 @@ function addProject(section, stage) {
 	var area = {};
 	function resizeHandler() {
 		area.screenWidth=screenWidthFromDistance(camera.position.z);
-		console.log(area.screenWidth);
 	}
 	$(window).bind("resize",resizeHandler);
 	resizeHandler();
@@ -97,14 +96,14 @@ function addProject(section, stage) {
 		sectionObject.add(phonesGroup);
 
 	} else if ($(section).hasClass("desktop")) {
-		console.log("print out",screenMaterialArray[0],screenMaterialArray[1])
-		addLaptop({x:de2ra(60), y:de2ra(0), z:de2ra(0)}, { x:0, y:-40, z:10}, screenMaterialArray[0], glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(macbookGroup) {
+		// console.log("print out",screenMaterialArray[0],screenMaterialArray[1])
+		addLaptop({x:de2ra(60), y:de2ra(0), z:de2ra(0)}, { x:0, y:-45, z:10}, screenMaterialArray[0], glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(macbookGroup) {
 			// console.log("received macbook", macbookGroup);
 			sectionObject.loaded+=1.5;
 			macbookGroup.startRotationPoint = 0;
 			macbookGroup.opacity = 0;
 			macbookGroup.begin = function() {
-				console.log("macbook open");
+				// console.log("macbook open");
 				var openLid = TweenMax.to(macbookGroup.screen.rotation, 1, { x:-de2ra(20), delay:.75, ease:Power4.easeInOut});
 			}
 			macbookGroup.end = function() {
@@ -118,7 +117,7 @@ function addProject(section, stage) {
 			if (sectionObject.kickstart) {
 				macbookGroup.begin()
 			}
-			console.log("macbook added");
+			// console.log("macbook added");
 		});
 		// addPhone({ x:de2ra(-5), y:de2ra(-10), z:de2ra(-10) },{ x:0, y:0, z:10 }, screenMaterialArray[1], glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(phoneGroup) {
 		// 	// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
@@ -184,6 +183,7 @@ function addProject(section, stage) {
 		this.position.y = sectionObject.count * -1*screenWidthFromDistance(200);
 	}
 	sectionObject.start = function(object) {
+
 		if (typeof this.loaded == "undefined" || typeof sectionObject.headline == "undefined") {
 			setTimeout(function() {
 				sectionObject.start()
@@ -197,7 +197,7 @@ function addProject(section, stage) {
 		
 		$("body").css("background",$(section).data("bg-dark"));
 		$("body").css("color",$(section).data("text-color"));
-		// $("button.cta").css("background-color",$(section).data("text-color"));
+		kickOffSite();
 		$("button.cta .arrow").css("background-color",$(section).data("text-color"));
 		setTimeout(function() {
 			$("button.cta").removeClass("off").css("color",$(section).data("text-color"));
@@ -217,13 +217,13 @@ function addProject(section, stage) {
 		sectionObject.kickstart=true;
 	}
 	sectionObject.end = function() {
+		$("button.cta").addClass("off");
 		for (var a=0;a<sectionObject.children.length;a++) {
 			// console.log("sectionobject child",a);
 			if (typeof sectionObject.children[a].end != "undefined") {
 				sectionObject.children[a].end();
 			}
 		}
-		$("button.cta").addClass("off");
 		if (typeof sectionObject.headline =="object") {
 			$(sectionObject.headline.parentNode).removeClass("active");
 		}
@@ -233,10 +233,6 @@ function addProject(section, stage) {
 	sectionObject.checkLoad = function() {
 		if (sectionObject.loaded>0.98) {
 			animateText.register(sectionObject);
-			setTimeout(function() {
-				$(".devices canvas").css("opacity",1);
-
-			},1250);
 			scrollHandler();
 		} else {
 			setTimeout(sectionObject.checkLoad,100);

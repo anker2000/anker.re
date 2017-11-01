@@ -1,29 +1,7 @@
-// var multiSearch = function() {
-// 	var defaultSearchPlatform = "spotify";
-// 	var select;
-
-	
-// 	return {
-// 		Init: function() {
-			
-// 		}
-// 	}
-// }();
-
-// $(function() {
-// 	multiSearch.Init();
-// })
-
 $(function() {
 	init();
 	$('.projects').panelSnap();
-	// setTimeout(function() {
-	// 	$("video").each(function() {
-	// 		this.play();
-	// 	});
-	// },2000);
 });
-// if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 var camera, scene, stage, renderer;
 var mouseX = 0, prevMouseX = 0, mouseY = 0, mouseDown = false, mouseDirection;
@@ -67,6 +45,7 @@ function scrollHandler() {
 		for (i=0;i<sections.length;i++) {
 			if (i==activeSection) {
 				sections[activeSection].start();
+				$(".status").html((activeSection+1)+" – "+(sections.length));
 				for (no=0;no<sections[i].tween.length;no++) {
 					sections[i].tween[no].resume();
 				}
@@ -101,6 +80,10 @@ function setEnvironment() {
 
 	camera = new THREE.PerspectiveCamera( setFOV(), window.innerWidth / window.innerHeight, 1, 5000 );
 	camera.position.z = 120;
+	camera.myTarget = new THREE.Vector3(0,50,-50);
+
+	camera.lookAt(camera.myTarget);
+
 	scene = new THREE.Scene();
 	stage = new THREE.Group();
 	scene.add(stage);
@@ -132,17 +115,25 @@ function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
 	renderer.setSize( window.innerWidth, window.innerHeight );
-	// overlay.width=window.innerWidth;
-	// overlay.height=window.innerHeight;
 	camera.fov = setFOV();
 	scrollHandler();
 	for (i=0;i<sections.length;i++) {
 		sections[i].updatePosition();
 	}
 }
-
+function kickOffSite() {
+	if (!$("body").hasClass("loaded")) {
+		TweenMax.to(camera.myTarget, 1.2, {x:0, y:0, z:0, ease:Power4.easeOut, onComplete:cameraReady});
+		setTimeout(function() {
+			$("body").addClass("loaded");
+		},2000);
+	}
+}
+function cameraReady() {
+	console.log("camera ready");
+}
 var mousePosition = { x:0, y:0 };
-// document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 var storedMouse = { x:0, y:0 };
 function onDocumentMouseMove( event ) {
@@ -157,7 +148,7 @@ function onDocumentMouseMove( event ) {
 	mouseX = windowHalfX - event.clientX;
 	mouseY = windowHalfY - event.clientY;
 	prevMouseX=mouseX;
-	TweenMax.to(mousePosition, 2, {x: 0, y:mouseY, ease: Power1.easeOut});
+	TweenMax.to(mousePosition, 1, {x: mouseX, y:mouseY, ease: Power1.easeOut});
 }
 
 TweenMax.ticker.addEventListener("tick",animate);
@@ -233,8 +224,9 @@ function render() {
 	// var time = Date.now();
 	// console.log(camera);
 	if (typeof camera != "undefined") {
-		camera.position.x = 0- ( mousePosition.x - camera.position.x ) * 0.003;
-		camera.position.y = 4-(( - mousePosition.y - camera.position.y ) * 0.003);
+		camera.position.x = 0- ( mousePosition.x - camera.position.x ) * 0.009;
+		camera.position.y = 0 - (( - mousePosition.y - camera.position.y ) * 0.009);
+		camera.lookAt(camera.myTarget);
 		renderer.render( scene, camera );
 	}
 }

@@ -34,6 +34,10 @@ var animateText = function() {
 			// $("footer")[0].appendChild(cta);
 			
 			var name = document.createElement("h2");
+			// var nameHTML="";
+			// for (i=0;i<obj.name.length;i++) {
+			// 	nameHTML+="<span>"+obj.name[i]+"</span>";
+			// }
 			name.innerHTML='<a href="#">'+obj.name+'</a>';
 			container.appendChild(name);
 			obj.headline = name;

@@ -26,6 +26,7 @@
 			</nav>
 		</header>
 		<footer>
+			<div class="status"></div>
 			<button class="cta off">See project<span class="arrow"></span></button>
 		</footer>
 		<div class="devices">
@@ -88,5 +89,11 @@
 			
 		</div>
 		<script src="/js/site.js?5"></script>
+		<script>
+			$("body").css("background-color",$(".projects section:first-child").data("bg-dark"));
+			setTimeout(function() {
+				$("body").css("transition","all 1s");
+			},100);
+		</script>
 	</body>
 </html>

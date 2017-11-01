@@ -60,9 +60,6 @@ html {
   backface-visibility: hidden; }
 
 body {
-  -webkit-transition: background 1s;
-  -moz-transition: background 1s;
-  transition: background 1s;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -90,6 +87,9 @@ body {
 .clickable {
   cursor: pointer; }
 
+body.loaded header {
+  opacity: 1; }
+
 header {
   padding: 30px;
   text-align: center;
@@ -97,7 +97,9 @@ header {
   position: fixed;
   width: 100%;
   left: 0;
-  font-size: 17px; }
+  opacity: 0;
+  font-size: 17px;
+  transition: opacity 1s; }
   header a {
     text-decoration: none;
     color: inherit;
@@ -172,13 +174,21 @@ header {
           margin-right: 0; }
 
 footer {
-  bottom: 5%;
-  right: 40px;
+  bottom: 20px;
+  width: 100%;
+  padding: 0 30px;
   position: fixed;
   text-align: right;
   color: inherit;
-  padding: 0;
   z-index: 300; }
+  footer .status {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 3px; }
 
 button {
   position: relative;
@@ -189,7 +199,7 @@ button {
   outline: none;
   cursor: pointer;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 500;
   font-family: anker;
   display: inline-block;
   text-align: center;
@@ -214,17 +224,17 @@ button {
     content: " ";
     border-radius: 10px;
     height: 2px;
-    width: 120px;
+    width: 40px;
     line-height: inherit;
     -webkit-transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1);
     -moz-transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1);
     transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1); }
     button .arrow:before, button .arrow:after {
-      right: -3px;
+      right: -2px;
       content: " ";
       display: block;
       height: 15px;
-      width: 2px;
+      width: 1.5px;
       background-color: inherit;
       position: absolute;
       border-radius: 10px;
@@ -244,7 +254,7 @@ button {
       -o-transform: translateY(1px) rotate(55deg);
       transform: translateY(1px) rotate(55deg); }
   button:hover .arrow {
-    width: 61px; }
+    width: 120px; }
   button.off {
     opacity: 0;
     -webkit-transition: opacity 0.2s 0.3s;
@@ -278,18 +288,6 @@ button {
   top: 0;
   left: 0;
   z-index: 0; }
-  @media (pointer: coarse) {
-    .projects {
-      white-space: nowrap;
-      overflow-y: hidden;
-      -webkit-scroll-snap-type: proximity;
-      -webkit-scroll-snap-points-x: repeat(100%);
-      -webkit-scroll-snap-stop: always;
-      scroll-snap-type: proximity;
-      scroll-snap-points-x: repeat(100%);
-      scroll-snap-stop: always; }
-      .projects section {
-        display: inline-block; } }
   .projects section {
     opacity: 0;
     visibility: hidden;
@@ -327,7 +325,6 @@ section {
   .devices canvas:nth-child(2) {
     z-index: 200; }
   .devices canvas {
-    opacity: 0;
     -webkit-transition: opacity 1s;
     -moz-transition: opacity 1s;
     transition: opacity 1s; }

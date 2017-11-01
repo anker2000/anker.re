@@ -11,7 +11,7 @@ function setLights() {
 	ground.receiveShadow = true;
 	ground.rotation.x=0;
 	ground.position.y=30;
-	ground.position.z=-10;
+	ground.position.z=0;
 	ground.transparent = false;
 	scene.add(ground);
 
@@ -47,7 +47,6 @@ function setLights() {
 		y:10,
 		z:0
 	}
-	console.log(spotLight2);
 	scene.add( spotLight2 );
 	scene.add(spotLight2.target);
 

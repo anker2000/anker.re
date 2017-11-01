@@ -82,16 +82,8 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 function addLaptop(rotation, position, screenMaterial, glassMaterial, reflectionCube, loader, color_dark, color_light) {
 	var deferred = new $.Deferred();
 	var macbookGroup = new THREE.Group();
-	var macbookScreenGroup = new THREE.Object3D();
-
-	// var texture = new THREE.TextureLoader().load( "models/macbook-texture.jpg" );
-	// texture.wrapS = THREE.RepeatWrapping;
-	// texture.wrapT = THREE.RepeatWrapping;
-	// texture.repeat.set( 12, 12 );
-console.log("rotation y",rotation.y)
-	
+	var macbookScreenGroup = new THREE.Object3D();	
     var material = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xffffff, metalness:0.5, roughness:1});
-
 	var macbookPivot = new THREE.Object3D();
 	
 
@@ -127,11 +119,9 @@ console.log("rotation y",rotation.y)
 				macbookScreenGroup.add( object );
 		        
 		    });
-		    console.log("loaded screen back 1");
+		    // console.log("loaded screen back 1");
 		    loader.load(
-				// resource URL
 				'models/screen-front.json',
-				// Function when resource is loaded
 				function ( geometry, materials ) {
 					
 					var material = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0x222222, emissive:0x0, metalness:0.7, roughness:0.2, envMap:reflectionCube });
@@ -177,7 +167,7 @@ console.log("rotation y",rotation.y)
 					
 					macbookGroup.add(macbookPivot);
 
-					console.log("loaded screen front 2");
+					// console.log("loaded screen front 2");
 					loader.load(
 						'models/keyboard.json',
 						function ( geometry, materials ) {
@@ -186,7 +176,7 @@ console.log("rotation y",rotation.y)
 							object.position.x=-0.5;
 							object.castShadow=true;
 							macbookGroup.add( object );
-							console.log("loaded keyboard 3");
+							// console.log("loaded keyboard 3");
 							loader.load(
 								// resource URL
 								'models/keys.json',
@@ -219,7 +209,7 @@ console.log("rotation y",rotation.y)
 									object.material.shininess=15;	
 
 									macbookGroup.add( object );
-									console.log("loaded keys 4");
+									// console.log("loaded keys 4");
 							    	loader.load(
 										// resource URL
 										'models/keys-top.json',
@@ -257,20 +247,18 @@ console.log("rotation y",rotation.y)
 								        
 											macbookGroup.scale.set(6.25,6.25,6.25);
 											macbookGroup.add( object );
-											console.log(position);
 											// macbookGroup.position = position;
 											macbookGroup.position.z=position.z;
 											macbookGroup.position.y=position.y;
 											macbookGroup.position.x=position.x;
 											macbookGroup.rotation.x = rotation.x;
 											macbookGroup.rotation.y = rotation.y;
-											console.log("rotation y",rotation.y)
 											macbookGroup.rotation.z = rotation.z;
 											macbookGroup.screen = macbookPivot;
 											// screenMaterial.opacity=0;
-											console.log("screenMaterial",screenMaterial);
+											// console.log("screenMaterial",screenMaterial);
 											
-											console.log("loaded keys top 5");
+											// console.log("loaded keys top 5");
 											
 									    	deferred.resolve(macbookGroup);
 									    }

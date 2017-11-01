@@ -1,11 +1,20 @@
 footer {
-	bottom:5%;
-	right:40px;
+	bottom:20px;
+	width:100%;
+	padding:0 30px;
 	position:fixed;
 	text-align:right;
 	color:inherit;
-	padding:0;
 	z-index:300;
+	.status {
+		position:absolute;
+		right:30px;
+		bottom:30px;
+		padding:10px 0;
+		font-size:18px;
+		font-weight:500;
+		margin-top:3px;
+	}
 }
 button {
 	position:relative;
@@ -16,7 +25,7 @@ button {
 	outline:none;
 	cursor:pointer;
 	font-size:18px;	
-	font-weight:300;
+	font-weight:500;
 	font-family:anker;
 	display:inline-block;
 	text-align:center;
@@ -35,15 +44,15 @@ button {
 		content:" ";
 		border-radius:10px;
 		height:2px;
-		width:120px;
+		width:40px;
 		line-height:inherit;
 		@include transition(all 0.3s cubic-bezier(.6,0,.4,1));
 		&:before, &:after {
-			right:-3px;
+			right:-2px;
 			content: " ";
 			display:block;
 			height:15px;
-			width:2px;
+			width:1.5px;
 			background-color:inherit;
 			position:absolute;
 			border-radius:10px;
@@ -57,7 +66,7 @@ button {
 	}
 	&:hover {
 		.arrow {
-			width:61px;
+			width:120px;
 		}
 	}
 	&.off {

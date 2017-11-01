@@ -1,5 +1,4 @@
 function customMaterial(element) {
-	console.log(element);
 	var screenMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 	if (element.tagName=="IMG") {
 		var texture = new THREE.TextureLoader().load( element.src);
