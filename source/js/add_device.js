@@ -124,7 +124,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 				'models/screen-front.json',
 				function ( geometry, materials ) {
 					
-					var material = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0x222222, emissive:0x0, metalness:0.7, roughness:0.2, envMap:reflectionCube });
+					var material = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0x0f0f0f, shininess:1,emissive:0x0, metalness:0.7, roughness:0.2, envMap:reflectionCube });
 					var object = new THREE.Mesh( geometry, material );				
 					object.position.y=0;
 					object.position.x=-0.5;
@@ -171,7 +171,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 					loader.load(
 						'models/keyboard.json',
 						function ( geometry, materials ) {
-							var bodyMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xaaaaaa, metalness:0.2, roughness:1});
+							var bodyMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xcccccc, metalness:0.2, roughness:1});
 							var object = new THREE.Mesh( geometry, bodyMaterial );
 							object.position.x=-0.5;
 							object.castShadow=true;
@@ -231,9 +231,9 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 												b: 0
 											}
 											var color_light = {
-												r:15,
-												g:15,
-												b:15
+												r:5,
+												g:5,
+												b:5
 											};
 									        
 								        	object.material.side=THREE.DoubleSide;
