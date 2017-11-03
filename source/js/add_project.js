@@ -199,9 +199,9 @@ function addProject(section, stage) {
 		$("body").css("color",$(section).data("text-color"));
 		kickOffSite();
 		$("button.cta .arrow").css("background-color",$(section).data("text-color"));
-		setTimeout(function() {
-			$("button.cta").removeClass("off").css("color",$(section).data("text-color"));
-		},1500);
+
+		$("button.cta").removeClass("off").css("color",$(section).data("text-color"));
+
 		$("nav .toggle span").css("background-color",$(section).data("text-color"));
 		mainLight.color = rgbPercentage(hexToRgb($(section).data("bg-dark")));
 		var intensity = colorIntensity(hexToRgb($(section).data("bg-light")));
@@ -217,7 +217,7 @@ function addProject(section, stage) {
 		sectionObject.kickstart=true;
 	}
 	sectionObject.end = function() {
-		$("button.cta").addClass("off");
+
 		for (var a=0;a<sectionObject.children.length;a++) {
 			// console.log("sectionobject child",a);
 			if (typeof sectionObject.children[a].end != "undefined") {

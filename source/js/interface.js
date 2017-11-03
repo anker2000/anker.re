@@ -1,6 +1,32 @@
 $(function() {
 	init();
-	$('.projects').panelSnap();
+	var options = {
+	  $menu: false,
+	  menuSelector: 'a',
+	  panelSelector: '> section',
+	  namespace: '.panelSnap',
+	  onSnapStart: function(){ $("button.cta").addClass("off") },
+	  onSnapFinish: function(){ $("button.cta").removeClass("off") },
+	  onActivate: function(){},
+	  directionThreshold: 50,
+	  slideSpeed: 800,
+	  delay: 0,
+	  easing: 'swing',
+	  offset: 0,
+	  navigation: {
+	    keys: {
+	      nextKey: false,
+	      prevKey: false,
+	    },
+	    buttons: {
+	      $nextButton: false,
+	      $prevButton: false,
+	    },
+	    wrapAround: false
+	  }
+	};
+
+	$('.projects').panelSnap(options);
 });
 
 var camera, scene, stage, renderer;

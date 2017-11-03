@@ -226,9 +226,9 @@ button {
     height: 2px;
     width: 40px;
     line-height: inherit;
-    -webkit-transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1);
-    -moz-transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1);
-    transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1); }
+    -webkit-transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1), background-color 0s 0s;
+    -moz-transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1), background-color 0s 0s;
+    transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1), background-color 0s 0s; }
     button .arrow:before, button .arrow:after {
       right: -2px;
       content: " ";
@@ -239,9 +239,9 @@ button {
       position: absolute;
       border-radius: 10px;
       transform-origin: center top;
-      -webkit-transition: all 0.3s 0.2s cubic-bezier(0, 0.7, 0.3, 1);
-      -moz-transition: all 0.3s 0.2s cubic-bezier(0, 0.7, 0.3, 1);
-      transition: all 0.3s 0.2s cubic-bezier(0, 0.7, 0.3, 1);
+      -webkit-transition: all 0.3s 0.2s cubic-bezier(0, 0.6, 0.5, 1), background-color 0s 0s;
+      -moz-transition: all 0.3s 0.2s cubic-bezier(0, 0.6, 0.5, 1), background-color 0s 0s;
+      transition: all 0.3s 0.2s cubic-bezier(0, 0.6, 0.5, 1), background-color 0s 0s;
       -webkit-transform: translateY(1px) rotate(125deg);
       -moz-transform: translateY(1px) rotate(125deg);
       -ms-transform: translateY(1px) rotate(125deg);
@@ -262,15 +262,15 @@ button {
     transition: opacity 0.2s 0.3s; }
     button.off .arrow {
       width: 0;
-      -webkit-transition: all 0.3s 0.2s cubic-bezier(0.6, 0, 0.4, 1);
-      -moz-transition: all 0.3s 0.2s cubic-bezier(0.6, 0, 0.4, 1);
-      transition: all 0.3s 0.2s cubic-bezier(0.6, 0, 0.4, 1); }
+      -webkit-transition: all 0.3s 0.2s cubic-bezier(0.6, 0, 0.4, 1), background-color 0s 0s;
+      -moz-transition: all 0.3s 0.2s cubic-bezier(0.6, 0, 0.4, 1), background-color 0s 0s;
+      transition: all 0.3s 0.2s cubic-bezier(0.6, 0, 0.4, 1), background-color 0s 0s; }
       button.off .arrow:before, button.off .arrow:after {
         height: 0;
         opacity: 1 !important;
-        -webkit-transition: all 0.3s cubic-bezier(0.7, 0, 1, 0.3);
-        -moz-transition: all 0.3s cubic-bezier(0.7, 0, 1, 0.3);
-        transition: all 0.3s cubic-bezier(0.7, 0, 1, 0.3); }
+        -webkit-transition: all 0.3s cubic-bezier(0.7, 0, 1, 0.3), background-color 0s 0s;
+        -moz-transition: all 0.3s cubic-bezier(0.7, 0, 1, 0.3), background-color 0s 0s;
+        transition: all 0.3s cubic-bezier(0.7, 0, 1, 0.3), background-color 0s 0s; }
 
 .projects {
   -webkit-scroll-snap-type: proximity;

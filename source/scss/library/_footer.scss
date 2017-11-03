@@ -46,7 +46,7 @@ button {
 		height:2px;
 		width:40px;
 		line-height:inherit;
-		@include transition(all 0.3s cubic-bezier(.6,0,.4,1));
+		@include transition(all 0.3s cubic-bezier(.6,0,.4,1), background-color 0s 0s);
 		&:before, &:after {
 			right:-2px;
 			content: " ";
@@ -57,7 +57,7 @@ button {
 			position:absolute;
 			border-radius:10px;
 			transform-origin:center top;
-			@include transition(all 0.3s 0.2s cubic-bezier(0,.7,.3,1));
+			@include transition(all 0.3s 0.2s cubic-bezier(0,.6,.5,1), background-color 0s 0s);
 			@include transform(translateY(1px) rotate(125deg));
 		}
 		&:after {
@@ -74,11 +74,11 @@ button {
 		@include transition(opacity 0.2s 0.3s);
 		.arrow {
 			width:0;
-			@include transition(all 0.3s 0.2s cubic-bezier(.6,0,.4,1));
+			@include transition(all 0.3s 0.2s cubic-bezier(.6,0,.4,1), background-color 0s 0s);
 			&:before, &:after {
 				height:0;
 				opacity:1 !important;
-				@include transition(all 0.3s cubic-bezier(.7,0,1,.3));
+				@include transition(all 0.3s cubic-bezier(.7,0,1,.3), background-color 0s 0s);
 			}
 		}
 	}
