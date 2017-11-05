@@ -28,21 +28,15 @@
 //     font-style: normal;
 // }
 @font-face {
-  font-family: 'aanker';
-  src: url("fonts/01_anker_bold-webfont.woff2?v=3") format("woff2"), url("fonts/01_anker_bold-webfont.woff?v=3") format("woff");
+  font-family: 'anker';
+  src: url("fonts/anker-bold-webfont.woff2?v=1") format("woff2"), url("fonts/anker-bold-webfont.woff?v=1") format("woff");
   font-weight: bold;
   font-style: normal; }
 @font-face {
-  font-family: 'aanker';
-  src: url("fonts/01_anker_light-webfont.woff2?v=3") format("woff2"), url("fonts/01_anker_light-webfont.woff?v=3") format("woff");
+  font-family: 'anker';
+  src: url("fonts/anker-regular-webfont.woff2?v=1") format("woff2"), url("fonts/anker-regular-webfont.woff?v=1") format("woff");
   font-weight: normal;
   font-style: normal; }
-@font-face {
-  font-family: 'Sailec';
-  src: url("fonts/sailec-bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal; 
-}
   
 * {
 	font-family: "anker",system, -apple-system, BlinkMacSystemFont, sans-serif;

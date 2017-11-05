@@ -1,7 +1,7 @@
 .currentProjectH2 {
 	z-index:3;
 	font-weight:700;
-	margin-bottom:70px;
+	
 	text-align:center;
 	width:100%;
 	color:inherit;
@@ -13,7 +13,7 @@
 		text-decoration:none;
 		color:inherit;
 		
-		@include transform(translateY(61.8%));
+		@include transform(translateY(25%));
 	}
 }
 .current_project {
@@ -25,11 +25,7 @@
 	text-align:center;
 	opacity:0;
 	color:inherit;
-	padding:0 13vw;
-	@media (max-width:600px) {
-		padding:0;
-		bottom:48%;
-	}
+	padding:0 10vw;
 	@include perspective(900px);
 	pointer-events:none;
 	@include transition(transform 2.5s cubic-bezier(0,.6,.4,1));
@@ -37,26 +33,7 @@
 	h2 {
 		@extend .currentProjectH2;
 	}
-	button {
-		position:absolute;
-		z-index:2000000;
-		border-color:inherit;
-		border-style:solid;
-		border-width:0px;
-		background-color:transparent;
-		outline:none;
-		cursor:pointer;
-		text-transform:uppercase;
-		font-size:12px;
-		letter-spacing:0.15em;
-		bottom:-200px;
-		@include transform(translate3d(-50%,0,100px));
-		font-weight:700;
-		text-align:center;
-		padding:17px 40px;
-		border-radius:100px;
-		@include appearance(none);
-	}
+	
 	&.hover {
 		
 		@include transform(translate3d(0,0,0.1px) scale(1,1));

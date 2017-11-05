@@ -2,7 +2,7 @@ var mainLight;
 var groundMaterial;
 
 function setLights() {
-	var shadowMapSize = 1024;
+	var shadowMapSize = 512;
 	var groundGeometry = new THREE.PlaneGeometry( 3000, 3000, 1 );
 	groundMaterial = new THREE.ShadowMaterial();
 	// groundMaterial = new THREE.MeshDepthMaterial( { color: 0xff0000 } );

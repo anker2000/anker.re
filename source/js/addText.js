@@ -6,6 +6,7 @@ var animateText = function() {
 		headline.each(function(i,elm) {
 			 if (Math.abs(obj.proximity<.15)) {
 				var tOpacity=map_range(Math.abs(obj.proximity), 0, .15, 1, 0)
+				if (tOpacity<0) tOpacity=0;
 				TweenMax.to(elm.parentNode, .5, { opacity:tOpacity, onComplete:function() {}})
 			} else {
 				var tOpacity=0;
@@ -28,9 +29,9 @@ var animateText = function() {
 
 			document.body.appendChild(container);
 
-			var cta = document.createElement("button");
-			cta.className="cta";
-			cta.innerHTML = "See more";
+			// var cta = document.createElement("a");
+			// cta.className="cta";
+			// cta.innerHTML = "See more";
 			// $("footer")[0].appendChild(cta);
 			
 			var name = document.createElement("h2");
@@ -45,9 +46,9 @@ var animateText = function() {
 
 
 
-			$(".current_project h2").scalem({maxSize:390});
+			$(".current_project h2").scalem({maxSize:175});
 
-			$(".projects").bind("scroll",function() {
+			snapWrapper.bind("scroll",function() {
 				setLetterPosition(obj);
 			});
 			

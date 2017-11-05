@@ -10,6 +10,7 @@ function customMaterial(element) {
 	texture.format = THREE.RGBFormat;
 	texture.wrapS = THREE.ClampToEdgeWrapping;
 	texture.wrapT = THREE.ClampToEdgeWrapping;
+	texture.anisotropy = 0.5;
 	screenMaterial.map = texture;
 	return screenMaterial;
 }

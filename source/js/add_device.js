@@ -1,4 +1,4 @@
-function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionCube, loader, color_dark, color_light) {
+function addPhone(rotation, position, screenMaterial, glassMaterial, loader, color_dark, color_light) {
 
 	var deferred = new $.Deferred();
 	var phoneGroup = new THREE.Group();
@@ -23,7 +23,7 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 			var object = new THREE.Mesh( geometry, material );				
 			object.position.y=-0.6;
 			object.castShadow=true;
-			object.receiveShadow = true;
+			object.receiveShadow = false;
 			phoneGroup.add( object );
 			object.traverse( function ( child ) {
 				// child.geometry.computeFaceNormals();
@@ -45,7 +45,7 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 					var object = new THREE.Mesh( geometry, material );				
 					object.position.y=-0.6;
 					object.castShadow=true;
-					object.receiveShadow = true;
+					object.receiveShadow = false;
 					phoneGroup.add( object );
 					object.traverse( function ( child ) {
 						// child.geometry.computeFaceNormals();
@@ -79,7 +79,7 @@ function addPhone(rotation, position, screenMaterial, glassMaterial, reflectionC
 	return deferred.promise();
 }
 
-function addLaptop(rotation, position, screenMaterial, glassMaterial, reflectionCube, loader, color_dark, color_light) {
+function addLaptop(rotation, position, screenMaterial, glassMaterial, loader, color_dark, color_light) {
 	var deferred = new $.Deferred();
 	var macbookGroup = new THREE.Group();
 	var macbookScreenGroup = new THREE.Object3D();	
@@ -101,7 +101,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 			object.position.x=-0.5;
 			object.position.z=0;
 			// object.rotation.y=de2ra(180);
-
+			object.receiveShadow = false;
 			object.castShadow=true;
 			material.shininess = 0.2;
 			object.traverse( function ( child ) {
@@ -124,7 +124,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 				'models/screen-front.json',
 				function ( geometry, materials ) {
 					
-					var material = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0x0f0f0f, shininess:1,emissive:0x0, metalness:0.7, roughness:0.2, envMap:reflectionCube });
+					var material = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0x0f0f0f, emissive:0x0, metalness:0.7, roughness:0.2 });
 					var object = new THREE.Mesh( geometry, material );				
 					object.position.y=0;
 					object.position.x=-0.5;
@@ -136,7 +136,8 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 						b:0
 					}
 					var color_light = color_dark;
-					object.castShadow=true;
+					object.castShadow=false;
+					object.receiveShadow = false;
 					macbookScreenGroup.add( object );
 					var desktopGeometry = new THREE.PlaneGeometry( 8.7, 5.8, 1 );
 
@@ -174,7 +175,8 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 							var bodyMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xcccccc, metalness:0.2, roughness:1});
 							var object = new THREE.Mesh( geometry, bodyMaterial );
 							object.position.x=-0.5;
-							object.castShadow=true;
+							object.castShadow=false;
+							object.receiveShadow = true;
 							macbookGroup.add( object );
 							// console.log("loaded keyboard 3");
 							loader.load(
@@ -190,8 +192,8 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 									// object.position.y=0.06;
 									object.position.x=-0.5;
 									object.position.z=0;
-									
-									object.castShadow=false;
+									object.receiveShadow = true;
+									object.castShadow=true;
 									var color_dark = {
 										r: 0,
 										g: 0,
@@ -223,8 +225,8 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, reflection
 											// object.position.y=0.06;
 											object.position.x=-0.5;
 											object.position.z=0;
-											
-											object.castShadow=true;
+											object.receiveShadow = false;
+											object.castShadow=false;
 											var color_dark = {
 												r: 0,
 												g: 0,

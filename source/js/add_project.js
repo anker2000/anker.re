@@ -1,5 +1,8 @@
-function addProject(section, stage) {
+function addProject(section, stage, count) {
 	var sectionObject = new THREE.Group();
+	sectionObject.count=count;
+	sectionObject.position.y = sectionObject.count * -1*screenWidthFromDistance(200);
+	if (count>0) sectionObject.visible = false;
 	var area = {};
 	function resizeHandler() {
 		area.screenWidth=screenWidthFromDistance(camera.position.z);
@@ -14,10 +17,6 @@ function addProject(section, stage) {
 		video[vl].pause();
 		sectionObject.video = video[vl];
 	}
-	
-
-	var reflectionCube = new THREE.CubeTextureLoader().load(["models/environment2.jpg","models/environment2.jpg","models/environment2.jpg","models/environment2.jpg","models/environment2.jpg","models/environment2.jpg"] );
-	reflectionCube.format = THREE.RGBFormat;
 
 	var screenMaterialArray = new Array();
 
@@ -36,7 +35,7 @@ function addProject(section, stage) {
 	glassMaterial.transparent = true;
 	glassMaterial.opacity = 0.05;
 	glassMaterial.shininess = 20;
-	glassMaterial.envMap = reflectionCube;
+	// glassMaterial.envMap = reflectionCube;
 	glassMaterial.reflectivity = 5;
 	glassMaterial.combine = THREE.MixOperation;
 	var emDarken = 1;
@@ -51,10 +50,11 @@ function addProject(section, stage) {
 	sectionObject.tween = [];
 	sectionObject.loaded=0;
 	sectionObject.ref = section;
-	if ($(section).hasClass("mobile")) {
 
+	if ($(section).hasClass("mobile")) {
+		sectionObject.type="mobile";
 		var phonesGroup = new THREE.Group();
-		addPhone({ x:de2ra(60), y:de2ra(-140), z:de2ra(30) },{ x:-10, y:4, z:-10 }, screenMaterialArray[1], glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(phoneGroup) {
+		addPhone({ x:de2ra(60), y:de2ra(-140), z:de2ra(30) },{ x:-10, y:4, z:-8 }, screenMaterialArray[1], glassMaterial, loader, color_dark, color_light).done(function(phoneGroup) {
 			// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
 			phoneGroup.startRotationPoint = 60;
 			phonesGroup.add(phoneGroup);
@@ -63,7 +63,7 @@ function addProject(section, stage) {
 			// console.log("phone added");
 		});
 
-		addPhone({ x:de2ra(50), y:de2ra(35), z:de2ra(-80) },{ x:15, y:1, z:-10 }, screenMaterialArray[0], glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(phoneGroup) {
+		addPhone({ x:de2ra(50), y:de2ra(35), z:de2ra(-80) },{ x:15, y:1, z:-8 }, screenMaterialArray[0], glassMaterial, loader, color_dark, color_light).done(function(phoneGroup) {
 			// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
 			sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:0.5, ease:Power2.easeInOut, onComplete:function() {}}));	
 			phoneGroup.startRotationPoint = 50;
@@ -73,7 +73,7 @@ function addProject(section, stage) {
 		});
 
 
-		addPhone({ x:de2ra(120), y:de2ra(0), z:de2ra(-60) },{ x:45, y:-11, z:-10 }, screenMaterialArray[2], glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(phoneGroup) {
+		addPhone({ x:de2ra(120), y:de2ra(0), z:de2ra(-60) },{ x:45, y:-11, z:-8 }, screenMaterialArray[2], glassMaterial, loader, color_dark, color_light).done(function(phoneGroup) {
 			// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
 			sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:1.5, ease:Power2.easeInOut, onComplete:function() {}}));
 			phoneGroup.startRotationPoint = 120;
@@ -96,18 +96,20 @@ function addProject(section, stage) {
 		sectionObject.add(phonesGroup);
 
 	} else if ($(section).hasClass("desktop")) {
+		sectionObject.type="desktop";
 		// console.log("print out",screenMaterialArray[0],screenMaterialArray[1])
-		addLaptop({x:de2ra(60), y:de2ra(0), z:de2ra(0)}, { x:0, y:-45, z:10}, screenMaterialArray[0], glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(macbookGroup) {
+		addLaptop({x:de2ra(60), y:de2ra(0), z:de2ra(0)}, { x:0, y:-45, z:10}, screenMaterialArray[0], glassMaterial, loader, color_dark, color_light).done(function(macbookGroup) {
 			// console.log("received macbook", macbookGroup);
 			sectionObject.loaded+=1.5;
+			sectionObject.macbookGroup = macbookGroup;
 			macbookGroup.startRotationPoint = 0;
 			macbookGroup.opacity = 0;
 			macbookGroup.begin = function() {
 				// console.log("macbook open");
-				var openLid = TweenMax.to(macbookGroup.screen.rotation, 1, { x:-de2ra(20), delay:.75, ease:Power4.easeInOut});
+				// var openLid = TweenMax.to(macbookGroup.screen.rotation, 1.3, { x:-de2ra(20), delay:1.25, ease:Power4.easeOut});
 			}
 			macbookGroup.end = function() {
-				var openLid = TweenMax.to(macbookGroup.screen.rotation, 1, { x:de2ra(90), ease:Power4.easeInOut});
+				// var openLid = TweenMax.to(macbookGroup.screen.rotation, 1, { x:de2ra(90), ease:Power4.easeOut});
 			}
 			sectionObject.add(macbookGroup);
 			// sectionObject.tween.push(TweenMax.to(macbookGroup.position, 3.5,{ y:macbookGroup.position.y-1, yoyo:true, repeat:-1, ease:Power2.easeInOut, onComplete:function() {}}));
@@ -119,39 +121,42 @@ function addProject(section, stage) {
 			}
 			// console.log("macbook added");
 		});
-		// addPhone({ x:de2ra(-5), y:de2ra(-10), z:de2ra(-10) },{ x:0, y:0, z:10 }, screenMaterialArray[1], glassMaterial, reflectionCube, loader, color_dark, color_light).done(function(phoneGroup) {
-		// 	// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
-		// 	var phonesGroup = new THREE.Group();
+		addPhone({ x:de2ra(-15), y:de2ra(10), z:de2ra(15) },{ x:-50, y:-25, z:0 }, screenMaterialArray[1], glassMaterial, loader, color_dark, color_light).done(function(phoneGroup) {
+			// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
+			var phonesGroup = new THREE.Group();
 			
-		// 	phonesGroup.position.y=-2;
-		// 	phonesGroup.position.z=45;
-		// 	// phonesGroup.rotation.z=de2ra(-15);
-		// 	phonesGroup.position.x=0
-		// 	phoneGroup.scale.x = 12;
-		// 	phoneGroup.scale.y = 12;
-		// 	phoneGroup.scale.z = 12;
-		// 	phonesGroup.begin = function() {
-		// 		console.log("phonesgroup begin");
-		// 	}
-		// 	phonesGroup.end = function() {
+			// phonesGroup.rotation.z=de2ra(-15);
+			phoneGroup.scale.x = 16;
+			phoneGroup.scale.y = 16;
+			phoneGroup.scale.z = 16;
+			phonesGroup.begin = function() {
 
-		// 	}
-		// 	phonesGroup.startRotationPoint = 0;
-		// 	phoneGroup.startRotationPoint = -5;
-		// 	phonesGroup.add(phoneGroup);
+			}
+			phonesGroup.end = function() {
+
+			}
+			phonesGroup.startRotationPoint = 0;
+			phoneGroup.startRotationPoint = -30;
+			phonesGroup.add(phoneGroup);
 			
-		// 	sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:0.5, ease:Power2.easeInOut, onComplete:function() {}}));
-		// 	sectionObject.loaded=1;
-		// 	sectionObject.loaded+=.5;
+			// sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:0.5, ease:Power2.easeInOut, onComplete:function() {}}));
+			sectionObject.loaded=1;
+			sectionObject.loaded+=.5;
 
-		// 	scrollHandler();
-		// 	console.log("phone added",phonesGroup);
-		// 	sectionObject.add(phonesGroup);
+			scrollHandler();
 
-		// });
+			sectionObject.add(phonesGroup);
+
+		});
 	}
 	sectionObject.updateRotation = function() {
-
+		if (typeof sectionObject.macbookGroup!="undefined") {
+			if (sectionObject.type=="desktop" && Math.abs(getProximity(this.count))<1) {
+				var lidAngle = map_range(Math.abs(getProximity(this.count)),-0.15,0,90,20);
+				if (lidAngle<-90) lidAngle = -90;
+				TweenMax.to(sectionObject.macbookGroup.screen.rotation, 1, { x:-de2ra(lidAngle), ease:Power4.easeOut})
+			}
+		}
 		if (Math.abs(this.proximity)<0.1) {
 			if (this.video) this.video.play();
 			for (t=0;t<this.tween.length;t++) {
@@ -164,19 +169,21 @@ function addProject(section, stage) {
 			}
 		}
 		try {
-			if (this.name,this.type, this.children[0].children[0].type=="Group") { //phones
+			if (this.children[0].children[0].type=="Group" && this.children[0].children.length>2) { //phones
 				var targetRotation =  this.children[0].startRotationPoint+(this.proximity*100);
 				for (r=0;r<this.children[0].children.length; r++) {
 					this.children[0].children[r].rotation.x=de2ra(this.children[0].children[r].startRotationPoint+(this.proximity*200));
 				}
 			} else {
 				var targetRotation =  this.children[0].startRotationPoint+(this.proximity*100);
+				this.children[0].children[1].rotation.x=de2ra(this.children[0].children[1].startRotationPoint+(this.proximity*-200));
 			}
 			this.children[0].rotation.y=de2ra(targetRotation);
 			
 		} catch(e) {
 
 		}
+
 	}
 	sectionObject.updatePosition = function() {
 		// this.position.x = this.count*screenWidthFromDistance(200);
@@ -193,15 +200,10 @@ function addProject(section, stage) {
 		
 		
 		$(sectionObject.headline.parentNode).addClass("active");
-		
-		
-		$("body").css("background",$(section).data("bg-dark"));
-		$("body").css("color",$(section).data("text-color"));
 		kickOffSite();
-		$("button.cta .arrow").css("background-color",$(section).data("text-color"));
-		setTimeout(function() {
-			$("button.cta").removeClass("off").css("color",$(section).data("text-color"));
-		},1500);
+		
+		$("body").css("background",$(section).data("bg-dark")).css("color",$(section).data("text-color"));
+
 		$("nav .toggle span").css("background-color",$(section).data("text-color"));
 		mainLight.color = rgbPercentage(hexToRgb($(section).data("bg-dark")));
 		var intensity = colorIntensity(hexToRgb($(section).data("bg-light")));
@@ -217,7 +219,7 @@ function addProject(section, stage) {
 		sectionObject.kickstart=true;
 	}
 	sectionObject.end = function() {
-		$("button.cta").addClass("off");
+
 		for (var a=0;a<sectionObject.children.length;a++) {
 			// console.log("sectionobject child",a);
 			if (typeof sectionObject.children[a].end != "undefined") {

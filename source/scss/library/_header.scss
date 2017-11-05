@@ -5,10 +5,12 @@ body.loaded {
 }
 header {
 	padding:30px;
-	text-align:center;
+	text-align:left;
 	color:inherit;
 	position:fixed;
+	z-index:1000;
 	width:100%;
+	box-sizing:border-box;
 	left:0;
 	opacity:0;
 	font-size:17px;
@@ -16,37 +18,23 @@ header {
 	a {
 		text-decoration: none;
 		color:inherit;
-		@include transition(color 0.3s);
 		letter-spacing: 0em;
 	}
 	.home {
 		font-weight:bold;
 		color:inherit;
-		position:absolute;
-		left:30px;
+		
 		@media (max-width:600px) {
 			left:15px;
 			top:20px;
 		}
 	}
 	nav {
-		position:absolute;
-		display:inline-block;
 		color:inherit;
-		
-		right:30px;
-		@media (max-width:600px) {
-			right:15px;
-			top:20px;
-		}
+		float:right;
 		.toggle {
-			@media (min-width:601px) {
-				display:none;
-			}
-			@media (max-width:600px) {
-				display:block;
-			}
-			margin-top:-9px;
+			display:block;
+			margin-top:-10px;
 			background-color:transparent;
 			color:transparent;
 			overflow:visible;
@@ -73,14 +61,11 @@ header {
 			}
 		}
 		ul {
-			@media (max-width:600px) {
-				display:none;
-			}
-			@media (min-width:601px) {
-				display:block;
-			}
+			display:none;
 			opacity:1;
 			left:0;
+			color:inherit;
+			position:absolute;
 			li {
 				display:inline-block;
 				margin:0 30px;
@@ -91,10 +76,6 @@ header {
 					margin-right:0;
 				}
 			}
-			color:inherit;
-			
-			display:inline-block;
-
 		}
 	}
 	
