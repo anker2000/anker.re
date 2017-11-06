@@ -136,7 +136,7 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, loader, co
 						b:0
 					}
 					var color_light = color_dark;
-					object.castShadow=false;
+					object.castShadow=true;
 					object.receiveShadow = false;
 					macbookScreenGroup.add( object );
 					var desktopGeometry = new THREE.PlaneGeometry( 8.7, 5.8, 1 );
@@ -172,11 +172,12 @@ function addLaptop(rotation, position, screenMaterial, glassMaterial, loader, co
 					loader.load(
 						'models/keyboard.json',
 						function ( geometry, materials ) {
-							var bodyMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xcccccc, metalness:0.2, roughness:1});
+							var bodyMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, color:0xbdbdbd, metalness:0.2, roughness:1});
 							var object = new THREE.Mesh( geometry, bodyMaterial );
 							object.position.x=-0.5;
 							object.castShadow=false;
 							object.receiveShadow = true;
+							object.material.shininess = 10;
 							macbookGroup.add( object );
 							// console.log("loaded keyboard 3");
 							loader.load(

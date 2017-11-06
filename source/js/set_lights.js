@@ -15,8 +15,8 @@ function setLights() {
 	ground.transparent = false;
 	scene.add(ground);
 
-	mainLight = new THREE.AmbientLight( { color:0x000000,intensity:0.02 } ); // soft white light
-	mainLight.intensity = 0.37;
+	mainLight = new THREE.AmbientLight( { color:0x000000,intensity:0.37 } ); // soft white light
+
 	scene.add( mainLight );
 
 
@@ -34,7 +34,7 @@ function setLights() {
 
 	var spotLight2 = new THREE.SpotLight( 0xFFFFFF); 
 	spotLight2.castShadow = true;
-	spotLight2.position.set( 0, 20,60 ); 
+	spotLight2.position.set( 0,20,60 ); 
 	spotLight2.shadow.mapSize.height = shadowMapSize;
 	spotLight2.shadow.mapSize.width = shadowMapSize;
 	spotLight2.intensity = .15;

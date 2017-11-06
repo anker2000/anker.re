@@ -26,16 +26,10 @@
 	opacity:0;
 	color:inherit;
 	padding:0 10vw;
-	@include perspective(900px);
 	pointer-events:none;
 	@include transition(transform 2.5s cubic-bezier(0,.6,.4,1));
 	// text-shadow: 0 0 100px rgba(0,0,0,0.7);
 	h2 {
 		@extend .currentProjectH2;
-	}
-	
-	&.hover {
-		
-		@include transform(translate3d(0,0,0.1px) scale(1,1));
 	}
 }

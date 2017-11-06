@@ -52,7 +52,7 @@ function addProject(section, stage, count) {
 	sectionObject.ref = section;
 
 	if ($(section).hasClass("mobile")) {
-		sectionObject.type="mobile";
+		sectionObject.deviceType="mobile";
 		var phonesGroup = new THREE.Group();
 		addPhone({ x:de2ra(60), y:de2ra(-140), z:de2ra(30) },{ x:-10, y:4, z:-8 }, screenMaterialArray[1], glassMaterial, loader, color_dark, color_light).done(function(phoneGroup) {
 			// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
@@ -96,7 +96,7 @@ function addProject(section, stage, count) {
 		sectionObject.add(phonesGroup);
 
 	} else if ($(section).hasClass("desktop")) {
-		sectionObject.type="desktop";
+		sectionObject.deviceType="desktop";
 		// console.log("print out",screenMaterialArray[0],screenMaterialArray[1])
 		addLaptop({x:de2ra(60), y:de2ra(0), z:de2ra(0)}, { x:0, y:-45, z:10}, screenMaterialArray[0], glassMaterial, loader, color_dark, color_light).done(function(macbookGroup) {
 			// console.log("received macbook", macbookGroup);
@@ -151,7 +151,7 @@ function addProject(section, stage, count) {
 	}
 	sectionObject.updateRotation = function() {
 		if (typeof sectionObject.macbookGroup!="undefined") {
-			if (sectionObject.type=="desktop" && Math.abs(getProximity(this.count))<1) {
+			if (sectionObject.deviceType=="desktop" && Math.abs(getProximity(this.count))<1) {
 				var lidAngle = map_range(Math.abs(getProximity(this.count)),-0.15,0,90,20);
 				if (lidAngle<-90) lidAngle = -90;
 				TweenMax.to(sectionObject.macbookGroup.screen.rotation, 1, { x:-de2ra(lidAngle), ease:Power4.easeOut})
