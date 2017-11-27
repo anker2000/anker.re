@@ -1,7 +1,10 @@
 $(function() {
 	init();
-	
 });
+
+var globalDistance = 200;
+if ($(window).height()>$(window).width()) globalDistance = 300;
+
 var snapWrapper = $(".projects");
 var camera, scene, stage, renderer;
 var mouseX = 0, prevMouseX = 0, mouseY = 0, mouseDown = false, mouseDirection;
@@ -10,10 +13,11 @@ var windowHalfY = window.innerHeight / 2;
 var mouseDownCoord = new Object();
 var sections = [], progression = 0, activeSection = 0, prevActiveSection = null, background = { light: { r:0, g:0, b:0 }, dark: { r:0, g:0, b:0 } };
 function startSection() {
-	$activeSection = $("section:nth-child("+(activeSection+1)+")"); 
+	$activeSection = $(".projects > section:nth-child("+(activeSection+1)+")"); 
   	$("a.cta").removeClass("off");
-	$("a.cta").css("color",$activeSection.data("text-color"));
-  	$("a.cta .arrow").css("background-color",$activeSection.data("text-color"));
+  	$("a.back").removeClass("off");
+	$("a.cta, a.back").css("color",$activeSection.data("text-color"));
+  	$("a.cta .arrow, a.back .arrow").css("background-color",$activeSection.data("text-color"));
 }
 function init() {
 	var options = {
@@ -22,11 +26,11 @@ function init() {
 	  panelSelector: '> section',
 	  namespace: '.panelSnap',
 	  onSnapStart: function(){ 
-	  	$("a.cta").addClass("off") 
+	  	if (!$("body").hasClass("article")) $("a.cta").addClass("off") 
 	  },
 	  onSnapFinish: function(){  
 	  	// console.log("snap finish"); 
-	  	startSection();
+	  	if (!$("body").hasClass("article")) startSection();
 	  },
 	  onActivate: function(){ 
 	  	// console.log("snap activate");
@@ -50,18 +54,17 @@ function init() {
 	};
 
 	snapWrapper.panelSnap(options);
-
-
-
 	snapWrapper.bind("scroll",scrollHandler);
+
 	setEnvironment();
 	setLights();
 	scrollHandler();
 	animate();
-	$("section").each(function(i,elm) {
+	$(".projects section").each(function(i,elm) {
 		sections.push(addProject(elm,stage,i));
 	});
 	$("a.cta").bind("click",goToCaseStudy);
+	$("a.back").bind("click",goToFrontPage);
 }
 
 function getProximity(sectionNo) {
@@ -71,41 +74,43 @@ function getProximity(sectionNo) {
 	return (sectionNo) - (localScroll * sections.length);
 }
 function scrollHandler() {
-	scrollPercentage = snapWrapper.scrollTop() / (snapWrapper[0].scrollHeight-$("section",snapWrapper).height());	
-	progression = scrollPercentage * sections.length;
+	if (!$("body").hasClass("article")) {
+		scrollPercentage = snapWrapper.scrollTop() / (snapWrapper[0].scrollHeight-$("section",snapWrapper).height());	
+		progression = scrollPercentage * sections.length;
 
-	activeSection = Math.floor(progression);
+		activeSection = Math.floor(progression);
 
-	if (activeSection == sections.length) activeSection -=1;
-	if (activeSection != prevActiveSection) {
-		for (i=0;i<sections.length;i++) {
-			if (i==activeSection) {
-				sections[activeSection].start();
-				for (no=0;no<sections[i].tween.length;no++) {
-					sections[i].tween[no].resume();
-				}
-			} else {
-				sections[i].end();
-				for (no=0;no<sections[i].tween.length;no++) {
-					sections[i].tween[no].pause();
+		if (activeSection == sections.length) activeSection -=1;
+		if (activeSection != prevActiveSection) {
+			for (i=0;i<sections.length;i++) {
+				if (i==activeSection) {
+					sections[activeSection].start();
+					for (no=0;no<sections[i].tween.length;no++) {
+						sections[i].tween[no].resume();
+					}
+				} else {
+					sections[i].end();
+					for (no=0;no<sections[i].tween.length;no++) {
+						sections[i].tween[no].pause();
+					}
 				}
 			}
 		}
-	}
-	var inProximity=[];
-	for (i=0;i<sections.length;i++) {
-		sections[i].proximity = getProximity(i);
-		sections[i].updateRotation();
-		
-		if (sections[i].proximity>-0.75 && sections[i].proximity<0.75) {
-			sections[i].visible = true;
-		} else {
-			sections[i].visible = true;
+		var inProximity=[];
+		for (i=0;i<sections.length;i++) {
+			sections[i].proximity = getProximity(i);
+			sections[i].updateRotation();
+			
+			if (sections[i].proximity>-0.75 && sections[i].proximity<0.75) {
+				sections[i].visible = true;
+			} else {
+				sections[i].visible = true;
+			}
 		}
+		prevActiveSection = activeSection;
+		var scrollTarget = 0-scrollPercentage*(screenWidthFromDistance(globalDistance)*(sections.length-1));
+		TweenMax.to(stage.position, 0.75, {ease: Power4.easeOut, y: -1*scrollTarget});
 	}
-	prevActiveSection = activeSection;
-	var scrollTarget = 0-scrollPercentage*(screenWidthFromDistance(200)*(sections.length-1));
-	TweenMax.to(stage.position, 0.75, {ease: Power4.easeOut, y: -1*scrollTarget});
 }
 function setEnvironment() {
 	var pixelRatio = window.devicePixelRatio;
@@ -193,7 +198,9 @@ function onDocumentMouseMove( event ) {
 	TweenMax.to(mousePosition, 1, {x: mouseX, y:mouseY, ease: Power1.easeOut});
 }
 
-TweenMax.ticker.addEventListener("tick",animate);
+TweenMax.ticker.addEventListener("tick",function() {
+	requestAnimationFrame(animate);
+});
 var hasData=false;
 setTimeout(function() {
 	hasData=true

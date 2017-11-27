@@ -563,7 +563,7 @@ if (typeof Object.create !== 'function') {
       $this.on('touchleave touchcancel touchend', function () {
         isTouching = false;
         setTimeout(function () {
-          clearTimeout(timer);
+          // clearTimeout(timer);
         }, 50);
       });
 
@@ -585,6 +585,7 @@ if (typeof Object.create !== 'function') {
         timer = setTimeout(function () {
           $.event.special.scrollstart.scrolling = false;
           trigger(event, false);
+          console.log("triggering",event);
         }, 50);
       });
     }

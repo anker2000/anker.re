@@ -1,7 +1,11 @@
 article {
-	min-height:100%;
-	width:100%;
 	pointer-events:none;
+	overflow:hidden;
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
 	header {
 		pointer-events:none;
 		z-index:3;
@@ -11,31 +15,93 @@ article {
 		bottom:auto;
 		height:100%;
 		width:100%;
-		background-color:black;
-		position:absolute;
+		background-color:inherit;
+		position:relative;
 		padding:0 10vw;
-		@include transition(transform 0.7s cubic-bezier(.9,0,.9,1));
-		transform:translate3d(100%,0,0);
-		text-align:center;
-		h1 {
-			@extend .currentProjectH2;
-			display:block;
-			position:absolute;
-			width:calc(100% - 20vw);
-			bottom:50%;
-			left:0;
-			@include transition(transform 0.7s cubic-bezier(.9,0,.9,1));
-			transform:translate3d(-100%,25%,0);
+		pointer-events:none;
+		will-change:opacity;
+		@media (max-width:768px) {
+			padding:0 5vw;
+			bottom:60%;
 		}
-	}
-	&.on {
-		header {
-			transform:translate3d(0,0,0);
-			@include transition(transform 1s cubic-bezier(.9,0,.9,1), background-color 2s 0.8s);
+		&.swift {
+			transition:all 0s !important;
 			h1 {
-				transform:translate3d(0,25%,0);
-				@include transition(transform 1s cubic-bezier(.9,0,.9,1), color 2s 0.8s);
+				@include transition(transform 0s, color 0s);
 			}
 		}
+		@include transition(transform 1s 2s cubic-bezier(.9,0,.9,1), background-color 2s 1s, height 1s 0s cubic-bezier(.8,0,.2,1));
+		transform:translate3d(100%,0,0);
+		text-align:center;
+		.container {
+			@include transition(transform 1s 2s cubic-bezier(.9,0,.9,1), background-color 1s);
+			transform:translate3d(-100%,0,0);
+			position:absolute;
+			bottom:50%;
+			text-align:center;
+			color:inherit;
+			left:0;
+			width:100%;
+			overflow:visible;
+			padding:0 10vw;
+			pointer-events:none;
+			will-change:opacity;
+			@media (max-width:768px) {
+				padding:0 5vw;
+				bottom:60%;
+			}
+		}
+		h1 {
+			@extend .currentProjectH2;
+			width:100%;
+			left:0;
+			transform:translate3d(0,25%,0);
+			@include transition(transform 1s cubic-bezier(.9,0,.9,1), color 1s 0s);
+		}
+	}
+	.content {
+		min-height:200vh;
+		background-color:white;
+		position:relative;
+		width:100%;
+		z-index:12200;
+		transform:translate3d(100%,0,0);
+	}
+}
+body.article {
+	overflow-y: scroll;
+	min-height:100%;
+	.devices {
+		position:absolute;
+		pointer-events:none;
+		@include transition(transform 1s 2s cubic-bezier(.8,0,.2,1));
+		@include transform(translate3d(0,-60px,0));
+	}
+	article {
+		min-height:100%;
+		pointer-events:all;
+		position:absolute;
+		overflow:visible;
+		header {
+			transform:translate3d(0,0,0);
+			height:calc(100% - 60px);
+			@include transition(transform 1s cubic-bezier(.9,0,.9,1), background-color 2s 0.8s, height 1s 2s cubic-bezier(.8,0,.2,1));
+			.container {
+				@include transition(transform 1s cubic-bezier(.9,0,.9,1), background-color 2s 0.8s);
+				transform:translate3d(0,0,0);
+			}
+			h1 {
+				@include transition(transform 1s cubic-bezier(.9,0,.9,1), color 2s 0.8s !important);
+			}
+		}
+		.content {
+			transform:translate3d(0,0,0);
+		}
+
+	}
+	footer {
+		position:absolute;
+		transform:translate3d(0,-60px,0);
+		@include transition(transform 1s 2s cubic-bezier(.8,0,.2,1));
 	}
 }

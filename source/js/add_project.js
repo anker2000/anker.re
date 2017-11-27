@@ -1,7 +1,7 @@
 function addProject(section, stage, count) {
 	var sectionObject = new THREE.Group();
 	sectionObject.count=count;
-	sectionObject.position.y = sectionObject.count * -1*screenWidthFromDistance(200);
+	sectionObject.position.y = sectionObject.count * -1*screenWidthFromDistance(globalDistance);
 	if (count>0) sectionObject.visible = false;
 	var area = {};
 	function resizeHandler() {
@@ -27,7 +27,6 @@ function addProject(section, stage, count) {
 			screenMaterialArray.push(customMaterial(materialArray[im]));
 		}		
 	}
-	
 	var glassMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff  });
 	glassMaterial.specular.r=1;
 	glassMaterial.specular.g=1;
@@ -38,6 +37,7 @@ function addProject(section, stage, count) {
 	// glassMaterial.envMap = reflectionCube;
 	glassMaterial.reflectivity = 5;
 	glassMaterial.combine = THREE.MixOperation;
+	
 	var emDarken = 1;
 	var color_light = hexToRgb($(section).data("device-light"));
 	var color_dark = hexToRgb($(section).data("device-dark"));
@@ -45,42 +45,39 @@ function addProject(section, stage, count) {
 	
 	sectionObject.elm = section;
 
-
 	sectionObject.name=$(section).find("h2").html()
 	sectionObject.tween = [];
 	sectionObject.loaded=0;
 	sectionObject.ref = section;
-
 	if ($(section).hasClass("mobile")) {
 		sectionObject.deviceType="mobile";
 		var phonesGroup = new THREE.Group();
-		addPhone({ x:de2ra(60), y:de2ra(-140), z:de2ra(30) },{ x:-10, y:4, z:-8 }, screenMaterialArray[1], glassMaterial, loader, color_dark, color_light).done(function(phoneGroup) {
+		addPhone({ x:de2ra(60), y:de2ra(-140), z:de2ra(30) }, { x:-10, y:4, z:-8 }, screenMaterialArray[1], loader, color_dark, color_light).done(function(phoneGroup) {
 			// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
 			phoneGroup.startRotationPoint = 60;
 			phonesGroup.add(phoneGroup);
 			sectionObject.loaded+=.333333;
 			sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:0, ease:Power2.easeInOut, onComplete:function() {}}));
 			// console.log("phone added");
+			addPhone({ x:de2ra(50), y:de2ra(35), z:de2ra(-80) }, { x:15, y:1, z:-8 }, screenMaterialArray[0], loader, color_dark, color_light).done(function(phoneGroup) {
+				// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
+				sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:0.5, ease:Power2.easeInOut, onComplete:function() {}}));	
+				phoneGroup.startRotationPoint = 50;
+				phonesGroup.add(phoneGroup);
+				sectionObject.loaded+=.333333;
+				// console.log("phone added");
+				addPhone({ x:de2ra(120), y:de2ra(0), z:de2ra(-60) },{ x:45, y:-11, z:-8 }, screenMaterialArray[2], loader, color_dark, color_light).done(function(phoneGroup) {
+					// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
+					sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:1.5, ease:Power2.easeInOut, onComplete:function() {}}));
+					phoneGroup.startRotationPoint = 120;
+					phonesGroup.add(phoneGroup);
+					sectionObject.loaded+=.333333;
+					// console.log("phone added");
+				});
+			});
 		});
 
-		addPhone({ x:de2ra(50), y:de2ra(35), z:de2ra(-80) },{ x:15, y:1, z:-8 }, screenMaterialArray[0], glassMaterial, loader, color_dark, color_light).done(function(phoneGroup) {
-			// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
-			sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:0.5, ease:Power2.easeInOut, onComplete:function() {}}));	
-			phoneGroup.startRotationPoint = 50;
-			phonesGroup.add(phoneGroup);
-			sectionObject.loaded+=.333333;
-			// console.log("phone added");
-		});
-
-
-		addPhone({ x:de2ra(120), y:de2ra(0), z:de2ra(-60) },{ x:45, y:-11, z:-8 }, screenMaterialArray[2], glassMaterial, loader, color_dark, color_light).done(function(phoneGroup) {
-			// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
-			sectionObject.tween.push(TweenMax.to(phoneGroup.position, 3.5,{ y:phoneGroup.position.y-1, yoyo:true, repeat:-1, delay:1.5, ease:Power2.easeInOut, onComplete:function() {}}));
-			phoneGroup.startRotationPoint = 120;
-			phonesGroup.add(phoneGroup);
-			sectionObject.loaded+=.333333;
-			// console.log("phone added");
-		});
+		
 
 		phonesGroup.position.y=5;
 		phonesGroup.position.z=15;
@@ -98,7 +95,7 @@ function addProject(section, stage, count) {
 	} else if ($(section).hasClass("desktop")) {
 		sectionObject.deviceType="desktop";
 		// console.log("print out",screenMaterialArray[0],screenMaterialArray[1])
-		addLaptop({x:de2ra(60), y:de2ra(0), z:de2ra(0)}, { x:0, y:-45, z:10}, screenMaterialArray[0], glassMaterial, loader, color_dark, color_light).done(function(macbookGroup) {
+		addLaptop({x:de2ra(60), y:de2ra(0), z:de2ra(0)}, { x:0, y:-48.5, z:10}, screenMaterialArray[0], loader, color_dark, color_light).done(function(macbookGroup) {
 			// console.log("received macbook", macbookGroup);
 			sectionObject.loaded+=1.5;
 			sectionObject.macbookGroup = macbookGroup;
@@ -111,7 +108,7 @@ function addProject(section, stage, count) {
 			macbookGroup.end = function() {
 				// var openLid = TweenMax.to(macbookGroup.screen.rotation, 1, { x:de2ra(90), ease:Power4.easeOut});
 			}
-			sectionObject.add(macbookGroup);
+			
 			// sectionObject.tween.push(TweenMax.to(macbookGroup.position, 3.5,{ y:macbookGroup.position.y-1, yoyo:true, repeat:-1, ease:Power2.easeInOut, onComplete:function() {}}));
 			if (sectionObject.loaded==1) {
 				scrollHandler();
@@ -119,9 +116,9 @@ function addProject(section, stage, count) {
 			if (sectionObject.kickstart) {
 				macbookGroup.begin()
 			}
-			// console.log("macbook added");
+			sectionObject.add(macbookGroup);
 		});
-		addPhone({ x:de2ra(-15), y:de2ra(10), z:de2ra(15) },{ x:-50, y:-25, z:0 }, screenMaterialArray[1], glassMaterial, loader, color_dark, color_light).done(function(phoneGroup) {
+		addPhone({ x:de2ra(-15), y:de2ra(10), z:de2ra(15) },{ x:-50, y:-25, z:0 }, screenMaterialArray[1], loader, color_dark, color_light).done(function(phoneGroup) {
 			// TweenMax.to(phoneGroup.rotation, 1.5, {y:de2ra(0),  ease:Power4.easeOut});
 			var phonesGroup = new THREE.Group();
 			
@@ -187,7 +184,7 @@ function addProject(section, stage, count) {
 	}
 	sectionObject.updatePosition = function() {
 		// this.position.x = this.count*screenWidthFromDistance(200);
-		this.position.y = sectionObject.count * -1*screenWidthFromDistance(200);
+		this.position.y = sectionObject.count * -1*screenWidthFromDistance(globalDistance);
 	}
 	sectionObject.start = function(object) {
 
@@ -243,7 +240,7 @@ function addProject(section, stage, count) {
 	sectionObject.checkLoad();
 	setTimeout(function(sectionObject) {
 		// sectionObject.position.y = sectionObject.count*screenWidthFromDistance(200);
-		sectionObject.position.y = sectionObject.count * -1*screenWidthFromDistance(200);
+		sectionObject.position.y = sectionObject.count * -1*screenWidthFromDistance(globalDistance);
 	},100,sectionObject);
 	return sectionObject;
 }
